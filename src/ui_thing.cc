@@ -265,7 +265,7 @@ UI_ThingBox::UI_ThingBox(int X, int Y, int W, int H, const char *label) :
 
 	// Hexen thing specials
 
-	spec_type = new UI_DynInput(X+74, Y, 64, 24, "Особенности: ");
+	spec_type = new UI_DynInput(X+74, Y, 64, 24, "Особ.: ");
 	spec_type->align(FL_ALIGN_LEFT);
 	spec_type->callback(spec_callback, this);
 	spec_type->callback2(dynspec_callback, this);
