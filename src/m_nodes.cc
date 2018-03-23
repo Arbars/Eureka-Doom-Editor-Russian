@@ -410,13 +410,13 @@ void CMD_BuildAllNodes()
 {
 	if (! edit_wad)
 	{
-		DLG_Notify("Cannot build nodes unless you are editing a PWAD.");
+		DLG_Notify("Невозможно создать ноды во время редактирования PWAD.");
 		return;
 	}
 
 	if (edit_wad->IsReadOnly())
 	{
-		DLG_Notify("Cannot build nodes on a read-only file.");
+		DLG_Notify("Невозможно создать ноды в файле со статусом \"только для чтения\".");
 		return;
 	}
 
@@ -444,7 +444,7 @@ void CMD_BuildAllNodes()
 	// this probably cannot happen, but check anyway
 	if (edit_wad->LevelCount() == 0)
 	{
-		DLG_Notify("Невозможно построить ноды: уровни не обнаружено!");
+		DLG_Notify("Невозможно построить ноды: уровни не обнаружены!");
 		return;
 	}
 
@@ -468,19 +468,19 @@ void CMD_BuildAllNodes()
 	{
 		dialog->Finish_OK();
 
-		Status_Set("Built nodes OK");
+		Status_Set("Ноды созданы");
 	}
 	else if (nb_info->cancelled)
 	{
 		dialog->Finish_Cancel();
 
-		Status_Set("Cancelled");
+		Status_Set("Отменео");
 	}
 	else
 	{
 		dialog->Finish_Error();
 
-		Status_Set("Error building nodes");
+		Status_Set("Ошибка создания нодов");
 	}
 
 	while (! dialog->WantClose())

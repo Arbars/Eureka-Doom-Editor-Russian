@@ -204,7 +204,7 @@ Wad_file::Wad_file(const char *_name, char _mode, FILE * _fp) :
 
 Wad_file::~Wad_file()
 {
-	LogPrintf("Closing WAD file: %s\n", filename);
+	LogPrintf("Закрываем WAD файл: %s\n", filename);
 
 	fclose(fp);
 
@@ -225,7 +225,7 @@ Wad_file * Wad_file::Open(const char *filename, char mode)
 	if (mode == 'w')
 		return Create(filename, mode);
 
-	LogPrintf("Opening WAD file: %s\n", filename);
+	LogPrintf("Открываем WAD файл: %s\n", filename);
 
 	FILE *fp = NULL;
 
@@ -241,13 +241,13 @@ retry:
 		// if file is read-only, open in 'r' mode instead
 		if (mode == 'a' && (errno == EACCES || errno == EROFS))
 		{
-			LogPrintf("Open r/w failed, trying again in read mode...\n");
+			LogPrintf("Открыть на чтение/запись не удалось, пробуем только на чтение...\n");
 			mode = 'r';
 			goto retry;
 		}
 
 		int what = errno;
-		LogPrintf("Open failed: %s\n", what, strerror(what));
+		LogPrintf("Не удалось открыть: %s\n", what, strerror(what));
 		return NULL;
 	}
 
@@ -255,14 +255,14 @@ retry:
 
 	// determine total size (seek to end)
 	if (fseek(fp, 0, SEEK_END) != 0)
-		FatalError("Error determining WAD size.\n");
+		FatalError("Ошибка определения размера WAD файла.\n");
 
 	w->total_size = (int)ftell(fp);
 
 	DebugPrintf("total_size = %d\n", w->total_size);
 
 	if (w->total_size < 0)
-		FatalError("Error determining WAD size.\n");
+		FatalError("Ошибка определения размера WAD файла.\n");
 
 	w->ReadDirectory();
 	w->DetectLevels();
@@ -274,7 +274,7 @@ retry:
 
 Wad_file * Wad_file::Create(const char *filename, char mode)
 {
-	LogPrintf("Creating new WAD file: %s\n", filename);
+	LogPrintf("Создание нового WAD файла: %s\n", filename);
 
 	FILE *fp = fopen(filename, "w+b");
 	if (! fp)
@@ -673,7 +673,7 @@ void Wad_file::ProcessNamespaces()
 		if (y_stricmp(name, "P_START") == 0 || y_stricmp(name, "PP_START") == 0)
 		{
 			if (active && active != 'P')
-				LogPrintf("WARNING: missing %c_END marker.\n", active);
+				LogPrintf("ВНИМАНИЕ: утерян маркер %c_END.\n", active);
 
 			active = 'P';
 			continue;
@@ -681,7 +681,7 @@ void Wad_file::ProcessNamespaces()
 		else if (y_stricmp(name, "P_END") == 0 || y_stricmp(name, "PP_END") == 0)
 		{
 			if (active != 'P')
-				LogPrintf("WARNING: stray P_END marker found.\n");
+				LogPrintf("ВНИМАНИЕ: найден лишний маркер P_END .\n");
 
 			active = 0;
 			continue;
@@ -690,7 +690,7 @@ void Wad_file::ProcessNamespaces()
 		if (y_stricmp(name, "S_START") == 0 || y_stricmp(name, "SS_START") == 0)
 		{
 			if (active && active != 'S')
-				LogPrintf("WARNING: missing %c_END marker.\n", active);
+				LogPrintf("ВНИМАНИЕ: утерян маркер %c_END .\n", active);
 
 			active = 'S';
 			continue;
@@ -698,7 +698,7 @@ void Wad_file::ProcessNamespaces()
 		else if (y_stricmp(name, "S_END") == 0 || y_stricmp(name, "SS_END") == 0)
 		{
 			if (active != 'S')
-				LogPrintf("WARNING: stray S_END marker found.\n");
+				LogPrintf("ВНИМАНИЕ: найден лишний маркер S_END.\n");
 
 			active = 0;
 			continue;
@@ -707,7 +707,7 @@ void Wad_file::ProcessNamespaces()
 		if (y_stricmp(name, "F_START") == 0 || y_stricmp(name, "FF_START") == 0)
 		{
 			if (active && active != 'F')
-				LogPrintf("WARNING: missing %c_END marker.\n", active);
+				LogPrintf("ВНИМАНИЕ: утерян маркер %c_END.\n", active);
 
 			active = 'F';
 			continue;
@@ -715,7 +715,7 @@ void Wad_file::ProcessNamespaces()
 		else if (y_stricmp(name, "F_END") == 0 || y_stricmp(name, "FF_END") == 0)
 		{
 			if (active != 'F')
-				LogPrintf("WARNING: stray F_END marker found.\n");
+				LogPrintf("ВНИМАНИЕ: найден лишний маркер F_END.\n");
 
 			active = 0;
 			continue;
@@ -724,7 +724,7 @@ void Wad_file::ProcessNamespaces()
 		if (y_stricmp(name, "TX_START") == 0)
 		{
 			if (active && active != 'T')
-				LogPrintf("WARNING: missing %c_END marker.\n", active);
+				LogPrintf("ВНИМАНИЕ: утерян маркер %c_END.\n", active);
 
 			active = 'T';
 			continue;
@@ -732,7 +732,7 @@ void Wad_file::ProcessNamespaces()
 		else if (y_stricmp(name, "TX_END") == 0)
 		{
 			if (active != 'T')
-				LogPrintf("WARNING: stray TX_END marker found.\n");
+				LogPrintf("ВНИМАНИЕ: найден лишний TX_END.\n");
 
 			active = 0;
 			continue;
@@ -742,7 +742,7 @@ void Wad_file::ProcessNamespaces()
 		{
 			if (directory[k]->Length() == 0)
 			{
-				LogPrintf("WARNING: skipping empty lump %s in %c_START\n",
+				LogPrintf("ВНИМАНИЕ: пропущен пустой ламп %s в %c_START\n",
 						  name, active);
 				continue;
 			}
@@ -763,7 +763,7 @@ void Wad_file::ProcessNamespaces()
 	}
 
 	if (active)
-		LogPrintf("WARNING: Missing %c_END marker (at EOF)\n", active);
+		LogPrintf("ВНИМАНИЕ: утерян маркер %c_END (в EOF)\n", active);
 }
 
 

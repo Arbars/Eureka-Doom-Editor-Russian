@@ -518,7 +518,7 @@ static void CreateFallbackSideDef()
 	if (NumSectors == 0)
 		CreateFallbackSector();
 
-	LogPrintf("Creating a fallback sidedef.\n");
+	LogPrintf("Создаём запасную сторону.\n");
 
 	SideDef *sd = new SideDef;
 

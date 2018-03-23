@@ -5,7 +5,7 @@
 //  Eureka DOOM Editor
 //
 //  Copyright (C) 2001-2016 Andrew Apted
-//  Copyright (C) 1997-2003 Andr� Majorel et al
+//  Copyright (C) 1997-2003 André Majorel et al
 //
 //  This program is free software; you can redistribute it and/or
 //  modify it under the terms of the GNU General Public License
@@ -20,7 +20,7 @@
 //------------------------------------------------------------------------
 //
 //  Based on Yadex which incorporated code from DEU 5.21 that was put
-//  in the public domain in 1994 by Rapha�l Quinet and Brendon Wyber.
+//  in the public domain in 1994 by Raphaël Quinet and Brendon Wyber.
 //
 //------------------------------------------------------------------------
 
@@ -91,14 +91,14 @@ void W_LoadPalette()
 
 	if (! lump)
 	{
-		FatalError("PLAYPAL lump not found.\n");
+		FatalError("PLAYPAL ламп не найден.\n");
 		return;
 	}
 
 	if (! lump->Seek() ||
 		! lump->Read(raw_palette, sizeof(raw_palette)))
 	{
-		LogPrintf("PLAYPAL: read error\n");
+		LogPrintf("PLAYPAL: ошибка чтения\n");
 		return;
 	}
 
@@ -123,14 +123,14 @@ void W_LoadColormap()
 
 	if (! lump)
 	{
-		FatalError("COLORMAP lump not found.\n");
+		FatalError("Ламп COLORMAP не найден.\n");
 		return;
 	}
 
 	if (! lump->Seek() ||
 		! lump->Read(raw_colormap, sizeof(raw_colormap)))
 	{
-		LogPrintf("COLORMAP: read error\n");
+		LogPrintf("COLORMAP: Ошибка чтения\n");
 		return;
 	}
 

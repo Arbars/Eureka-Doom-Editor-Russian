@@ -5,7 +5,7 @@
 //  Eureka DOOM Editor
 //
 //  Copyright (C) 2001-2016 Andrew Apted
-//  Copyright (C) 1997-2003 Andr� Majorel et al
+//  Copyright (C) 1997-2003 André Majorel et al
 //
 //  This program is free software; you can redistribute it and/or
 //  modify it under the terms of the GNU General Public License
@@ -20,7 +20,7 @@
 //------------------------------------------------------------------------
 //
 //  Based on Yadex which incorporated code from DEU 5.21 that was put
-//  in the public domain in 1994 by Rapha�l Quinet and Brendon Wyber.
+//  in the public domain in 1994 by Raphaël Quinet and Brendon Wyber.
 //
 //------------------------------------------------------------------------
 
@@ -798,7 +798,7 @@ static int parse_config_line_from_file(char *p, const char *basename, int lnum)
 
 	if (! isspace(*p))
 	{
-		LogPrintf("WARNING: %s(%u): bad line, no space after keyword.\n", basename, lnum);
+		LogPrintf("ВНИМАНИЕ: %s(%u): неправильная линия, нет пространства после ключевого слова.\n", basename, lnum);
 		return 0;
 	}
 
@@ -810,7 +810,7 @@ static int parse_config_line_from_file(char *p, const char *basename, int lnum)
 
 	if (*p == 0)
 	{
-		LogPrintf("WARNING: %s(%u): bad line, missing option value.\n", basename, lnum);
+		LogPrintf("ВНИМАНИЕ: %s(%u): плохая линия, пропущено значение опции.\n", basename, lnum);
 		return 0;
 	}
 
@@ -823,7 +823,7 @@ static int parse_config_line_from_file(char *p, const char *basename, int lnum)
 	{
 		if (opt->opt_type == OPT_END)
 		{
-			LogPrintf("WARNING: %s(%u): invalid option '%s', skipping\n",
+			LogPrintf("ВНИМАНИЕ: %s(%u): неверная опция '%s', пропускаем\n",
 					  basename, lnum, name);
 			return 0;
 		}
@@ -834,7 +834,7 @@ static int parse_config_line_from_file(char *p, const char *basename, int lnum)
 		// pre-pass options (like --help) don't make sense in a config file
 		if (strchr(opt->flags, '1'))
 		{
-			LogPrintf("WARNING: %s(%u): cannot use option '%s' in config files.\n",
+			LogPrintf("ВНИМАНИЕ: %s(%u): невозможно использовать опцию '%s' в конфигах.\n",
 			          basename, lnum, name);
 			return 0;
 		}
@@ -951,7 +951,7 @@ int M_ParseConfigFile()
 
 	FILE * fp = fopen(config_file, "r");
 
-	LogPrintf("Reading config file: %s\n", config_file);
+	LogPrintf("Читаем конфиг: %s\n", config_file);
 
 	if (fp == NULL)
 	{
@@ -975,7 +975,7 @@ int M_ParseDefaultConfigFile()
 
 	FILE * fp = fopen(filename, "r");
 
-	LogPrintf("Reading config file: %s\n", filename);
+	LogPrintf("Читаем конфиг: %s\n", filename);
 
 	if (fp == NULL)
 	{
@@ -1238,7 +1238,7 @@ void M_PrintCommandLineOptions(FILE *fp)
 
 			case OPT_STRING:        fprintf (fp, "<string>    "); break;
 			case OPT_STRING_LIST:   fprintf (fp, "<string> ..."); break;
-			case OPT_END: ;  // This line is here only to silence a GCC warning.
+			case OPT_END: ;  // This line is here only to silence a GCC ВНИМАНИЕ.
 		}
 
 		fprintf (fp, " %s\n", o->desc);
@@ -1253,7 +1253,7 @@ int M_WriteConfigFile()
 {
 	SYS_ASSERT(config_file);
 
-	LogPrintf("Writing config file: %s\n", config_file);
+	LogPrintf("Записываем конфиг: %s\n", config_file);
 
 	FILE * fp = fopen(config_file, "w");
 
@@ -1263,7 +1263,7 @@ int M_WriteConfigFile()
 		return -1;
 	}
 
-	fprintf(fp, "# Eureka configuration (local)\n");
+	fprintf(fp, "# Конфигурация Eureka (локальная)\n");
 
 	const opt_desc_t *o;
 
@@ -1454,7 +1454,7 @@ bool M_LoadUserState()
 	if (! fp)
 		return false;
 
-	LogPrintf("Loading user state from: %s\n", filename);
+	LogPrintf("Загружаем состояние пользователя из: %s\n", filename);
 
 
 	static char line_buf[FL_PATH_MAX];
@@ -1477,7 +1477,7 @@ bool M_LoadUserState()
 
 		if (num_tok < 0)
 		{
-			LogPrintf("Error in persistent data: %s\n", line);
+			LogPrintf("Ошибка в посоянных данных: %s\n", line);
 			continue;
 		}
 
@@ -1492,7 +1492,7 @@ bool M_LoadUserState()
 		}
 		else
 		{
-			LogPrintf("Unknown persistent data: %s\n", line);
+			LogPrintf("Неизвестные постоянные данные: %s\n", line);
 		}
 	}
 
@@ -1513,13 +1513,13 @@ bool M_SaveUserState()
 
 	char *filename = PersistFilename(crc);
 
-	LogPrintf("Save user state to: %s\n", filename);
+	LogPrintf("Сохраняем состояние пользователя в: %s\n", filename);
 
 	FILE *fp = fopen(filename, "w");
 
 	if (! fp)
 	{
-		LogPrintf("--> FAILED! (%s)\n", strerror(errno));
+		LogPrintf("--> НЕ УДАЛОСЬ! (%s)\n", strerror(errno));
 		return false;
 	}
 

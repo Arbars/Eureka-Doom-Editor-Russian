@@ -633,15 +633,15 @@ void UI_OpenMap::LoadFile()
 	switch (chooser.show())
 	{
 		case -1:
-			LogPrintf("Open Map: error choosing file:\n");
+			LogPrintf("Открыть карту: Ошибка выбора файла:\n");
 			LogPrintf("   %s\n", chooser.errmsg());
 
-			DLG_Notify("Unable to open the map:\n\n%s",
+			DLG_Notify("Не удалось открыть карту:\n\n%s",
 					   chooser.errmsg());
 			return;
 
 		case 1:
-			LogPrintf("Open Map: cancelled by user\n");
+			LogPrintf("Открыть карту: отменено пользователем\n");
 			return;
 
 		default:

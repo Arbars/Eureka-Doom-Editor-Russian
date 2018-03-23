@@ -506,7 +506,7 @@ static void ParseKeyBinding(const char ** tokens, int num_tok)
 
 	if (! temp.key)
 	{
-		LogPrintf("bindings.cfg: cannot parse key name: %s\n", tokens[1]);
+		LogPrintf("bindings.cfg: cannot parse key nameневозможно распознать имя клавиши: %s\n", tokens[1]);
 		return;
 	}
 
@@ -514,7 +514,7 @@ static void ParseKeyBinding(const char ** tokens, int num_tok)
 
 	if (temp.context == KCTX_NONE)
 	{
-		LogPrintf("bindings.cfg: unknown context: %s\n", tokens[0]);
+		LogPrintf("bindings.cfg: неизвестная связь: %s\n", tokens[0]);
 		return;
 	}
 
@@ -523,7 +523,7 @@ static void ParseKeyBinding(const char ** tokens, int num_tok)
 	if (y_stricmp(tokens[2], "UNBOUND") == 0)
 	{
 #if 0
-fprintf(stderr, "REMOVED BINDING key:%04x (%s)\n", temp.key, tokens[0]);
+fprintf(stderr, "УДАЛЕНЫ НАЗНАЧЕННЫЕ клавиши:%04x (%s)\n", temp.key, tokens[0]);
 #endif
 		M_RemoveBinding(temp.key, temp.context);
 		return;
@@ -543,14 +543,14 @@ fprintf(stderr, "REMOVED BINDING key:%04x (%s)\n", temp.key, tokens[0]);
 
 	if (! temp.cmd)
 	{
-		LogPrintf("bindings.cfg: unknown function: %s\n", tokens[2]);
+		LogPrintf("bindings.cfg: неизвестная функция: %s\n", tokens[2]);
 		return;
 	}
 
 	if (temp.cmd->req_context != KCTX_NONE &&
 	    temp.context != temp.cmd->req_context)
 	{
-		LogPrintf("bindings.cfg: function '%s' in wrong context '%s'\n",
+		LogPrintf("bindings.cfg: функция '%s' в неправильной связи '%s'\n",
 				  tokens[2], tokens[0]);
 		return;
 	}
@@ -560,7 +560,7 @@ fprintf(stderr, "REMOVED BINDING key:%04x (%s)\n", temp.key, tokens[0]);
 			strncpy(temp.param[p], tokens[3 + p], MAX_BIND_LENGTH-1);
 
 #if 0  // DEBUG
-fprintf(stderr, "ADDED BINDING key:%04x --> %s\n", temp.key, tokens[2]);
+fprintf(stderr, "НАЗНАЧЕНА клавиша:%04x --> %s\n", temp.key, tokens[2]);
 #endif
 
 	M_RemoveBinding(temp.key, temp.context);
@@ -587,7 +587,7 @@ static bool LoadBindingsFromPath(const char *path, bool required)
 		FatalError("Missing key bindings file:\n\n%s\n", filename);
 	}
 
-	LogPrintf("Reading key bindings from: %s\n", filename);
+	LogPrintf("Читаем назначение клавиш из: %s\n", filename);
 
 	static char line_buf[FL_PATH_MAX];
 
@@ -609,7 +609,7 @@ static bool LoadBindingsFromPath(const char *path, bool required)
 
 		if (num_tok < 3)
 		{
-			LogPrintf("Syntax error in bindings: %s\n", line);
+			LogPrintf("Ошибка синтаксиса в назначении клавиш: %s\n", line);
 			continue;
 		}
 
@@ -694,14 +694,14 @@ void M_SaveBindings()
 
 	if (! fp)
 	{
-		LogPrintf("Failed to save key bindings to: %s\n", filename);
+		LogPrintf("Не удалось сохранить назначение клавиши в : %s\n", filename);
 
-		DLG_Notify("Warning: failed to save key bindings\n"
-		           "(filename: %s)", filename);
+		DLG_Notify("Внимание: не удалось сохранить назначение клавиши\n"
+		           "(имя файла: %s)", filename);
 		return;
 	}
 
-	LogPrintf("Writing key bindings to: %s\n", filename);
+	LogPrintf("Записываем назначение клавиш в: %s\n", filename);
 
 	fprintf(fp, "# Eureka key bindings (local)\n");
 	fprintf(fp, "# vi:ts=16:noexpandtab\n\n");

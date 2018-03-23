@@ -5,7 +5,7 @@
 //  Eureka DOOM Editor
 //
 //  Copyright (C) 2001-2016 Andrew Apted
-//  Copyright (C) 1997-2003 Andr� Majorel et al
+//  Copyright (C) 1997-2003 André Majorel et al
 //
 //  This program is free software; you can redistribute it and/or
 //  modify it under the terms of the GNU General Public License
@@ -20,7 +20,7 @@
 //------------------------------------------------------------------------
 //
 //  Based on Yadex which incorporated code from DEU 5.21 that was put
-//  in the public domain in 1994 by Rapha�l Quinet and Brendon Wyber.
+//  in the public domain in 1994 by Raphaël Quinet and Brendon Wyber.
 //
 //------------------------------------------------------------------------
 
@@ -154,7 +154,7 @@ bool LoadPicture(Img_c& img,      // image to load picture into
 
 		if (offset < 0 || offset >= lump->Length())
 		{
-			LogPrintf("WARNING: bad image offset 0x%08x in patch [%s]\n",
+			LogPrintf("ВНИМАНИЕ: неверное разрешение изображения 0x%08x в пути [%s]\n",
 			          offset, pic_name);
 			return false;
 		}

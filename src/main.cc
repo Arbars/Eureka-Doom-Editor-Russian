@@ -149,7 +149,7 @@ void FatalError(const char *fmt, ...)
 
 	if (init_progress >= 1)
 	{
-		LogPrintf("\nFATAL ERROR: %s", buffer);
+		LogPrintf("\nФАТАЛЬНАЯ ОШИБКА: %s", buffer);
 	}
 
 	if (init_progress >= 2)
@@ -163,7 +163,7 @@ void FatalError(const char *fmt, ...)
 #ifdef WIN32
 	else
 	{
-		MessageBox(NULL, buffer, "Eureka : Error",
+		MessageBox(NULL, buffer, "Eureka : Ошибка",
 		           MB_ICONEXCLAMATION | MB_OK |
 				   MB_SYSTEMMODAL | MB_SETFOREGROUND);
 	}
@@ -279,8 +279,8 @@ static void Determine_HomeDir(const char *argv0)
 	if (! cache_dir)
 		cache_dir = home_dir;
 
-	LogPrintf("Home  dir: %s\n", home_dir);
-	LogPrintf("Cache dir: %s\n", cache_dir);
+	LogPrintf("Домашняя  папка: %s\n", home_dir);
+	LogPrintf("Папка с кэшем: %s\n", cache_dir);
 
 	// create cache directory (etc)
 	CreateHomeDirs();
@@ -339,7 +339,7 @@ static void Determine_InstallPath(const char *argv0)
 	if (! install_dir)
 		FatalError("Unable to find install directory!\n");
 
-	LogPrintf("Install dir: %s\n", install_dir);
+	LogPrintf("папка установки: %s\n", install_dir);
 }
 
 
@@ -427,13 +427,13 @@ static void DeterminePort()
 	// ensure the 'default_port' value is OK
 	if (! default_port[0])
 	{
-		LogPrintf("WARNING: Default port is empty, resetting...\n");
+		LogPrintf("ВНИМАНИЕ: Порт по-умолчанию пуст, сбрасываем...\n");
 		default_port = DEFAULT_PORT_NAME;
 	}
 
 	if (! M_CanLoadDefinitions("ports", default_port))
 	{
-		LogPrintf("WARNING: Default port '%s' is unknown, resetting...\n");
+		LogPrintf("ВНИМАНИЕ: Порт по-умолчанию '%s' неизвестен, сбрасываем...\n");
 		default_port = DEFAULT_PORT_NAME;
 	}
 
@@ -560,7 +560,7 @@ static void Main_SetupFLTK()
 	int screen_w = Fl::w();
 	int screen_h = Fl::h();
 
-	LogPrintf("Detected Screen Size: %dx%d\n", screen_w, screen_h);
+	LogPrintf("Определено разрешение экрана: %dx%d\n", screen_w, screen_h);
 
 	KF = 1;
 #if 0  // TODO
@@ -759,20 +759,20 @@ static void Main_LoadIWAD()
 void Main_LoadResources()
 {
 	LogPrintf("\n");
-	LogPrintf("----- Loading Resources -----\n");
+	LogPrintf("----- Загрузка ресурсов -----\n");
 
 	M_ClearAllDefinitions();
 
 	Game_name = DetermineGame(Iwad_name);
 
-	LogPrintf("Game name: '%s'\n", Game_name);
-	LogPrintf("IWAD file: '%s'\n", Iwad_name);
+	LogPrintf("Название игры: '%s'\n", Game_name);
+	LogPrintf("Файл IWAD: '%s'\n", Iwad_name);
 
 	M_LoadDefinitions("games", Game_name);
 
 	SYS_ASSERT(Port_name);
 
-	LogPrintf("Port name: '%s'\n", Port_name);
+	LogPrintf("Название порта: '%s'\n", Port_name);
 
 	M_LoadDefinitions("ports", Port_name);
 
@@ -804,7 +804,7 @@ void Main_LoadResources()
 	W_LoadTextures();
 	W_ClearSprites();
 
-	LogPrintf("--- DONE ---\n");
+	LogPrintf("--- ЗАВЕРШЕНО ---\n");
 	LogPrintf("\n");
 
 	if (main_win)
@@ -844,7 +844,7 @@ static void ShowHelp()
 
 static void ShowVersion()
 {
-	printf("Eureka version " EUREKA_VERSION " (" __DATE__ ")\n");
+	printf("Версия Eureka " EUREKA_VERSION " (" __DATE__ ")\n");
 
 	fflush(stdout);
 }
@@ -857,7 +857,7 @@ static void ShowTime()
 
 	GetSystemTime(&sys_time);
 
-	LogPrintf("Current time: %02d:%02d on %04d/%02d/%02d\n",
+	LogPrintf("Текущее время: %02d:%02d on %04d/%02d/%02d\n",
 			  sys_time.wHour, sys_time.wMinute,
 			  sys_time.wYear, sys_time.wMonth, sys_time.wDay);
 
@@ -873,7 +873,7 @@ static void ShowTime()
 	if (! calend_time)
 		return;
 
-	LogPrintf("Current time: %02d:%02d on %04d/%02d/%02d\n",
+	LogPrintf("Текущее время: %02d:%02d on %04d/%02d/%02d\n",
 			  calend_time->tm_hour, calend_time->tm_min,
 			  calend_time->tm_year + 1900, calend_time->tm_mon + 1,
 			  calend_time->tm_mday);
@@ -1017,7 +1017,7 @@ int main(int argc, char *argv[])
 
 
 	// load the initial level
-	LogPrintf("Loading initial map : %s\n", Level_name);
+	LogPrintf("Загружаем указанную карту : %s\n", Level_name);
 
 	LoadLevel(edit_wad ? edit_wad : game_wad, Level_name);
 

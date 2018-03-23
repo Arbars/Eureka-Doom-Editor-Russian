@@ -5,7 +5,7 @@
 //  Eureka DOOM Editor
 //
 //  Copyright (C) 2001-2016 Andrew Apted
-//  Copyright (C) 1997-2003 Andr� Majorel et al
+//  Copyright (C) 1997-2003 André Majorel et al
 //
 //  This program is free software; you can redistribute it and/or
 //  modify it under the terms of the GNU General Public License
@@ -20,7 +20,7 @@
 //------------------------------------------------------------------------
 //
 //  Based on Yadex which incorporated code from DEU 5.21 that was put
-//  in the public domain in 1994 by Rapha�l Quinet and Brendon Wyber.
+//  in the public domain in 1994 by Raphaël Quinet and Brendon Wyber.
 //
 //------------------------------------------------------------------------
 
@@ -802,7 +802,7 @@ static void ParseOperationLine(const char ** tokens, int num_tok,
 
 	if (! cmd)
 	{
-		LogPrintf("operations.cfg: unknown function: %s\n", tokens[2]);
+		LogPrintf("operations.cfg: неизвестная функция: %s\n", tokens[2]);
 		return;
 	}
 
@@ -872,7 +872,7 @@ static void M_ParseOperationFile(const char *context, Fl_Menu_Button *menu)
 
 		if (num_tok < 0)
 		{
-			LogPrintf("operations.cfg: failed parsing a line\n");
+			LogPrintf("operations.cfg: не удалось проанализировать линию\n");
 			continue;
 		}
 
@@ -888,7 +888,7 @@ static void M_ParseOperationFile(const char *context, Fl_Menu_Button *menu)
 
 	if (menu->size() < 2)
 	{
-		FatalError("Bad operations menu : no %s items.\n", context);
+		FatalError("Кривое меню операций : нет объекта %s.\n", context);
 		return;
 	}
 
@@ -912,7 +912,7 @@ static void M_ParseOperationFile(const char *context, Fl_Menu_Button *menu)
 
 void M_LoadOperationMenus()
 {
-	LogPrintf("Loading Operation menus...\n");
+	LogPrintf("Загрузка Меню операций...\n");
 
 	no_operation_cfg = false;
 
@@ -923,7 +923,7 @@ void M_LoadOperationMenus()
 	M_ParseOperationFile("render", main_win->op_render);
 
 	if (no_operation_cfg)
-		DLG_Notify("Installation problem: cannot find \"operaitons.cfg\" file!");
+		DLG_Notify("Проблема установки: Не удалось найти файл \"operaitons.cfg\"!");
 }
 
 

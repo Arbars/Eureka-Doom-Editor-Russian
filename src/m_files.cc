@@ -1013,7 +1013,7 @@ bool M_ParseEurekaLump(Wad_file *wad, bool keep_cmd_line_args)
 
 void M_WriteEurekaLump(Wad_file *wad)
 {
-	LogPrintf("Запись '%s' lump'a\n", EUREKA_LUMP);
+	LogPrintf("Запись лампа '%s\n", EUREKA_LUMP);
 
 	wad->BeginWrite();
 

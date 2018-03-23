@@ -587,7 +587,7 @@ void PutBlockmap()
 		// leave an empty blockmap lump
 		CreateLevelLump("BLOCKMAP")->Finish();
 
-		Warning("Blockmap overflowed (lump will be empty)\n");
+		Warning("Переполнение карты блоков (лампы будут пустыми)\n");
 	}
 	else
 	{

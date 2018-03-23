@@ -93,7 +93,7 @@ rgba_color_t * TGA_DecodeImage(const byte *buffer, size_t length,
 	    targa_header.image_type != TGA_RGB &&
 		targa_header.image_type != TGA_RGB_RLE)
 	{
-		LogPrintf("Bad tga file: type %d is not supported\n", targa_header.image_type);
+		LogPrintf("Кривой файл tga: тип %d не поддерживается\n", targa_header.image_type);
 		return NULL;
 	}
 
@@ -102,7 +102,7 @@ rgba_color_t * TGA_DecodeImage(const byte *buffer, size_t length,
 
 	if (width == 0 || height == 0)
 	{
-		LogPrintf("Bad tga file: width or height is zero\n");
+		LogPrintf("кривой файл tga: нулевая ширина или длина\n");
 		return NULL;
 	}
 
@@ -120,19 +120,19 @@ rgba_color_t * TGA_DecodeImage(const byte *buffer, size_t length,
 	{
 		if (targa_header.colormap_type != 1)
 		{
-			LogPrintf("Bad tga file: colormap type != 1\n");
+			LogPrintf("Кривой файл tga: тип colormap != 1\n");
 			return NULL;
 		}
 
 		if (targa_header.colormap_length > 256)
 		{
-			LogPrintf("Bad tga file: too many colors (over 256)\n");
+			LogPrintf("Кривой файл tga: слишком много цветов (более 256)\n");
 			return NULL;
 		}
 
 		if (targa_header.pixel_bits != 8 || targa_header.colormap_bits < 24)
 		{
-			LogPrintf("Bad tga file: unsupported colormap size\n");
+			LogPrintf("Кривой файл tga: неподдерживаемый тип colormap\n");
 			return NULL;
 		}
 
@@ -167,7 +167,7 @@ rgba_color_t * TGA_DecodeImage(const byte *buffer, size_t length,
 	{
 		if (targa_header.pixel_bits != 24 && targa_header.pixel_bits != 32)
 		{
-			LogPrintf("Bad tga file: only 24 or 32 bit images supported\n");
+			LogPrintf("Кривой файл tga: поддерживаются только 24 и 32-битные изображения\n");
 			delete[] pixels;
 			return NULL;
 		}
@@ -199,7 +199,7 @@ rgba_color_t * TGA_DecodeImage(const byte *buffer, size_t length,
 	{
 		if (targa_header.pixel_bits != 24 && targa_header.pixel_bits != 32)
 		{
-			LogPrintf("Bad tga file: only 24 or 32 bit images supported\n");
+			LogPrintf("Кривой файл tga: поддерживаются только 24 и 32-битные изображения\n");
 			delete[] pixels;
 			return NULL;
 		}

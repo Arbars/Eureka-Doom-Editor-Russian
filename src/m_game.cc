@@ -168,7 +168,7 @@ static void ParseColorDef(char ** argv, int argc)
 	}
 	else
 	{
-		LogPrintf("unknown color keyword: '%s'\n", argv[0]);
+		LogPrintf("неизвестное ключ-слово цвета: '%s'\n", argv[0]);
 	}
 }
 
@@ -186,7 +186,7 @@ static map_format_bitset_t ParseMapFormats(char ** argv, int argc)
 			result |= (1 << MAPF_Hexen);
 
 		else
-			FatalError("Unknown map format '%s' in definition file.\n", argv[0]);
+			FatalError("Неизвестный формат карты '%s' в файле определения.\n", argv[0]);
 	}
 
 	return result;
@@ -237,7 +237,7 @@ static void ParseFeatureDef(char ** argv, int argc)
 	}
 	else
 	{
-		LogPrintf("unknown feature keyword: '%s'\n", argv[0]);
+		LogPrintf("Неизвестное ключ-слово функции: '%s'\n", argv[0]);
 	}
 }
 
@@ -287,14 +287,14 @@ void M_LoadDefinitions(const char *folder, const char *name)
 
 	sprintf(prettyname, "%s/%s.ugh", folder, name);
 
-	LogPrintf("Loading Definitions : %s\n", prettyname);
+	LogPrintf("Загружаем определения : %s\n", prettyname);
 
 	const char * filename = FindDefinitionFile(folder, name);
 
 	if (! filename)
-		FatalError("Cannot find definition file: %s\n", prettyname);
+		FatalError("Не найден файл определений: %s\n", prettyname);
 
-	DebugPrintf("  found at: %s\n", filename);
+	DebugPrintf("  найден в: %s\n", filename);
 
 	M_ParseDefinitionFile(PURPOSE_Normal, filename, folder, prettyname);
 }
@@ -619,7 +619,7 @@ static void M_ParseNormalLine(parser_state_c *pst)
 
 		if (thing_groups.find(info->group) == thing_groups.end())
 		{
-			LogPrintf("%s(%d): unknown thing group '%c'\n",
+			LogPrintf("%s(%d): неизвестная группа объектов '%c'\n",
 					pst->fname, pst->lineno, info->group);
 		}
 		else
@@ -653,7 +653,7 @@ static void M_ParseNormalLine(parser_state_c *pst)
 
 		if (texture_groups.find(tolower(group)) == texture_groups.end())
 		{
-			LogPrintf("%s(%d): unknown texture group '%c'\n",
+			LogPrintf("%s(%d): неизвестная группа текстур '%c'\n",
 					  pst->fname, pst->lineno, group);
 		}
 		else
@@ -670,7 +670,7 @@ static void M_ParseNormalLine(parser_state_c *pst)
 
 		if (texture_groups.find(tolower(group)) == texture_groups.end())
 		{
-			LogPrintf("%s(%d): unknown texture group '%c'\n",
+			LogPrintf("%s(%d): неизвестная группа текстур '%c'\n",
 						pst->fname, pst->lineno, group);
 		}
 		else

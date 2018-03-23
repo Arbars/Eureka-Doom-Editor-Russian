@@ -433,7 +433,7 @@ void CMD_TestMap()
 
 	FilenameGetPath(folder, sizeof(folder), info->exe_filename);
 
-	LogPrintf("Changing current dir to: %s\n", folder);
+	LogPrintf("Изменяем текущую папку на: %s\n", folder);
 
 	if (! FileChangeDir(folder))
 	{
@@ -449,7 +449,7 @@ void CMD_TestMap()
 	snprintf(cmd_buffer, sizeof(cmd_buffer), "%s %s %s",
 			 CalcEXEName(info), GrabWadNames(info), CalcWarpString());
 
-	LogPrintf("Testing map using the following command:\n");
+	LogPrintf("Тестируем карту, используя следующие комманды:\n");
 	LogPrintf("--> %s\n", cmd_buffer);
 
 	Status_Set("TESTING MAP");
@@ -468,7 +468,7 @@ void CMD_TestMap()
 	else
 		Status_Set("Result code: %d\n", status);
 
-	LogPrintf("--> result code: %d\n", status);
+	LogPrintf("--> код результата: %d\n", status);
 
 
 	// restore previous working directory

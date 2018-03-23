@@ -5,7 +5,7 @@
 //  Eureka DOOM Editor
 //
 //  Copyright (C) 2001-2016 Andrew Apted
-//  Copyright (C) 1997-2003 Andr� Majorel et al
+//  Copyright (C) 1997-2003 André Majorel et al
 //
 //  This program is free software; you can redistribute it and/or
 //  modify it under the terms of the GNU General Public License
@@ -20,7 +20,7 @@
 //------------------------------------------------------------------------
 //
 //  Based on Yadex which incorporated code from DEU 5.21 that was put
-//  in the public domain in 1994 by Rapha�l Quinet and Brendon Wyber.
+//  in the public domain in 1994 by Raphaël Quinet and Brendon Wyber.
 //
 //------------------------------------------------------------------------
 
@@ -156,7 +156,7 @@ static void LoadTextureEntry_Strife(byte *tex_data, int tex_length, int offset,
 
 		if (pname_idx >= pname_size)
 		{
-			LogPrintf("Invalid pname in texture '%.8s'\n", raw->name);
+			LogPrintf("Неверный pname в текстуре '%.8s'\n", raw->name);
 			continue;
 		}
 
@@ -169,7 +169,7 @@ static void LoadTextureEntry_Strife(byte *tex_data, int tex_length, int offset,
 		if (! lump ||
 			! LoadPicture(*img, lump, picname, xofs, yofs, 0, 0))
 		{
-			LogPrintf("texture '%.8s': patch '%.8s' not found.\n", raw->name, picname);
+			LogPrintf("текстура '%.8s': путь '%.8s' не найден.\n", raw->name, picname);
 		}
 	}
 
@@ -231,7 +231,7 @@ static void LoadTextureEntry_DOOM(byte *tex_data, int tex_length, int offset,
 
 		if (pname_idx >= pname_size)
 		{
-			LogPrintf("Invalid pname in texture '%.8s'\n", raw->name);
+			LogPrintf("Неверный pname в текстуре '%.8s'\n", raw->name);
 			continue;
 		}
 
@@ -245,7 +245,7 @@ static void LoadTextureEntry_DOOM(byte *tex_data, int tex_length, int offset,
 		if (! lump ||
 			! LoadPicture(*img, lump, picname, xofs, yofs, 0, 0))
 		{
-			LogPrintf("texture '%.8s': patch '%.8s' not found.\n", raw->name, picname);
+			LogPrintf("текстура '%.8s': путь '%.8s' не найден.\n", raw->name, picname);
 		}
 	}
 
@@ -339,7 +339,7 @@ static void LoadTexture_PNG(const char *name, Lump_c *lump, char img_fmt)
 	if (fltk_img.w() <= 0)
 	{
 		// failed to decode
-		LogPrintf("Failed to decode PNG image in '%s' lump.\n", name);
+		LogPrintf("Не удалось декодировать изображение PNG в лампе '%s'.\n", name);
 		return;
 	}
 
@@ -366,7 +366,7 @@ static void LoadTexture_JPEG(const char *name, Lump_c *lump, char img_fmt)
 	if (fltk_img.w() <= 0)
 	{
 		// failed to decode
-		LogPrintf("Failed to decode JPEG image in '%s' lump.\n", name);
+		LogPrintf("Не удалось декодировать изображение JPEG в лампе '%s'.\n", name);
 		return;
 	}
 
@@ -394,7 +394,7 @@ static void LoadTexture_TGA(const char *name, Lump_c *lump, char img_fmt)
 	if (! rgba)
 	{
 		// failed to decode
-		LogPrintf("Failed to decode TGA image in '%s' lump.\n", name);
+		LogPrintf("Не удалось декодировать изображение TGA в лампе '%s' .\n", name);
 		return;
 	}
 
@@ -453,7 +453,7 @@ void W_LoadTextures()
 
 	for (int i = 0 ; i < (int)master_dir.size() ; i++)
 	{
-		LogPrintf("Loading Textures from WAD #%d\n", i+1);
+		LogPrintf("Загружаем текстуры из  WAD #%d\n", i+1);
 
 		Lump_c *pnames   = master_dir[i]->FindLump("PNAMES");
 		Lump_c *texture1 = master_dir[i]->FindLump("TEXTURE1");
@@ -645,7 +645,7 @@ void W_LoadFlats()
 
 	for (int i = 0 ; i < (int)master_dir.size() ; i++)
 	{
-		LogPrintf("Loading Flats from WAD #%d\n", i+1);
+		LogPrintf("Загружаем плоскости из WAD #%d\n", i+1);
 
 		Wad_file *wf = master_dir[i];
 
@@ -780,7 +780,7 @@ Lump_c * Sprite_loc_by_root (const char *name)
 	// TODO: verify lump is OK (size etc)
 	if (lump)
 	{
-		LogPrintf("WARNING: using sprite '%s' outside of S_START..S_END\n", name);
+		LogPrintf("ВНИМАНИЕ: используемый спрайт '%s' вне S_START..S_END\n", name);
 	}
 
 	return lump;
@@ -805,7 +805,7 @@ Img_c * W_GetSprite(int type)
 		Lump_c *lump = Sprite_loc_by_root(info->sprite);
 		if (! lump)
 		{
-			LogPrintf("Sprite not found: '%s'\n", info->sprite);
+			LogPrintf("Спрайт не найден: '%s'\n", info->sprite);
 
 			// for the MBF dog, create our own sprite for it, since
 			// it is defined in the Boom definition file and the
