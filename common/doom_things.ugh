@@ -58,10 +58,10 @@ thinggroup - 0BD "ПРОЧЕЕ"
 #    t  :  teleport dest (can overlap certain things)
 #
 
-thing    1 p -  16 PLAY   "Точка старта для 1-го игрока"
-thing    2 p -  16 PLAY   "Точка старта для 2-го игрока"
-thing    3 p -  16 PLAY   "Точка старта для 3-го игрока"
-thing    4 p -  16 PLAY   "Точка старта для 4-го игрока"
+thing    1 p -  16 PLAY   "Игрок 1"
+thing    2 p -  16 PLAY   "Игрок 2"
+thing    3 p -  16 PLAY   "Игрок 3"
+thing    4 p -  16 PLAY   "Игрок 4"
 thing   11 p t  16 PLAYF1 "Точка старта для DeathMatch"
 thing   14 p t  16 TFOG   "Выход в телепорт"
 
