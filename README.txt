@@ -34,7 +34,7 @@ SUPPORTED GAMES
 -  HacX
 -  Heretic
 -  Hexen
-
+-  Chex Quest
 
 REQUIREMENTS
 
