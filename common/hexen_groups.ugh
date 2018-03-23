@@ -1,0 +1,38 @@
+#------------------------------------------------------------------------
+#  HEXEN LINE CATEGORIES
+#------------------------------------------------------------------------
+#
+#  Eureka DOOM Editor
+#
+#  Copyright (C) 2016 Andrew Apted
+#
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License
+#  as published by the Free Software Foundation; either version 2
+#  of the License, or (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#------------------------------------------------------------------------
+
+spec_group a "Анимация"
+spec_group c "Потолок"
+spec_group d "Двери"
+spec_group e "Подъёмник"
+spec_group f "Пол"
+spec_group g "Лифт"
+spec_group k "Скрипты"
+spec_group l "Освещение"
+
+spec_group p "Полиобъекты"
+spec_group q "Лестницы"
+spec_group r "Рендер"
+spec_group s "Сектор"
+spec_group t "Объект"
+spec_group u "Телепорт"
+spec_group x "Выходы"
+spec_group - "ПРОЧЕЕ"
+

@@ -1,0 +1,170 @@
+#------------------------------------------------------------------------
+#  DOOM 1/2 common things
+#------------------------------------------------------------------------
+#
+#  Eureka DOOM Editor
+#
+#  Copyright (C) 2001-2015 Andrew Apted
+#  Copyright (C) 1997-2003 André Majorel et al
+#
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License
+#  as published by the Free Software Foundation; either version 2
+#  of the License, or (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#------------------------------------------------------------------------
+#
+#  Based on Yadex which incorporated code from DEU 5.21 that was put
+#  in the public domain in 1994 by Raphaël Quinet and Brendon Wyber.
+#
+#------------------------------------------------------------------------
+
+player_size 16 56 41
+
+#
+#	Definition of thing groups
+#	Format is : thinggroup <letter> <colour> <description>
+#
+
+thinggroup p 4F4 "Игрок"
+thinggroup m F00 "Монстры"
+thinggroup w FA0 "Оружие"
+thinggroup a 850 "Снаряжение"
+thinggroup h 280 "Здоровье и броня"
+thinggroup b 280 "Бонусы"
+thinggroup k F0F "Ключи"
+thinggroup d 66C "Декорации"
+thinggroup l 66C "Источники света"
+thinggroup g 66C "Останки"
+thinggroup - 0BD "ПРОЧЕЕ"
+
+#
+#	Definition of things
+#	Format is : thing <number> <group> <flags> <radius> <sprite> <desc>
+#
+#	<sprite> should be NULL for things without any sprite
+#
+# <flags> can contain these letters:
+#    i  :  invisible
+#    c  :  on ceiling
+#    l  :  lit up
+#    n  :  non-blocking
+#    v  :  can exist in void-space
+#    t  :  teleport dest (can overlap certain things)
+#
+
+thing    1 p -  16 PLAY   "Точка старта для 1-го игрока"
+thing    2 p -  16 PLAY   "Точка старта для 2-го игрока"
+thing    3 p -  16 PLAY   "Точка старта для 3-го игрока"
+thing    4 p -  16 PLAY   "Точка старта для 4-го игрока"
+thing   11 p t  16 PLAYF1 "Точка старта для DeathMatch"
+thing   14 p t  16 TFOG   "Выход в телепорт"
+
+thing 2005 w n  20 CSAW   "Бензопила"
+thing 2001 w n  20 SHOT   "Дробовик"
+thing 2002 w n  20 MGUN   "Пулемёт"
+thing 2003 w n  20 LAUN   "Ракетница"
+thing 2004 w n  20 PLAS   "Плазмаган"
+thing 2006 w n  20 BFUG   "BFG9000"
+
+thing 2007 a n  20 CLIP   "Обойма"
+thing 2048 a n  20 AMMO   "Цинк с патронами"
+thing 2008 a n  20 SHEL   "Патроны для дробовика"
+thing 2049 a n  20 SBOX   "Коробка патронов для дробовика"
+thing 2010 a n  20 ROCK   "Ракета"
+thing 2046 a n  20 BROK   "Ящик ракет"
+thing 2047 a n  20 CELL   "Энерго-ячейка"
+thing   17 a n  20 CELP   "Ящик энерго-ячеек"
+
+thing    8 b n-  20 BPAK   "Рюкзак с припасами"
+thing 2022 b nl  20 PINV   "Невидимость"
+thing 2023 b nl  20 PSTR   "Берсерк"
+thing 2024 b nl  20 PINS   "Временная неуязвимость"
+thing 2025 b nl  20 SUIT   "Костюм ОЗК"
+thing 2026 b n-  20 PMAP   "Автокарта"
+thing 2045 b nl  20 PVIS   "Очки ночного видения"
+
+thing 2011 h n-  20 STIM   "Малая аптечка"
+thing 2012 h n-  20 MEDI   "Большая аптечка"
+thing 2013 h nl  20 SOUL   "Мега-Сфера"
+thing 2014 h n-  20 BON1   "Бонус здоровья"
+thing 2015 h n-  20 BON2   "Бонус брони"
+thing 2018 h nl  20 ARM1   "Зелёная броня"
+thing 2019 h nl  20 ARM2   "Синяя броня"
+
+thing    5 k nl  20 BKEY   "Синяя ключ-карта"
+thing    6 k nl  20 YKEY   "Желтая ключ-карта"
+thing   13 k nl  20 RKEY   "Красная ключ-карта"
+thing   40 k nl  20 BSKU   "Синий ключ-череп"
+thing   39 k nl  20 YSKU   "Желтый ключ-череп"
+thing   38 k nl  20 RSKU   "Красный ключ-череп"
+
+thing   15 g n  16 PLAYN  "Мёртвый игрок (зелёный)"
+thing   18 g n  20 POSSL  "Мёртвый солдат"
+thing   19 g n  20 SPOSL  "Мёртвый сержант"
+thing   20 g n  20 TROOM  "Мертвый имп"
+thing   21 g n  16 SARGN  "Мёртвый демон"
+thing   22 g n  16 HEADL  "Мёртвый какодемон"
+thing   23 g n  16 SKULK  "Мёртвый лост-соул"
+
+thing 2035 d -  10 BAR1   "Бочка"
+thing   48 d -  16 ELEC   "Техническая колонна"
+thing   30 d -  16 COL1   "Высокий зелёный постамент"
+thing   32 d -  16 COL3   "Высокий красный постамент"
+thing   31 d -  16 COL2   "Низкий зелёный постамент"
+thing   33 d -  16 COL4   "Низкий красный постамент"
+thing   36 d -  16 COL5   "Постамент с сердцем"
+thing   37 d -  16 COL6   "Постамент с черепом"
+thing   41 d l  16 CEYE   "Злой глаз"
+thing   42 g l  16 FSKU   "Парящие черепа"
+thing   47 d -  16 SMIT   "Усохший куст"
+thing   54 d -  32 TRE2   "Усохшее дерево"
+thing   43 d -  16 TRE1   "Зелёное дерево"
+
+thing   10 g n  16 PLAYW  "Растерзанный игрок"
+thing   12 g n  16 PLAYW  "Растерзанный игрок 2"
+thing   24 g n  16 POL5   "Лужа крови"
+thing   27 g -  16 POL4   "Кол с черепом"
+thing   28 g -  16 POL2   "Кол с головами"
+thing   29 g l  16 POL3   "Куча черепов"
+thing   25 g -  16 POL1   "Насаженное тело"
+thing   26 g -  16 POL6   "Насаженный в конвульсиях"
+
+thing   49 g c  16 GOR1   "Висельник"
+thing   63 g cn 16 GOR1   "Висельник в конвульсиях /n"
+thing   50 g c  16 GOR2   "Подвешанный без рук"
+thing   59 g cn 16 GOR2   "Подвешанный в конвульсиях"
+thing   53 g c  16 GOR5   "Подвешанная нога"
+thing   62 g cn 16 GOR5   "Подвешанная нога (дёргается)"
+thing   51 g c  16 GOR3   "Подвешанный за ногу"
+thing   61 g cn 16 GOR3   "Подвешанный за ногу в конвульсиях"
+thing   52 g c  16 GOR4   "Подвешанные ноги"
+thing   60 g cn 16 GOR4   "Подвешанные ноги (дёргаются)"
+
+thing 2028 l l  16 COLU   "Лампа"
+thing   34 l ln 16 CAND   "Свеча"
+thing   35 l l  16 CBRA   "Канделябр"
+thing   44 l l  16 TBLU   "Высокий синий факел"
+thing   45 l l  16 TGRN   "Высокий зелёный факел"
+thing   46 l l  16 TRED   "Высокий красный факел"
+thing   55 l l  16 SMBT   "Низкий синий факел"
+thing   56 l l  16 SMGT   "Низкий зелёный факел"
+thing   57 l l  16 SMRT   "Низкий красный факел"
+thing   70 l l  16 FCAN   "Горящая бочка"
+
+thing 3004 m -  20 POSS   "Солдат"
+thing    9 m -  20 SPOS   "Сержант"
+thing 3001 m -  20 TROO   "Имп"
+thing 3002 m -  30 SARG   "Демон"
+thing 3003 m -  24 BOSS   "Барон Ада"
+thing   58 m i  30 SARG   "Спектр"
+thing 3006 m l  16 SKUL   "Лост-Соул"
+thing 3005 m -  31 HEAD   "Какодемон"
+thing    7 m - 128 SPID   "Спайдер Мастермайнд"
+thing   16 m -  40 CYBR   "Кибердемон"
+

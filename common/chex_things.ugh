@@ -1,0 +1,148 @@
+#------------------------------------------------------------------------
+#  DOOM 1/2 common things
+#------------------------------------------------------------------------
+#
+#  Eureka DOOM Editor
+#
+#  Copyright (C) 2001-2015 Andrew Apted
+#  Copyright (C) 1997-2003 André Majorel et al
+#
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License
+#  as published by the Free Software Foundation; either version 2
+#  of the License, or (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#------------------------------------------------------------------------
+#
+#  Based on Yadex which incorporated code from DEU 5.21 that was put
+#  in the public domain in 1994 by Raphaël Quinet and Brendon Wyber.
+#
+#  Chex Quest version - Artyom Bystrov a.k.a. Arbars
+#
+#
+#
+#------------------------------------------------------------------------
+
+player_size 16 56 41
+
+#
+#	Definition of thing groups
+#	Format is : thinggroup <letter> <colour> <description>
+#
+
+thinggroup p 4F4 "Игрок"
+thinggroup m F00 "Флемоиды"
+thinggroup w FA0 "Оружие"
+thinggroup a 850 "Снаряжение"
+thinggroup h 280 "Здоровье и броня"
+thinggroup b 280 "Бонусы"
+thinggroup k F0F "Ключи"
+thinggroup d 66C "Декорации"
+thinggroup c 66C "Персонажи"
+thinggroup g 66C "Растения и проч."
+thinggroup - 0BD "ПРОЧЕЕ"
+
+#
+#	Definition of things
+#	Format is : thing <number> <group> <flags> <radius> <sprite> <desc>
+#
+#	<sprite> should be NULL for things without any sprite
+#
+# <flags> can contain these letters:
+#    i  :  invisible
+#    c  :  on ceiling
+#    l  :  lit up
+#    n  :  non-blocking
+#    v  :  can exist in void-space
+#    t  :  teleport dest (can overlap certain things)
+#
+
+thing    1 p -  16 PLAY   "Точка старта для 1-го игрока"
+thing    2 p -  16 PLAY   "Точка старта для 2-го игрока"
+thing    3 p -  16 PLAY   "Точка старта для 3-го игрока"
+thing    4 p -  16 PLAY   "Точка старта для 4-го игрока"
+thing   11 p t  16 PLAYF1 "Точка старта для DeathMatch"
+thing   14 p t  16 TFOG   "Выход в телепорт"
+
+thing 2005 w n  20 CSAW   "Электровилка"
+thing 2001 w n  20 SHOT   "Большой Зорчер"
+thing 2002 w n  20 MGUN   "Скоростной Зорчер"
+thing 2003 w n  20 LAUN   "Зорч-Пропульсор"
+thing 2004 w n  20 PLAS   "Фазер-Зорчер"
+thing 2006 w n  20 BFUG   "Прибор КТЗ"
+
+thing 2007 a n  20 CLIP   "Заряды для Зорчера"
+thing 2048 a n  20 AMMO   "Пак для Скор. Зорчера"
+thing 2008 a n  20 SHEL   "Заряды для Бол. Зорчера"
+thing 2049 a n  20 SBOX   "Пак для Бол. Зорчера"
+thing 2010 a n  20 ROCK   "Заряд для Зорч-Пропульсора"
+thing 2046 a n  20 BROK   "Пак для Зорч-Пропульсора"
+thing 2047 a n  20 CELL   "Заряд для Фазер-Зорчера"
+thing   17 a n  20 CELP   "Пак для Фазер-Зорчера"
+
+thing    8 b n-  20 BPAK   "Зорч-пак"
+thing 2025 b nl  20 SUIT   "Антислизневый костюм"
+thing 2026 b n-  20 PMAP   "Автокарта"
+thing 2045 b nl  20 PVIS   "Ультра-очки"
+
+thing 2011 h n-  20 STIM   "Чаша с фруктами"
+thing 2012 h n-  20 MEDI   "Чаша с овощами"
+thing 2013 h nl  20 SOUL   "Готовый завтрак"
+thing 2014 h n-  20 BON1   "Стакан воды"
+thing 2015 h n-  20 BON2   "Рипелент от слизи"
+thing 2018 h nl  20 ARM1   "Обычная броня"
+thing 2019 h nl  20 ARM2   "Усиленная броня"
+
+thing    5 k nl  20 BKEY   "Синяя ключ-карта"
+thing    6 k nl  20 YKEY   "Желтая ключ-карта"
+thing   13 k nl  20 RKEY   "Красная ключ-карта"
+
+thing 2035 d -  10 BAR1   "Баллон"
+thing   48 d -  16 ELEC   "Звездолёт"
+thing   30 d -  16 COL1   "Низкий сталагмит"
+thing   32 d -  16 COL3   "Высокий Сталагмит"
+thing   33 d -  16 COL4   "Тачка с картофелем"
+thing   37 d -  16 COL6   "Занавеска"
+thing 2028 d l  16 COLU   "Сигнальный фонарь"
+thing   34 d ln 16 CAND   "Колба"
+thing   35 d l  16 CBRA   "Баллон 1"
+thing   44 d l  16 TBLU   "Фонтан слизи"
+thing   53 d c  16 GOR5   "Сталактит"
+thing   62 d cn 16 GOR5   "Сталактит (анимированный)"
+
+thing   31 g -  16 COL2   "Саженец картофеля"
+thing   41 d l  16 CEYE   "Колба"
+thing   47 g -  16 SMIT   "Яблоня"
+thing   54 g -  32 TRE2   "Банановая пальма"
+thing   43 g -  16 TRE1   "Апельсиновое дерево"
+thing   51 g c  16 GOR3   "Висящее растение 2"
+thing   61 g cn 16 GOR3   "Висящее растение 4"
+thing   27 g -  16 POL4   "Кустик"
+thing   28 g -  16 POL2   "Орхидеи"
+thing   25 g -  16 POL1   "Цветок"
+thing   50 g c  16 GOR2   "Висящее растение 1"
+thing   59 g cn 16 GOR2   "Висящее растение 3"
+
+thing   49 - c  16 GOR1   "Летучая мышь"
+thing   63 - cn 16 GOR1   "Летучая мышь (анимированная)"
+
+thing   10 с n  16 PLAYW  "Игрок в слизи"
+thing   12 с n  16 PLAYW  "Игорк в слизи 2"
+thing   45 c l  16 TGRN   "Колечко в слизи"
+thing   55 c l  16 SMBT   "Галогеновая спираль"
+thing   56 c l  16 SMGT   "Засрявший шарик"
+thing   57 c l  16 SMRT   "Застрявший игрок"
+thing   70 c l  16 FCAN   "Колечко в слизи 2"
+thing   15 c n  16 PLAYN  "Застрявший игрок 2"
+
+thing 3004 m -  20 POSS   "Флемоид обычный"
+thing    9 m -  20 SPOS   "Флемоид двуногий"
+thing 3001 m -  20 TROO   "Флемоид двуногий в броне"
+thing 3002 m -  30 SARG   "Флемоид-циклоп"
+thing 3003 m -  24 BOSS   "Флембран"
+

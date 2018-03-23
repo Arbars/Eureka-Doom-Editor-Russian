@@ -1,0 +1,543 @@
+#------------------------------------------------------------------------
+#  HERETIC definitions
+#------------------------------------------------------------------------
+#
+#  Eureka DOOM Editor
+#
+#  Copyright (C) 2012-2016 Andrew Apted
+#  Copyright (C) 1997-2003 André Majorel et al
+#
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License
+#  as published by the Free Software Foundation; either version 2
+#  of the License, or (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#------------------------------------------------------------------------
+#
+#  This game definition is derived partially from the Unofficial
+#  Heretic Specs by John "DrSleep" Anderson, partially from the
+#  Heretic source code, and partially from YADEX (which probably
+#  used the other two sources anyway).
+#
+#------------------------------------------------------------------------
+
+player_size 16 56 41
+
+sky_flat  F_SKY1
+
+default_textures  SANDSQ2  FLOOR00  FLOOR30
+
+# 10 = wand crystal
+default_thing  10
+
+
+#---- COLORS --------------------
+
+color sky  199
+
+color wall   6   35
+color floor  68  94
+color invis  2   12
+
+color missing  244
+
+color unknown_tex   205
+color unknown_flat  222
+
+
+#---- THING TYPES ---------------
+
+thinggroup p 4F4 "Игроки"
+thinggroup m F00 "Монстры"
+thinggroup w FA0 "Оружие"
+thinggroup a 850 "Снаряжение"
+thinggroup h 280 "Аптечки и броня"
+thinggroup b 280 "Бонусы"
+thinggroup k F0F "Ключи"
+thinggroup d 66C "Декорации"
+thinggroup l 66C "Источники света"
+thinggroup s DAD "Звуки"
+thinggroup - 0BD "ПРОЧЕЕ"
+
+thing  1 p - 16 PLAY "Игрок 1"
+thing  2 p - 16 PLAY "Игрок 2"
+thing  3 p - 16 PLAY "Игрок 3"
+thing  4 p - 16 PLAY "Игрок 4"
+thing 11 p t 16 PLAYF1 "Старт DeathMatch"
+thing 14 p t 20 TELE "Точка телепорта"
+
+thing 2005 w n 20 WGNT "Латные рукавицы"
+thing 2001 w n 20 WBOW "Эфирный арбалет"
+thing   53 w n 20 WBLS "Коготь дракона"
+thing 2004 w n 20 WSKL "Посох Ада"
+thing 2003 w n 20 WPHX "Посох Феникса"
+thing 2002 w n 20 WMCE "Булава"
+
+thing 10 a n 20 AMG1 "Кристалл"
+thing 12 a n 20 AMG2 "Большой кристалл"
+thing 18 a n 20 AMC1 "Эфирные стрелы"
+thing 19 a n 20 AMC2 "Колчан со стрелами"
+thing 54 a n 20 AMB1 "Шар для Когтя"
+thing 55 a n 20 AMB2 "Шар Маны"
+thing 20 a n 20 AMS1 "Малые Руны"
+thing 21 a n 20 AMS2 "Большие Руны"
+thing 22 a n 20 AMP1 "Огненный Шар"
+thing 23 a n 20 AMP2 "Адский Шар"
+thing 13 a n 20 AMM1 "Сферы для Булавы"
+thing 16 a n 20 AMM2 "Кучка сфер для Булавы"
+
+thing 81 h n 20 PTN1 "Кристальный флакон"
+thing 82 h n 20 PTN2 "Кварцевая колба"
+thing 32 h n 20 SPHL "Мистическая урна"
+thing 85 h n 20 SHLD "Щит (Серебро)"
+thing 31 h n 20 SHD2 "Щит (Магический)"
+
+thing  8 b n  20 BAGH "Котомка"
+thing 30 b n  20 EGGC "Яйцо превращения"
+thing 34 b n  20 FBMB "Бомба Времени"
+thing 83 b n  20 SOAR "Крылья Гнева"
+thing 75 b n  20 INVS "Сфера Теней"
+thing 84 b nl 20 INVU "Кольцо неуязвимости"
+thing 35 b n  20 SPMP "Свиток с картой"
+thing 36 b n  20 ATLP "Амулет Хаоса"
+thing 86 b n  20 PWBK "Том Силы"
+thing 33 b nl 20 TRCH "Факел"
+
+thing 73 k nl 20 AKYY "Зелёный ключ"
+thing 79 k nl 20 BKYY "Синий ключ"
+thing 80 k nl 20 CKYY "Желтый ключ"
+thing 94 k -l 16 KGZB "Синяя ключ-статуя"
+thing 95 k -l 16 KGZG "Зелёная ключ-статуя"
+thing 96 k -l 16 KGZY "Жёлтая ключ-статуя"
+
+thing 44 d -  12 BARL "Бочка"
+thing 47 d -  14 BRPL "Коричневая колонна"
+thing 48 d nc 20 MOS1 "Мох 1"
+thing 49 d nc 20 MOS2 "Мох 2"
+thing 51 d -c  8 HCOR "Висячий труп"
+thing 26 d nc 20 SKH4 "Подвешенный череп 35"
+thing 25 d nc 20 SKH3 "Подвешенный череп 45"
+thing 24 d nc 20 SKH2 "Подвешенный череп 60"
+thing 17 d nc 20 SKH1 "Подвешенный череп 70"
+thing 29 d -  16 SMPL "Малая колонна"
+thing 37 d -   8 STGS "Сталагмит (малый)"
+thing 38 d -  12 STGL "сталагмит (большой)"
+thing 39 d c   8 STCS "сталактит (малый)"
+thing 40 d c  12 STCL "Сталактит (большой)"
+
+thing 87 d n- 12 VLCO "Вулкан"
+thing 74 d nl 20 TGLT "Сияние телепорта"
+thing 52 d nl 20 TGLTF0 "Сияние телепорта (выход)"
+thing 28 l nlc 20 CHDL "Люстра"
+thing 76 l -l 20 KFR1 "Огненная чаша"
+thing 27 l -l 20 SRTC "Змеиный факел"
+thing 50 l nl 20 WRTH "Настенный факел"
+
+thing 2035 - - 16 PPOD "Росток"
+thing 43   - n 20 NULL "Порождатель ростков"
+
+thing 66 m - 20 IMPX "Горгулья"
+thing  5 m - 20 IMPX "Огненная Горгулья"
+thing 68 m - 20 MUMM "Голем"
+thing 69 m i 20 MUMM "Голем-Призрак"
+thing 45 m - 20 MUMMY1 "Нитро-Голем"
+thing 46 m i 20 MUMMY1 "Нитро-Голем"
+thing 64 m - 20 KNIG "Воин Нежити"
+thing 65 m i 20 KNIG "Воин Нежити-призрак"
+thing 15 m - 20 WZRD "Культист"
+thing 70 m - 20 BEAS "Дракон-оборотень"
+thing 90 m - 20 CLNK "Рыцарь-скорпион"
+thing  6 m - 20 HEAD "Айронлич"
+thing  9 m - 20 MNTR "Минотавр"
+thing 92 m - 20 SNKE "Змеелюд"
+thing  7 m - 20 SRCR "Д'Спэрил"
+thing 56 m t 20 SOR2H0 "Фторая фаза Д'Спэрила"
+
+thing 1202 s nv 16 NULL "Звук: Всплеск воды"
+thing 1203 s nv 16 NULL "Звук: Медленные шаги"
+thing 1204 s nv 16 NULL "Звук: Биение сердца"
+thing 1205 s nv 16 NULL "Звук: Колокольчики"
+thing 1208 s nv 16 NULL "Звук: Хохот"
+thing 1209 s nv 16 NULL "Звук: Быстрые шаги"
+thing 1200 s nv 16 NULL "Звук: Крик"
+thing 1201 s nv 16 NULL "Звук: Хлюпающий звук"
+thing 1206 s nv 16 NULL "Звук: Рычание"
+thing 1207 s nv 16 NULL "Звук: Магия"
+
+thing 42 s nv 20 NULL "Окружение: Ветер"
+thing 41 s nv 20 NULL "Окружение: Водопад"
+
+
+#---- LINE TYPES ----------------
+
+include "doom_groups"
+
+
+line 0 - "-- НИЧЕГО"
+
+line 48 a "-- Смещение влево"
+line 99 a "-- Смещение вправо"
+
+line  31 d "D1 Открыть дверь(остав.)"
+line   1 d "DR Открыть дверь"
+line  46 d "GR Открыть дверь (остав.)"
+line  50 d "S1 Закрыть дверь"
+line 103 d "S1 Открыть дверь (остав.)"
+line  29 d "S1 Открыть дверь"
+line  42 d "SR Закрыть дверь"
+line  61 d "SR Открыть дверь (остав.)"
+line  63 d "SR Открыть дверь"
+line   3 d "W1 Закрыть дверь"
+line  16 d "W1 Закрыть дверь через 30 сек."
+line   2 d "W1 Открыть дверь (остав.)"
+line   4 d "W1 Открыть дверь"
+line  75 d "WR Закрыть дверь"
+line  76 d "WR Закрыть дверь через 30 сек."
+line  86 d "WR Открыть дверь (остав.)"
+line  90 d "WR Открыть дверь"
+line 100 d "WR Открыть дверь (турбо)"
+
+line  32 k "D1 Откр. синюю дверь (остав.)"
+line  26 k "DR Откр. синюю дверь"
+line  34 k "D1 Откр. жёлтую дверь (остав.)"
+line  27 k "DR Откр. жёлтую дверь"
+line  33 k "D1 Откр. зелёную дверь (остав.)"
+line  28 k "DR Откр. зелёную дверь"
+
+line  11 e "s1 Выход с уровня"
+line  51 e "s1 Секретный выход"
+line  52 e "w1 Выход с уровня"
+line 105 e "w1 Секретный выход"
+
+line  71 f "S1 Лифт вниз СВСС+8 /быст"
+line 102 f "S1 Лифт вниз СВСС"
+line  23 f "S1 Лифт вниз СНСС"
+line  70 f "SR Лифт быстро вниз СВСС + 8"
+line  45 f "SR Лифт вниз СВСС"
+line  60 f "SR Лифт вниз СНСС"
+line  36 f "W1 Лифт быстро вниз СВСС + 8"
+line  37 f "W1 Лифт вниз СНСС (ТКС)"
+line  19 f "W1 Лифт вниз СВСС"
+line  38 f "W1 Лифт вниз СНСС"
+line  98 f "WR Лифт быстро вниз СВСС + 8"
+line  84 f "WR Лифт вниз СНСС (ТКС)"
+line  83 f "WR Лифт вниз СВСС"
+line  82 f "WR Лифт вниз СНСС"
+
+line  21 p "S1 Опустить лифт"
+line  62 p "SR Опустить лифт"
+line  10 p "W1 Опустить лифт"
+line  88 p "WR Опустить лифт"
+
+line  53 m "W1 Начать двигать пол"
+line  54 m "W1 Перестать двигать пол"
+line  87 m "WR Начать двигать пол"
+line  89 m "WR Перестать двигать пол"
+
+line   7 s "S1 Высота ступеней -  8"
+line 107 s "S1 Высота ступеней -  16"
+line   8 s "W1 Высота ступеней -  8"
+line 106 s "W1 Высота ступеней -  16"
+
+line  39 - "W1 Телепорт"
+line  97 - "WR Телепорт"
+
+line   6 h "W1 Давилка"
+line  77 h "WR Давилка"
+line  25 h "W1 Давилка /медл."
+line  73 h "WR Давилка /медл."
+line  57 h "W1 Остановить Давилку"
+line  74 h "WR Остановить Давилку"
+
+line  47 g "G1 Лифт вверх СВП /ТКТР"
+line  24 g "G1 Лифт вверх СНСмП"
+line  55 g "S1 Лифт вверх СНСмП-8 /давл."
+line 101 g "S1 Лифт вверх СНСмП"
+line  18 g "S1 Лифт вверх СВП"
+line  20 g "S1 Лифт вверх СВП /ТКТР"
+line  15 g "S1 Лифт вверх 24 /ТКТР"
+line  14 g "S1 Лифт вверх 32 /ТКТР"
+line  65 g "SR Лифт вверх СНСмП-8 /давл."
+line  69 g "SR Лифт вверх СВП"
+line  64 g "SR Лифт вверх СНСмП"
+line  66 g "SR Лифт вверх 24 /ТКТР"
+line  67 g "SR Лифт вверх 32 /ТКТР"
+line  68 g "SR Лифт вверх СВП /ТКТР"
+line  59 g "W1 Лифт вверх 24 /ТКТP"
+line  58 g "W1 Лифт вверх 24"
+line   5 g "W1 Лифт вверх СНСмП"
+line  30 g "W1 Лифт вверх СКНТ"
+line  22 g "W1 Лифт вверх СВП /ТКТР"
+line  56 g "W1 Лифт вверх СНСмП-8 /давл."
+line  93 g "WR Лифт вверх 24 /ТКТР"
+line  94 g "WR Лифт вверх СНСмП-8 /давл."
+line  95 g "WR Лифт вверх СВП /ТКТР"
+line  92 g "WR Лифт вверх 24"
+line  91 g "WR Лифт вверх СНСмП"
+line  96 g "WR Лифт вверх СКНТ"
+
+line  13 l "W1 Уровень освещения -  255"
+line  35 l "W1 Уровень освещения -  35"
+line  12 l "W1 Уровень освещения -  Макс."
+line 104 l "W1 Уровень освещения -  Мин."
+line  81 l "WR Уровень освещения -  255"
+line  79 l "WR Уровень освещения -  35"
+line  80 l "WR Уровень освещения -  Макс."
+line  17 l "W1 Частота мерцания - 1 Гц"
+
+line  49 c "S1 Потолок ост. зазор в 8 ед."
+line  41 c "S1 Потолок опускается до пола"
+line  43 c "SR Потолок опускается до пола"
+line  44 c "W1 Потолок ост. зазор в 8 ед."
+line  40 c "W1 Ур. потолка=ур. сосед. сек."
+line  72 c "WR Потолок ост. зазор в 8 ед."
+
+line   9 - "S1 Пончик"
+
+
+#---- SECTOR TYPES -----------
+
+sector  0 "НИЧЕГО"
+
+sector  1 "Свет: Моргает"
+sector  2 "Свет: Быстрое мерцание"
+sector  3 "Свет: Медленное мерцание"
+sector  8 "Свет: Отсвет огня"
+sector 12 "Свет: Синх. (Медл.)"
+sector 13 "Свет: Синх. (Быст.)"
+
+sector  6 "Потолок давит и поднимается"
+sector 14 "Дверь: поднять через 5 мин. "
+sector 10 "Дверь: Закрыть через 30 сек."
+sector 15 "Низкое сцепление"
+sector  9 "Секрет"
+
+sector  7 "Урон: Тина"
+sector  4 "Урон: Поток лавы"
+sector  5 "Урон: Лава (Лёгкий)"
+sector 16 "Урон: Лава (Тяжёлый)"
+
+sector 21 "Смещение: Восток (медленное)"
+sector 22 "Смещение: Восток (средняя)"
+sector 23 "Смещение: Восток (быстрое)"
+sector 26 "Смещение: Север (медленное)"
+sector 27 "Смещение: Север (средняя)"
+sector 28 "Смещение: Север (быстрое)"
+sector 31 "Смещение: Юг (медленное)"
+sector 32 "Смещение: Юг (средняя)"
+sector 33 "Смещение: Юг (быстрое)"
+sector 36 "Смещение: Запад (медленное)"
+sector 37 "Смещение: Запад (средняя)"
+sector 38 "Смещение: Запад (быстрое)"
+
+sector 40 "Ветер: Восток (слабый)"
+sector 41 "Ветер: Восток (средний)"
+sector 42 "Ветер: Восток (сильный)"
+sector 43 "Ветер: Север (слабый)"
+sector 44 "Ветер: Север (средний)"
+sector 45 "Ветер: Север (сильный)"
+sector 46 "Ветер: Юг (слабый)"
+sector 47 "Ветер: Юг (средний)"
+sector 48 "Ветер: Юг (сильный)"
+sector 49 "Ветер: Запад (слабый)"
+sector 50 "Ветер: Запад (средний)"
+sector 51 "Ветер: Запад (сильный)"
+
+
+#---- TEXTURE CATEGORIES -----------
+
+texturegroup c "Замок"
+texturegroup d "Двери и Металл"
+texturegroup g "Решетки и Витражи"
+texturegroup l "Жидкости"
+texturegroup v "Деревня"
+texturegroup - "ПРОЧЕЕ"
+
+texture c BANNER1
+texture c BANNER2
+texture c BANNER3
+texture c BANNER4
+texture c BANNER5
+texture c BANNER6
+texture c BANNER7
+texture c BANNER8
+
+texture c CHAINSD
+texture c CSTLMOSS
+texture c CSTLRCK
+texture c GRNBLOK1
+texture c GRNBLOK2
+texture c GRNBLOK3
+texture c GRNBLOK4
+texture c GRSTNPB
+texture c GRSTNPBV
+texture c GRSTNPBW
+
+texture c LOOSERCK
+texture c MOSSRCK1
+texture c ORNGRAY
+texture c REDWALL
+texture c SANDSQ2
+texture c SNDBLCKS
+texture c SNDCHNKS
+texture c SNDPLAIN
+texture c SPINE1
+texture c SPINE2
+texture c SQPEB1
+texture c SQPEB2
+texture c TRISTON1
+texture c TRISTON2
+texture c WOODWL
+
+texture d CHAINMAN
+texture d DMNMSK
+texture d DOORWOOD
+texture d DOOREXIT
+texture d DOORSTON
+texture d GRSKULL1
+texture d GRSKULL2
+texture d GRSKULL3
+texture d HORSES1
+texture d SKULLSB1
+texture d SKULLSB2
+
+texture d SAINT1
+texture d METL1
+texture d METL2
+texture d SW1OFF
+texture d SW1ON
+texture d SW2OFF
+texture d SW2ON
+
+texture g GATMETL
+texture g GATMETL2
+texture g GATMETL3
+texture g GATMETL4
+texture g GATMETL5
+texture g WDGAT64
+texture g WEB1_B
+texture g WEB1_F
+texture g WEB2_B
+texture g WEB2_F
+texture g WEB3_M
+texture g STNGLS1
+texture g STNGLS2
+texture g STNGLS3
+
+texture l LAVA1
+texture l LAVAFL1
+texture l LAVAFL2
+texture l LAVAFL3
+texture l WATRWAL1
+texture l WATRWAL2
+texture l WATRWAL3
+
+texture v BRWNRCKS
+texture v CELTIC
+texture v CTYSTCI1
+texture v CTYSTCI2
+texture v CTYSTCI4
+texture v CTYSTUC1
+texture v CTYSTUC2
+texture v CTYSTUC3
+texture v CTYSTUC4
+texture v CTYSTUC5
+
+texture v DRIPWALL
+texture v RCKSNMUD
+texture v ROOTWALL
+texture v TMBSTON1
+texture v TMBSTON2
+
+texture v BLUEFRAG
+texture v MOSAIC1
+texture v MOSAIC2
+texture v MOSAIC3
+texture v MOSAIC4
+texture v MOSAIC5
+
+texture - OLDSKY2
+texture - OLDSKY3
+texture - SKY1
+texture - SKY2
+texture - SKY3
+texture - SKY5
+
+flat c FLAT500
+flat c FLAT503
+flat c FLAT504
+flat c FLAT520
+flat c FLAT521
+flat c FLAT522
+flat c FLAT523
+flat c FLOOR00
+flat c FLOOR01
+flat c FLOOR03
+flat c FLOOR06
+flat c FLOOR07
+flat c FLOOR09
+flat c FLOOR18
+flat c FLOOR19
+flat c FLOOR20
+
+flat l FLATHUH1
+flat l FLATHUH2
+flat l FLATHUH3
+flat l FLATHUH4
+flat l FLTFLWW1
+flat l FLTFLWW2
+flat l FLTFLWW3
+flat l FLTLAVA1
+flat l FLTLAVA2
+flat l FLTLAVA3
+flat l FLTLAVA4
+flat l FLTSLUD1
+flat l FLTSLUD2
+flat l FLTSLUD3
+flat l FLTWAWA1
+flat l FLTWAWA2
+flat l FLTWAWA3
+flat l FLAT517
+
+flat v FLAT502
+flat v FLAT506
+flat v FLAT507
+flat v FLAT508
+flat v FLAT509
+flat v FLAT510
+flat v FLAT512
+flat v FLAT513
+flat v FLAT516
+
+flat v FLOOR04
+flat v FLOOR05
+flat v FLOOR10
+flat v FLOOR11
+flat v FLOOR12
+flat v FLOOR16
+flat v FLOOR17
+flat v FLOOR25
+flat v FLOOR27
+
+flat m FLTTELE1
+flat m FLTTELE2
+flat m FLTTELE3
+flat m FLTTELE4
+
+flat - F_SKY1
+
+flat - FLOOR08
+flat - FLOOR21
+flat - FLOOR22
+flat - FLOOR23
+flat - FLOOR24
+flat - FLOOR26
+flat - FLOOR28
+flat - FLOOR29
+flat - FLOOR30
+

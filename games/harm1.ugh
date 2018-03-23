@@ -1,0 +1,162 @@
+#------------------------------------------------------------------------
+#  HARMONY 1.1 definitions
+#------------------------------------------------------------------------
+#
+#  Eureka DOOM Editor
+#
+#  Copyright (C) 2016  Andrew Apted
+#
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License
+#  as published by the Free Software Foundation; either version 2
+#  of the License, or (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#------------------------------------------------------------------------
+
+player_size 16 56 41
+
+sky_flat  F_SKY1
+
+default_textures  PANEL2  FLAT10  FLAT20
+default_thing  2011
+
+feature lax_sprites 1
+
+
+include "doom_groups"
+include "doom_specials"
+
+
+#---- COLORS --------------------
+
+color sky  244
+
+color wall    28   3
+color floor  140 130
+color invis   14  24
+
+color missing  39
+
+color unknown_tex   241
+color unknown_flat  250
+
+
+#---- THINGS ----------------
+
+thinggroup p 4F4 "Игроки"
+thinggroup m F00 "Монстры"
+thinggroup w FA0 "Оружие"
+thinggroup a 850 "Снаряжение"
+thinggroup h 280 "Аптечки и броня"
+thinggroup b 280 "Бонусы"
+thinggroup k F0F "Ключи"
+thinggroup d 66C "Декорации"
+thinggroup g 850 "Останки"
+thinggroup - 0BD "ПРОЧЕЕ"
+
+thing    1 p -   16 PLAY   "Старт игрока 1"    0.30
+thing    2 p -   16 PLAY   "Старт игрока 2"    0.30
+thing    3 p -   16 PLAY   "Старт игрока 3"    0.30
+thing    4 p -   16 PLAY   "Старт игрока 4"    0.30
+thing   11 p t   16 PLAYF1 "Старт DeathMatch"  0.30
+thing   14 p t   16 FATBA3A7  "Телепорт на выход"
+
+thing    5 k nl  20 BKEY   "Зелёная ключ-карта"    0.30
+thing    6 k nl  20 YKEY   "Желтая ключ-карта"   0.30
+thing   13 k nl  20 RKEY   "Пурпурная ключ-карта"   0.30
+thing   38 k nl  20 BSKU   "Зелёный PP ключ"     0.30
+thing   39 k nl  20 YSKU   "Желтый PP ключ"    0.30
+thing   40 k nl  20 RSKU   "Пурпурный PP ключ"    0.30
+
+thing    8 b n   20 BPAKA   "Рюкзак"        0.30
+thing 2026 b n   20 PMAPA   "Автокарта"    0.30
+thing 2010 b n   20 ROCKA   "Бомба с часами"       0.30
+
+thing   30 d -   16 COL1A   "Большой Мухомор"       0.30
+thing   34 d l   20 CBRAA   "Белая свеча"       0.30
+thing   36 d l   16 MISLB   "Зацикленный взрыв"  0.30
+thing   45 d -   16 TGRNA   "Dopefish"           0.50
+thing   46 d -   16 TREDA   "Зелёные брызги"       0.30
+thing   48 d l   16 ELECA   "Высокая лампа"          0.30
+
+thing   28 d -   16 POL2A   "Щупальце"            0.30
+thing   27 d -   16 SMT2A   "Ракета на старте"     0.30
+thing   29 d l   16 POL3A   "Летящая ракета"     0.30
+thing   31 d -   16 COL2A   "Труба грузовика"          0.30
+thing   32 d -   16 COL3A   "Похищенная Амира"      0.30
+thing   33 d -   16 COL4A   "Сфера из лиц"         0.30
+thing   37 d -   16 COL6A   "Наконечник ракеты"          0.30
+thing   42 d -   16 FSKUA   "Капающая вода"      0.30
+thing   47 d -   16 SMITA   "Серое пятно"           0.30
+thing   51 d -   16 GOR3A   "Антинейтронный щит" 0.30
+thing   54 d -   32 TRE2A   "Большое дерево"          0.30
+thing   55 d l   16 SMBTA   "Огонь"                0.30
+thing   56 d cl  16 SMGTA   "Искры с потолка"  0.30
+thing   57 d -   16 SMRTA   "Горящий ящик"             0.30
+thing   63 d cl  20 GOR1A   "Чаша с огнём"        0.30
+thing   73 d c   16 HDB1A   "Цепь"       0.30
+thing   74 d -   16 HDB2A   "Украденные пулемёты"     0.30
+thing   75 d -   16 HDB3A   "Украденные дробовики"     0.30
+thing   81 d cl  20 BRS1A   "Подпотолочный свет"       0.30
+thing 3006 d -   16 PAINA   "Мина"                0.30
+
+thing   15 g n   20 ARM2B   "Мёртвая Амазонка"      0.30
+thing   19 g n   20 ARM1B   "Мёртвый Адепт"     0.30
+thing   21 g n   20 SARGN   "Мёртвый Бистлинг"    0.30
+thing   44 g n   16 TBLUA   "Мёртвый Бистлинг 2"  0.30
+thing   18 g n   20 NULL    "Мёртвый Гиблет"       0.30
+thing 2007 g n   20 CEYEB   "Мухи"             0.30
+
+thing 2028 d l   16 COLUA   "Лазерная лампа"        0.30
+thing 2035 d -   10 BAR1A   "Красная бочка"        0.30
+
+thing 2001 w n   20 SHOTA   "Компенсатор"       0.30 # Уточнить перевод пушки
+thing 2002 w n   20 MGUNA   "Пулемёт"           0.30
+thing 2003 w n   20 LAUNA   "Гранатомёт"  0.30
+thing 2004 w n   20 PLASA   "Энтропийный метатель (?)"  0.30 # Уточнить перевод пушки
+
+thing   17 a n   20 CELPA   "Стержни Хаоса"          0.30
+thing 2006 a n   20 BFUGA   "Граната"             0.30
+thing 2046 a n   20 BROKA   "Коробка гранат"  0.30
+thing 2048 a n   20 AMMOA   "Патроны к пулемёту"        0.30
+thing 2049 a n   20 SBOXA   "Патроны к дробовику"       0.30
+
+thing 2011 h n   20 STIMA   "Мухомор"          0.30
+thing 2012 h n   20 MEDIA   "Аптечка"            0.30
+thing 2013 h n   20 SOULA   "Большой мухомор"      0.30
+thing 2018 h n   20 ARM1A   "Красная броня"         0.30
+thing 2019 h n   20 ARM2A   "Броня NDF"         0.30
+
+thing    9 m -   20 SPOSA   "Адепт"          0.30
+thing   64 m -   20 FCANB   "Падающий адепт"  0.30
+thing   65 m -   20 CPOSA   "Солдат"           0.30
+thing   16 m -   40 CYBRA   "Хищник"          0.30
+thing   66 m -   20 CYBRA   "Кентавр"           0.30
+thing   68 m -   64 SSWVA   "Фаг"             0.30
+thing 3003 m -   24 BOSSA   "Криттер"           0.30
+thing 3004 m -   30 SARGA   "Бистлинг"         0.30
+thing    7 m -  128 POSSA   "Босс Ехидна"      0.30
+
+thing   26 - -   16 HEADH   "Стрелянные гильзы"    0.30
+thing 3002 - -   30 NULL    "Эффект разбитого окна"
+thing   67 - -   48 NULL    "Эффект ОБЪЕКТА #67"
+thing   79 - -   20 NULL    "Эффект взрыва"
+
+thing   87 - nl  16 NULL    "Пятно появления"
+thing   88 - -   16 NULL    "Мозг босса"
+thing   89 - -   16 NULL    "Boss shooter"
+
+
+#---- TEXTURES ----------------
+
+# TODO
+
+#---- FLATS ----------------
+
+# TODO
+
