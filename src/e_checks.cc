@@ -816,7 +816,7 @@ void Sectors_RemoveUnused()
 
 	BA_End();
 
-//??	Status_Set("Removed %d vertices", sel.count_obj());
+//??	Status_Set("Удалено %d вершин", sel.count_obj());
 }
 
 
@@ -899,7 +899,7 @@ void SideDefs_RemoveUnused()
 
 	BA_End();
 
-//??	Status_Set("Removed %d vertices", sel.count_obj());
+//??	Status_Set("Удалено %d вершин", sel.count_obj());
 }
 
 

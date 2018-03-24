@@ -1309,7 +1309,7 @@ void Beep(const char *fmt, ...)
 		LogPrintf("BEEP: %s\n", buffer);
 	}
 	else
-		Status_Set("Problem occurred");
+		Status_Set("Возникла проблема");
 
 	EXEC_Errno = 1;
 

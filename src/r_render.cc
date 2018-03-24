@@ -5,7 +5,7 @@
 //  Eureka DOOM Editor
 //
 //  Copyright (C) 2001-2016 Andrew Apted
-//  Copyright (C) 1997-2003 Andr� Majorel et al
+//  Copyright (C) 1997-2003 André Majorel et al
 //
 //  This program is free software; you can redistribute it and/or
 //  modify it under the terms of the GNU General Public License
@@ -2782,7 +2782,7 @@ static void Render3D_Cut()
 
 	StoreTextureTo3DSel(BA_InternaliseString(name));
 
-	Status_Set("Cut texture to default");
+	Status_Set("Текстура обрезана до знач. по умол.");
 }
 
 
@@ -2797,7 +2797,7 @@ static void Render3D_Copy()
 
 	r_edit.StoreClipboard(new_tex);
 
-	Status_Set("Copied %s", BA_GetString(new_tex));
+	Status_Set("%s скопирована", BA_GetString(new_tex));
 }
 
 
@@ -2807,7 +2807,7 @@ static void Render3D_Paste()
 
 	StoreTextureTo3DSel(new_tex);
 
-	Status_Set("Pasted %s", BA_GetString(new_tex));
+	Status_Set("%s вставлена", BA_GetString(new_tex));
 }
 
 
@@ -2826,7 +2826,7 @@ static void Render3D_Delete()
 
 	StoreTextureTo3DSel(BA_InternaliseString("-"));
 
-	Status_Set("Removed textures");
+	Status_Set("Текстуры удалены");
 }
 
 

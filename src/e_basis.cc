@@ -5,7 +5,7 @@
 //  Eureka DOOM Editor
 //
 //  Copyright (C) 2001-2016 Andrew Apted
-//  Copyright (C) 1997-2003 Andr� Majorel et al
+//  Copyright (C) 1997-2003 André Majorel et al
 //
 //  This program is free software; you can redistribute it and/or
 //  modify it under the terms of the GNU General Public License
@@ -20,7 +20,7 @@
 //------------------------------------------------------------------------
 //
 //  Based on Yadex which incorporated code from DEU 5.21 that was put
-//  in the public domain in 1994 by Rapha�l Quinet and Brendon Wyber.
+//  in the public domain in 1994 by Raphaël Quinet and Brendon Wyber.
 //
 //------------------------------------------------------------------------
 
@@ -1026,7 +1026,7 @@ bool BA_Undo()
 	undo_group_c * grp = undo_history.front();
 	undo_history.pop_front();
 
-	Status_Set("Undo: %s", grp->GetMsg());
+	Status_Set("Откат: %s", grp->GetMsg());
 
 	grp->ReApply();
 
@@ -1046,7 +1046,7 @@ bool BA_Redo()
 	undo_group_c * grp = redo_future.front();
 	redo_future.pop_front();
 
-	Status_Set("Redo: %s", grp->GetMsg());
+	Status_Set("Возврат: %s", grp->GetMsg());
 
 	grp->ReApply();
 

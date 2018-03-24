@@ -1614,7 +1614,7 @@ static void SaveLevel(const char *level)
 
 	M_AddRecent(edit_wad->PathName(), Level_name);
 
-	Status_Set("Saved %s", Level_name);
+	Status_Set("Сохранено %s", Level_name);
 
 	if (main_win)
 	{
@@ -1856,7 +1856,7 @@ void CMD_CopyMap()
 
 	SaveLevel(new_name);
 
-	Status_Set("Copied to %s", Level_name);
+	Status_Set("Скопировано в %s", Level_name);
 }
 
 
@@ -1928,7 +1928,7 @@ void CMD_RenameMap()
 
 	main_win->SetTitle(edit_wad->PathName(), Level_name, false);
 
-	Status_Set("Renamed to %s", Level_name);
+	Status_Set("Переименовано в %s", Level_name);
 }
 
 

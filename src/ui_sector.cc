@@ -786,7 +786,7 @@ void UI_SectorBox::CB_Copy()
 
 	r_clipboard.SetFlat(name);
 
-	Status_Set("Copied %s", name);
+	Status_Set("Скопирована %s", name);
 }
 
 

@@ -452,7 +452,7 @@ void CMD_TestMap()
 	LogPrintf("Тестируем карту, используя следующие комманды:\n");
 	LogPrintf("--> %s\n", cmd_buffer);
 
-	Status_Set("TESTING MAP");
+	Status_Set("ТЕСТИРОВАНИЕ КАРТЫ");
 
 	main_win->redraw();
 	Fl::wait(0.1);
@@ -464,9 +464,9 @@ void CMD_TestMap()
 	int status = system(cmd_buffer);
 
 	if (status == 0)
-		Status_Set("Result: OK");
+		Status_Set("Результат: OK");
 	else
-		Status_Set("Result code: %d\n", status);
+		Status_Set("Код результата: %d\n", status);
 
 	LogPrintf("--> код результата: %d\n", status);
 
