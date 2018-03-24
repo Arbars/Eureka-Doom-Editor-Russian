@@ -1,11 +1,14 @@
-# Eureka-Doom-Editor-Russian
-Проект по переводу редактора Eureka на русский язык
+# Eureka Doom Editor - Russian Edition
+
+
+Проект по переводу редактора Eureka на русский язык, автор - Арбарс Загадкин
 
 
 Сайт оригинала: http://eureka-editor.sourceforge.net/
 
 
 Автор оригинального редактора: Andrew Apted  <ajapted@users.sf.net>
+
 
 Текущие отличия от оригинала:
 
@@ -15,6 +18,8 @@
 
 
 Связь с автором перевода: arbars.zagadkin(at)mail.ru
+
+Профиль ВК: https://vk.com/id374650777
 
 
 # Текущий прогресс перевода
