@@ -42,15 +42,15 @@ special 46 f "Floor_CrushStop"      тег
 
 special 138 f "Floor_Waggle"        тег  amp  скорость  offset  time
 
-special 62 g "Plat_DownWaitUp"  тег  скорость  delay
-special 63 g "Plat_Down"        тег  скорость  delay  расстояние
-special 64 g "Plat_UpWaitDown"  тег  скорость  delay
-special 65 g "Plat_Up"          тег  скорость  delay  расстояние
-special 60 g "Plat_Perpetual"   тег  скорость  delay
+special 62 g "Plat_DownWaitUp"  тег  скорость  задержка
+special 63 g "Plat_Down"        тег  скорость  задержка  расстояние
+special 64 g "Plat_UpWaitDown"  тег  скорость  задержка
+special 65 g "Plat_Up"          тег  скорость  задержка  расстояние
+special 60 g "Plat_Perpetual"   тег  скорость  задержка
 special 61 g "Plat_Stop"        тег
 
-special 26 q "Stairs_Down"        тег  скорость  расстояние  delay  reset
-special 27 q "Stairs_Up"          тег  скорость  расстояние  delay  reset
+special 26 q "Stairs_Down"        тег  скорость  расстояние  задержка  reset
+special 27 q "Stairs_Up"          тег  скорость  расстояние  задержка  reset
 special 31 q "Stairs_Down /sync"  тег  скорость  расстояние  reset
 special 32 q "Stairs_Up   /sync"  тег  скорость  расстояние  reset
 
@@ -67,8 +67,8 @@ special 44 c "Ceiling_CrushStop"      тег
 
 special 10 d "Door_Close"   тег  скорость
 special 11 d "Door_Open"    тег  скорость
-special 12 d "Door_Raise"   тег  скорость  delay
-special 13 d "Door_Locked"  тег  скорость  delay  lock
+special 12 d "Door_Raise"   тег  скорость  задержка
+special 13 d "Door_Locked"  тег  скорость  задержка  lock
 
 # Lighting
 
@@ -91,22 +91,22 @@ special 130 t "Thing_Activate"      tid
 special 131 t "Thing_Deactivate"    tid
 special 132 t "Thing_Remove"        tid
 special 133 t "Thing_Destroy"       tid
-special 134 t "Thing_Launch"        tid  type  угол  скорость  vскорость
-special 136 t "Thing_Launch /grav"  tid  type  угол  скорость  vскорость
-special 135 t "Thing_Spawn"         tid  type  угол
-special 137 t "Thing_Spawn /silent" tid  type  угол
+special 134 t "Thing_Launch"        tid  тип  угол  скорость  vскорость
+special 136 t "Thing_Launch /grav"  tid  тип  угол  скорость  vскорость
+special 135 t "Thing_Spawn"         tid  тип  угол
+special 137 t "Thing_Spawn /silent" tid  тип  угол
 
 # Polyobj specials
 
-special 1 p "Polyobj_Start"       по  mirror  sound_seq
-special 5 p "Polyobj_Explicit"    по  order  mirror  sound_seq
+special 1 p "Polyobj_Start"       по  зеркало  sound_seq
+special 5 p "Polyobj_Explicit"    по  порядок  зеркало  sound_seq
 
 special 2 p "Polyobj_RotateL"     по  скорость  угол
 special 3 p "Polyobj_RotateR"     по  скорость  угол
 special 4 p "Polyobj_Move"        по  скорость  угол  расстояние
 special 6 p "Polyobj_Move x8"     по  скорость  угол  расстояние
-special 7 p "Polyobj_DoorSwing"   по  скорость  угол  delay
-special 8 p "Polyobj_DoorSlide"   по  скорость  угол  расстояние  delay
+special 7 p "Polyobj_DoorSwing"   по  скорость  угол  задержка
+special 8 p "Polyobj_DoorSlide"   по  скорость  угол  расстояние  задержка
 
 special 90 p "Polyobj_RotateL /OR"  по  скорость  угол
 special 91 p "Polyobj_RotateR /OR"  по  скорость  угол
@@ -129,7 +129,7 @@ special 83 k "ACS_Execute /lock" script  map  парам1  парам2  lock
 special 81 k "ACS_Suspend"       script  map
 special 82 k "ACS_Terminate"     script  map
 
-special 121 - "Line_SetIdent"  id_number
+special 121 - "Line_SetIdent"  номер_id
 
 special 100 a "Scroll_Left"   скорость
 special 101 a "Scroll_Right"  скорость
@@ -143,6 +143,6 @@ special 120 - "Earthquake"  intensity  duration  damrad  tremrad  tid
 special 70 u "Teleport"          tid
 special 71 u "Teleport /silent"  tid
 
-special 74 x "Exit_ToMap"  map  position
+special 74 x "Exit_ToMap"  карта  позиция
 special 75 x "End_Game"
 
