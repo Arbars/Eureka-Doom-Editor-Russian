@@ -40,7 +40,7 @@ special 67 f "Floor_Raise /instant" тег  -  расстояние
 special 68 f "Floor_MoveTo x8"      тег  скорость  высота_x8  negate?
 special 46 f "Floor_CrushStop"      тег
 
-special 138 f "Floor_Waggle"        тег  amp  скорость  offset  time
+special 138 f "Floor_Waggle"        тег  амплитуда  скорость  смещение  время
 
 special 62 g "Plat_DownWaitUp"  тег  скорость  задержка
 special 63 g "Plat_Down"        тег  скорость  задержка  расстояние
@@ -49,10 +49,10 @@ special 65 g "Plat_Up"          тег  скорость  задержка  ра
 special 60 g "Plat_Perpetual"   тег  скорость  задержка
 special 61 g "Plat_Stop"        тег
 
-special 26 q "Stairs_Down"        тег  скорость  расстояние  задержка  reset
-special 27 q "Stairs_Up"          тег  скорость  расстояние  задержка  reset
-special 31 q "Stairs_Down /sync"  тег  скорость  расстояние  reset
-special 32 q "Stairs_Up   /sync"  тег  скорость  расстояние  reset
+special 26 q "Stairs_Down"        тег  скорость  расстояние  задержка  сброс
+special 27 q "Stairs_Up"          тег  скорость  расстояние  задержка  сброс
+special 31 q "Stairs_Down /sync"  тег  скорость  расстояние  сброс
+special 32 q "Stairs_Up   /sync"  тег  скорость  расстояние  сброс
 
 # Ceiling and doors
 
@@ -75,10 +75,10 @@ special 13 d "Door_Locked"  тег  скорость  задержка  lock
 special 110 l "Light_Raise"   тег  light
 special 111 l "Light_Lower"   тег  light
 special 112 l "Light_Set"     тег  light
-special 113 l "Light_Fade"    тег  light  time
-special 114 l "Light_Glow"    тег  high  low  time
+special 113 l "Light_Fade"    тег  light  время
+special 114 l "Light_Glow"    тег  high  low  время
 special 115 l "Light_Flicker" тег  high  low
-special 116 l "Light_Strobe"  тег  high  low  hightime  lowtime
+special 116 l "Light_Strobe"  тег  high  low  макс.время  мин.время
 
 special 109 l "Force Lightning"  mode
 
@@ -115,7 +115,7 @@ special 93 p "Polyobj_Move x8 /OR"  по  скорость  угол  расст
 
 # Miscellaneous
 
-special 0  - "NOTHING"
+special 0  - "НИЧЕГО"
 
 special 29 e "Pillar_Build"  тег  скорость  расстояние
 special 30 e "Pillar_Open"   тег  скорость  f_расстояние  c_расстояние
@@ -136,13 +136,13 @@ special 101 a "Scroll_Right"  скорость
 special 102 a "Scroll_Up"     скорость
 special 103 a "Scroll_Down"   скорость
 
-special 129 - "UsePuzzleItem"  item  script  парам1  парам2  парам3
+special 129 - "UsePuzzleItem"  предмет  скрипт  парам1  парам2  парам3
 special 140 - "Change Sound"  тег  sound_seq
-special 120 - "Earthquake"  intensity  duration  damrad  tremrad  tid
+special 120 - "Earthquake"  интенсивность  продолжительность  радиус_урона  tremrad  tid
 
-special 70 u "Teleport"          tid
-special 71 u "Teleport /silent"  tid
+special 70 u "Телепорт"          идентификатор телепорта
+special 71 u "Телепорт /тихий"  идентификатор телепорта
 
-special 74 x "Exit_ToMap"  карта  позиция
-special 75 x "End_Game"
+special 74 x "Выход_НаКарту"  карта  позиция
+special 75 x "Конец_игры"
 

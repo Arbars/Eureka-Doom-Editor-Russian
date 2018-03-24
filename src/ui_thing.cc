@@ -209,9 +209,9 @@ UI_ThingBox::UI_ThingBox(int X, int Y, int W, int H, const char *label) :
 
 
 	// Hexen class flags
-	o_fight   = new Fl_Check_Button(BX+28,  Y, FW, 22, "Fighter");
-	o_cleric  = new Fl_Check_Button(BX+28, AY, FW, 22, "Cleric");
-	o_mage    = new Fl_Check_Button(BX+28, BY, FW, 22, "Mage");
+	o_fight   = new Fl_Check_Button(BX+28,  Y, FW, 22, "Воин");
+	o_cleric  = new Fl_Check_Button(BX+28, AY, FW, 22, "Клерик");
+	o_mage    = new Fl_Check_Button(BX+28, BY, FW, 22, "Маг");
 
 	o_fight ->callback(option_callback, new thing_opt_CB_data_c(this, MTF_Hexen_Fighter));
 	o_cleric->callback(option_callback, new thing_opt_CB_data_c(this, MTF_Hexen_Cleric));
