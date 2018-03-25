@@ -1,44 +1,44 @@
 
-COMPILING Eureka
+КОМПИЛЯЦИЯ Eureka
 ================
 
-Dependencies:
+Зависимости:
 
-1. C++ compiler (GNU's G++) and associated tools
-   packages: g++ binutils
+1. Компилятор C++ (GNU's G++) и сопутствующие инструменты
+   пакеты: g++ binutils
 
 2. GNU make
-   package: make
+   пакеты: make
 
 3. FLTK 1.3 
-   website: http://www.fltk.org/
-   package: libfltk1.3-dev
+   вебсайт: http://www.fltk.org/
+   пакеты: libfltk1.3-dev
 
-   You may also need: libxft-dev
-                      libxinerama-dev
-                      libfontconfig-dev
-                      libjpeg-dev
-                      libpng-dev
+   Вам также понадобятся: libxft-dev
+                          libxinerama-dev
+                          libfontconfig-dev
+                          libjpeg-dev
+                          libpng-dev
 
 4. zlib
-   website: http://www.zlib.net/
-   package: zlib1g-dev
+   вебсайт: http://www.zlib.net/
+   пакеты: zlib1g-dev
 
-5. XDG Utils
-   (only needed for Linux, to install the desktop and icon files)
-   package: xdg-utils
+5. Утилиты XDG
+   (нужны только для Linux, для установки ярлыка на рабочий стол и добавление в меню)
+   пакеты: xdg-utils
 
-Заметка: в Linux Mint 18.3 нужно доустановить libghc-glut-dev
+Заметка: в Linux Mint 18.3 нужно доустановить libghc-glut-dev (но не факт :-) )
 
-Assuming all those dependencies are met, then the following shell
-command will build the Eureka binary. (The '>' is just the prompt)
+После установки всех зависимостей, введите комманду для сборки
+исполняемого файла Eureka.
 
-   > make
+   make
 
 
-Some systems may need additional CFLAGS and/or LDFLAGS in order
-to find the required libraries (especially FLTK).  For example,
-the following is reported to work for Gentoo Linux:
+Некоторые системы требуют дополнительные CFLAGS и/или LDFLAGS 
+для того, чтобы найти необходимые библиотеки (особенно FLTK). Например,
+эти условия нужны для нормальной сборки для Gentoo Linux:
 
    CFLAGS  += -I/usr/include/fltk-1
    LDFLAGS += -L/usr/lib64/fltk-1/
@@ -48,43 +48,42 @@ the following is reported to work for Gentoo Linux:
 INSTALLING Eureka
 =================
 
-First make sure the Eureka binary was compiled successfully.
+Для начала, убедитесь в том, что исполняемый файл Eureka был успешно собран.
 
-Then become root (via the 'sudo' or 'su' command) and enter the
-following shell command:
+Затем, получив права root (через команды 'sudo' или 'su'), введите следующую
+команду в терминал:
 
    > make install
 
-That will install the eureka binary, definition files for various
-games and source ports, and the desktop and icon files.
+Она установит исполняемый файл редактора, файлы настроек игр и source-портов,
+а также загрузит ярлык программы для рабочего стола и пункт в меню..
 
 
 
-SETTING UP Eureka
+Настройка Eureka
 =================
 
-Eureka requires an IWAD file from one of the supported games, for
-example "doom2.wad".  Eureka will look for IWADs when it starts up,
-but if it cannot find any then the 'Manage Wads' dialog will open
-and you can browse for an IWAD file there, which will be remembered
-for next time.
+Eureka требует IWAD от одной из поддерживаемых игр, для
+примера "doom2.wad".  Eureka ищет IWAD'ы при запуске,
+однако, если ей не удаётся их найти, запускается диалоговое окно
+'Менеджер wad-файлов' и Вы сможете указать редактору расположение IWAD файла,
+он его запомнит и загрузит при следующем запуске.
 
-Places where Eureka looks for IWADs:
+Где Eureka ищет IWAD'ы:
 
-  1. The "iwads" directory in Eureka's home directory.  In Linux
-     this will be "~/.eureka/iwads".  It is created automatically
-     the first time Eureka is run (though there is no harm in
-     creating it yourself).
+  1. В папке "iwads" в корневой папке Eureka.  В Linux
+     это обычно "~/.eureka/iwads".  Она создаётся автоматически
+     при первом запуске Eureka (но если Вы создатите её сами - 
+     хуже не станет).
 
-  2. (a) In Linux: /usr/share/games/doom
-     (b) In Windows: C:\DOOM and C:\DOOM2
+  2. (a) В Linux: /usr/share/games/doom
+     (b) В Windows: C:\DOOM and C:\DOOM2
 
-  3. If you run Eureka from the command line and have the DOOMWADDIR
-     or DOOMWADPATH environment variables set, then Eureka should find
-     it the specified directory.
+  3. Если Вы запустили Eureka из командной строки и имеете source-порт с 
+     настроенными переменными DOOMWADDIR или DOOMWADPATH,
+     редактор подхватит их автоматически.
 
-  4. If running from the command line, Eureka will look in the current
-     directory for the IWAD.
+  4. Также Eureka ищет IWAD'ы в той папке, в которой вы находитесь в терминале.
 
-  5. You can specify the IWAD file directly with the --iwad option.
+  5. Наконец, Вы можете укаазть путь к IWAD файлу через напрямую через параметр --iwad.
 

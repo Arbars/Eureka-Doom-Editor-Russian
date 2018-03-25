@@ -4,28 +4,30 @@ Eureka 1.21 README
 
 by Andrew Apted  <ajapted@users.sf.net>
 
-January 2017
+Перевод: Arbars Zagadkin (arbars.zagadkin(at)mail.ru)
+
+Март 2018
 
 
-INTRODUCTION
+ВВЕДЕНИЕ
 
-Eureka is a map editor for the classic DOOM games, and a few related
-games such as Heretic and Hexen.  The supported operating systems are
-Linux (and other Unix-likes), Windows and MacOS X.
+Eureka это редактор карт для игр, основанных на классическом Doom, и нескольких
+других, таких как Heretic и Hexen.  ПОддерживаются такие операционные системы, как
+Linux (и остальные Unix-подобные), Windows и MacOS X.
 
 
-FEATURES
+ОСОБЕННОСТИ
 
 -  Undo/Redo (multiple levels)
--  3D preview
--  Low system requirements, no 3D card needed
--  Editable panels for things, linedefs, sectors (etc)
--  Browser for textures, flats, things (etc)
--  Key binding system
--  Built-in nodes builder
+-  Режим 3D просмотра
+-  Низкие системные требования, отсутствие необходимости в дискретной видеокарте
+-  Настраиваемые панели для объектов (монстры, оружие и пр.), линий, секторов, и т.д.
+-  Каталог текстур стен и плоскостей, объектов, и т.д.
+-  Система назначения клавиш
+-  Встроенная система создания нодов
 
 
-SUPPORTED GAMES
+ПОДДЕРЖИВАЕМЫЕ ИГРЫ
 
 -  DOOM
 -  DOOM 2
@@ -36,41 +38,41 @@ SUPPORTED GAMES
 -  Hexen
 -  Chex Quest
 
-REQUIREMENTS
+СИСТЕМНЫЕ ТРЕБОВАНИЯ
 
--  128 MB of computer memory
--  800x600 or higher screen resolution
--  a keyboard and a two-button mouse
--  the data (iwad) file from a supported game
-
-
-COMPILATION
-
-See the INSTALL.txt document (in source code)
+-  128 MB оперативной памяти
+-  монитор с разрешением 800x600 или выше
+-  клавиатура и дву- или более кнопочная мышь
+-  файлы с данными (iwad'ы) поддерживаемых игр
 
 
-RUNNING
+КОМПИЛЯЦИЯ (сборка)
 
-You can run Eureka from the command line, or it can be run from
-the desktop menu (if your OS handles .desktop files as per the
-XDG specs).  Eureka will need to be able to find an IWAD to run,
-if it cannot find any then the "Manage Wads" dialog will open up,
-allowing you to "Find" one (which is remembered for next time).
+Читайте INSTALL.txt (в комплекте с исходникамии)
 
-You can open a PWAD file using the File/Open menu command, or start
-a new map with File/New command.
 
-You can also specify the PWAD to edit on the command line, either
-on its own or with the -file option:
+ЗАПУСК
+
+Вы можете запускать Eureka из командной строки, или же через пункт
+меню рабочего стола (если Ваша ОС поддерживает файлы .desktop из
+спецификации XDG). Редактору нужно будет найти iwad-файлы перед запуском,
+если этого не случится, запустится "Менеджер wad'ов", который 
+поможет "Найти" их (и запомнит их расположение при следующем запуске).
+
+Вы можете открыть PWAD, используя комманды меню "Файл/Открыть карту",
+или создать новый с помощью "Файл/Создать".
+
+Вы также можете указать изменяемый PWAD в командной строке, вписав его имя
+после параметра -file:
 
    eureka -file masterpiece.wad
 
-If that PWAD contains multiple maps, you may need to specify which
-one to edit using the -warp option:
+Если PWAD содержит несколько карт, Вы можете указать конкретно какую карту
+нужно изменить, куазав её номер через параметр -warp:
 
    eureka -file masterpiece.wad -warp 14
 
-For a summary of useful command line options, type:
+Для просмотра полного списка команд, введите:
 
    eureka --help
 
@@ -277,7 +279,10 @@ COPYRIGHT and LICENSE
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
   GNU General Public License for more details.
 
+  Перевод (С) 2018 Arbars Zagadkin
 
+  Перевод распространяется на тех же условиях, что и
+  исходная программа.
 
 CONTACT DETAILS
 
