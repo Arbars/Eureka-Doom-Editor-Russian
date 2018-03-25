@@ -948,7 +948,7 @@ void CMD_OperationMenu()
 			case OBJ_VERTICES:	menu = main_win->op_vertex; break;
 
 			default:
-				Beep("a strange case indeed!");
+				Beep("со странной причиной!");
 				return;
 		}
 	}

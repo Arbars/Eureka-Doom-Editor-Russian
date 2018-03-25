@@ -763,7 +763,7 @@ void CMD_CopyAndPaste()
 {
 	if (edit.Selected->empty() && edit.highlight.is_nil())
 	{
-		Beep("Nothing to copy and paste");
+		Beep("Нечего копировать и вставлять");
 		return;
 	}
 
@@ -787,7 +787,7 @@ void CMD_Clipboard_Cut()
 
 	if (! Clipboard_DoCopy())
 	{
-		Beep("Nothing to cut");
+		Beep("Нечего вырезать");
 		return;
 	}
 
@@ -808,7 +808,7 @@ void CMD_Clipboard_Copy()
 
 	if (! Clipboard_DoCopy())
 	{
-		Beep("Nothing to copy");
+		Beep("Нечего копировать");
 		return;
 	}
 }
@@ -827,7 +827,7 @@ void CMD_Clipboard_Paste()
 
 	if (! Clipboard_DoPaste())
 	{
-		Beep("Clipboard is empty");
+		Beep("Буфер обмена пуст");
 		return;
 	}
 }

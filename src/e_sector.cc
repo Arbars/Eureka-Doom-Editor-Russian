@@ -5,7 +5,7 @@
 //  Eureka DOOM Editor
 //
 //  Copyright (C) 2001-2016 Andrew Apted
-//  Copyright (C) 1997-2003 Andr� Majorel et al
+//  Copyright (C) 1997-2003 André Majorel et al
 //
 //  This program is free software; you can redistribute it and/or
 //  modify it under the terms of the GNU General Public License
@@ -20,7 +20,7 @@
 //------------------------------------------------------------------------
 //
 //  Based on Yadex which incorporated code from DEU 5.21 that was put
-//  in the public domain in 1994 by Rapha�l Quinet and Brendon Wyber.
+//  in the public domain in 1994 by Raphaël Quinet and Brendon Wyber.
 //
 //------------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ void CMD_SEC_Floor(void)
 
 	if (diff == 0)
 	{
-		Beep("SEC_Floor: bad parameter '%s'", EXEC_Param[0]);
+		Beep("SEC_Floor: неверный параметр '%s'", EXEC_Param[0]);
 		return;
 	}
 
@@ -57,7 +57,7 @@ void CMD_SEC_Floor(void)
 
 	if (! GetCurrentObjects(&list))
 	{
-		Beep("No sectors to move");
+		Beep("Нет секторов для передвижения");
 		return;
 	}
 
@@ -87,7 +87,7 @@ void CMD_SEC_Ceil(void)
 
 	if (diff == 0)
 	{
-		Beep("SEC_Ceil: bad parameter '%s'", EXEC_Param[0]);
+		Beep("SEC_Ceil: неверный параметр '%s'", EXEC_Param[0]);
 		return;
 	}
 
@@ -97,7 +97,7 @@ void CMD_SEC_Ceil(void)
 
 	if (! GetCurrentObjects(&list))
 	{
-		Beep("No sectors to move");
+		Beep("Нет секторов для передвижения");
 		return;
 	}
 
@@ -148,7 +148,7 @@ void SectorsAdjustLight(int delta)
 
 	if (! GetCurrentObjects(&list))
 	{
-		Beep("No sectors to adjust light");
+		Beep("Нет секторов, чтобы настроить освещение");
 		return;
 	}
 
@@ -163,7 +163,7 @@ void SectorsAdjustLight(int delta)
 		BA_ChangeSEC(*it, Sector::F_LIGHT, new_lt);
 	}
 
-	BA_MessageForSel(delta < 0 ? "darkened" : "brightened", &list);
+	BA_MessageForSel(delta < 0 ? "затемнено" : "осветлено", &list);
 
 	BA_End();
 
@@ -177,7 +177,7 @@ void CMD_SEC_Light(void)
 
 	if (diff == 0)
 	{
-		Beep("SEC_Light: bad parameter '%s'", EXEC_Param[0]);
+		Beep("SEC_Light: неверный параметр '%s'", EXEC_Param[0]);
 		return;
 	}
 
@@ -192,7 +192,7 @@ void CMD_SEC_SwapFlats()
 
 	if (! GetCurrentObjects(&list))
 	{
-		Beep("No sectors to swap");
+		Beep("Нет секторов для слияния");
 		return;
 	}
 
@@ -260,7 +260,7 @@ void CMD_SEC_Merge(void)
 
 	if (edit.Selected->count_obj() < 2)
 	{
-		Beep("Need 2 or more sectors to merge");
+		Beep("Нужно 2 или более секторов для слияния");
 		return;
 	}
 
@@ -1151,7 +1151,7 @@ bool AssignSectorToSpace(int map_x, int map_y, int new_sec, int model)
 
 	if (! GetLoopForSpace(map_x, map_y, loop))
 	{
-		Beep("Area is not closed");
+		Beep("Пространство не замкнуто");
 		return false;
 	}
 

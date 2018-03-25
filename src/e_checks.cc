@@ -2813,7 +2813,7 @@ void CMD_ApplyTag()
 {
 	if (! (edit.mode == OBJ_SECTORS || edit.mode == OBJ_LINEDEFS))
 	{
-		Beep("ApplyTag: wrong mode");
+		Beep("ApplyTag: неверный режим");
 		return;
 	}
 
@@ -2831,7 +2831,7 @@ void CMD_ApplyTag()
 	}
 	else
 	{
-		Beep("ApplyTag: unknown keyword: %s\n", mode);
+		Beep("ApplyTag: неизвестное ключ-слово: %s\n", mode);
 		return;
 	}
 
@@ -2842,7 +2842,7 @@ void CMD_ApplyTag()
 	{
 		if (edit.highlight.is_nil())
 		{
-			Beep("ApplyTag: nothing selected");
+			Beep("ApplyTag: ничего не выбрано");
 			return;
 		}
 
@@ -2859,12 +2859,12 @@ void CMD_ApplyTag()
 
 	if (new_tag <= 0)
 	{
-		Beep("No last tag");
+		Beep("Нет последнего тега");
 		return;
 	}
 	else if (new_tag > 32767)
 	{
-		Beep("Out of tag numbers");
+		Beep("Превышено число тегов");
 		return;
 	}
 
@@ -3944,7 +3944,7 @@ void CMD_MapCheck()
 
 	if (! what[0])
 	{
-		Beep("MapCheck: missing keyword");
+		Beep("Проверка карты: пропущенное ключ-слово");
 		return;
 	}
 	else if (y_stricmp(what, "all") == 0)
@@ -3992,7 +3992,7 @@ void CMD_MapCheck()
 				break;
 
 			default:
-				Beep("Nothing to check");
+				Beep("Нечего проверять");
 				break;
 		}
 	}
@@ -4006,7 +4006,7 @@ void CMD_MapCheck()
 	}
 	else
 	{
-		Beep("MapCheck: unknown keyword: %s\n", what);
+		Beep("Проверка карты: неизвестное ключ-слово: %s\n", what);
 	}
 }
 

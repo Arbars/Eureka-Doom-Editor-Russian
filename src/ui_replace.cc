@@ -1084,7 +1084,7 @@ bool UI_FindAndReplace::FindNext()
 	// this can happen via CTRL-G shortcut (View / Go to next)
 	if (strlen(find_match->value()) == 0)
 	{
-		Beep("No find active!");
+		Beep("Не найдено активных!");
 		return false;
 	}
 
@@ -1108,7 +1108,7 @@ bool UI_FindAndReplace::FindNext()
 		if (filter_toggle->value() && restrict_to_sel->value() &&
 			edit.Selected->empty())
 		{
-			Beep("EMPTY SELECTION!");
+			Beep("ПУСТОЕ ВЫДЕЛЕНИЕ!");
 			return false;
 		}
 	}
@@ -1152,9 +1152,9 @@ bool UI_FindAndReplace::FindNext()
 	rep_value->do_callback();
 
 	if (is_first)
-		Beep("Nothing found");
+		Beep("Ничего не найдено");
 	else
-		Beep("No more found");
+		Beep("Больше не найдено");
 
 	return false;
 }
@@ -1166,14 +1166,14 @@ void UI_FindAndReplace::DoReplace()
 	if (strlen(find_match->value()) == 0 ||
 		strlen( rep_value->value()) == 0)
 	{
-		Beep("Bad replace");
+		Beep("Неверная замена");
 		return;
 	}
 
 	// this generally can't happen either
 	if (cur_obj.is_nil())
 	{
-		Beep("No object to replace!");
+		Beep("Нет объекта для замены!");
 		return;
 	}
 
@@ -1251,7 +1251,7 @@ void UI_FindAndReplace::DoAll(bool replace)
 {
 	if (strlen(find_match->value()) == 0)
 	{
-		Beep("No find active!");
+		Beep("не найдено активных!");
 		return;
 	}
 
@@ -1259,7 +1259,7 @@ void UI_FindAndReplace::DoAll(bool replace)
 	if (filter_toggle->value() && restrict_to_sel->value() &&
 		edit.Selected->empty())
 	{
-		Beep("EMPTY SELECTION!");
+		Beep("ВЫБОР ПУСТОТЫ!");
 		return;
 	}
 
@@ -1306,7 +1306,7 @@ void UI_FindAndReplace::DoAll(bool replace)
 	}
 
 	if (count == 0)
-		Beep("Nothing found");
+		Beep("Ничего не найдено");
 	else
 		Status_Set("Найдено %d объектов", count);
 

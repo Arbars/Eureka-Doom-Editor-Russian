@@ -445,7 +445,7 @@ void UI_DefaultProps::CB_Copy(int sel_pics)
 		case 4: name = w_tex->value(); break;
 
 		default:
-			Beep("multiple textures");
+			Beep("несколько текстур");
 			return;
 	}
 
@@ -523,7 +523,7 @@ bool UI_DefaultProps::ClipboardOp(char what)
 			break;
 
 		case 'x':
-			Beep("cannot cut that");
+			Beep("невозможно вырезать");
 			break;
 
 		case 'd':

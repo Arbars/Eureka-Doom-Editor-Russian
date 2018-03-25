@@ -1193,13 +1193,13 @@ void CMD_GivenFile()
 	}
 	else
 	{
-		Beep("GivenFile: unknown keyword: %s", mode);
+		Beep("GivenFile: неизвестное ключ-слово: %s", mode);
 		return;
 	}
 
 	if (index < 0 || index >= (int)Pwad_list.size())
 	{
-		Beep("No more files");
+		Beep("Нет больше файлов");
 		return;
 	}
 
@@ -1217,7 +1217,7 @@ void CMD_FlipMap()
 
 	if (! mode[0])
 	{
-		Beep("FlipMap: missing keyword");
+		Beep("FlipMap: ПРопущено ключ-слово");
 		return;
 	}
 
@@ -1234,7 +1234,7 @@ void CMD_FlipMap()
 
 	if (max_idx < 0)
 	{
-		Beep("No maps ?!?");
+		Beep("Нет карт ?!?");
 		return;
 	}
 
@@ -1249,7 +1249,7 @@ void CMD_FlipMap()
 			lev_idx++;
 		else
 		{
-			Beep("No more maps");
+			Beep("Нет больше карт");
 			return;
 		}
 	}
@@ -1261,7 +1261,7 @@ void CMD_FlipMap()
 			lev_idx--;
 		else
 		{
-			Beep("No more maps");
+			Beep("Нет больше карт");
 			return;
 		}
 	}
@@ -1275,7 +1275,7 @@ void CMD_FlipMap()
 	}
 	else
 	{
-		Beep("FlipMap: unknown keyword: %s", mode);
+		Beep("FlipMap: неизвестное ключ-слово: %s", mode);
 		return;
 	}
 
@@ -1847,7 +1847,7 @@ void CMD_CopyMap()
 	// (should be prevented by the choose-map dialog)
 	if (y_stricmp(new_name, Level_name) == 0)
 	{
-		Beep("Name is same!?!");
+		Beep("Похожее имя !?!");
 		return;
 	}
 
@@ -1907,7 +1907,7 @@ void CMD_RenameMap()
 	// (should be prevented by the choose-map dialog)
 	if (y_stricmp(new_name, Level_name) == 0)
 	{
-		Beep("Name is same!?!");
+		Beep("Похожее имя!?!");
 		return;
 	}
 
@@ -1967,7 +1967,7 @@ void CMD_DeleteMap()
 
 	if (lev_num < 0)
 	{
-		Beep("No such map ?!?");
+		Beep("Нет такой карты?!?");
 		return;
 	}
 

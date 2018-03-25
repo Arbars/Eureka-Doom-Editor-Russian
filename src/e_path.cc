@@ -5,7 +5,7 @@
 //  Eureka DOOM Editor
 //
 //  Copyright (C) 2001-2016 Andrew Apted
-//  Copyright (C) 1997-2003 Andr� Majorel et al
+//  Copyright (C) 1997-2003 André Majorel et al
 //
 //  This program is free software; you can redistribute it and/or
 //  modify it under the terms of the GNU General Public License
@@ -20,7 +20,7 @@
 //------------------------------------------------------------------------
 //
 //  Based on Yadex which incorporated code from DEU 5.21 that was put
-//  in the public domain in 1994 by Rapha�l Quinet and Brendon Wyber.
+//  in the public domain in 1994 by Raphaël Quinet and Brendon Wyber.
 //
 //------------------------------------------------------------------------
 
@@ -178,7 +178,7 @@ void CMD_LIN_SelectPath(void)
 	// determine starting linedef
 	if (edit.highlight.is_nil())
 	{
-		Beep("No highlighted line");
+		Beep("Нет выделенной линии");
 		return;
 	}
 
@@ -320,7 +320,7 @@ void CMD_SEC_SelectGroup(void)
 	// determine starting sector
 	if (edit.highlight.is_nil())
 	{
-		Beep("No highlighted sector");
+		Beep("Нет выделенного сектора");
 		return;
 	}
 
@@ -425,7 +425,7 @@ void CMD_JumpToObject(void)
 
 	if (total <= 0)
 	{
-		Beep("No objects!");
+		Beep("Нет объектов!");
 		return;
 	}
 
@@ -449,7 +449,7 @@ void CMD_NextObject()
 {
 	if (edit.Selected->count_obj() != 1)
 	{
-		Beep("Next: need a single object");
+		Beep("Следующий: нужен единственный объект");
 		return;
 	}
 
@@ -457,7 +457,7 @@ void CMD_NextObject()
 
 	if (num >= NumObjects(edit.mode))
 	{
-		Beep("Next: no more objects");
+		Beep("Следующий: нет больше объектов");
 		return;
 	}
 
@@ -471,7 +471,7 @@ void CMD_PrevObject()
 {
 	if (edit.Selected->count_obj() != 1)
 	{
-		Beep("Prev: need a single object");
+		Beep("Предыдущий: нужен единственный объект");
 		return;
 	}
 
@@ -479,7 +479,7 @@ void CMD_PrevObject()
 
 	if (num <= 0)
 	{
-		Beep("Prev: no more objects");
+		Beep("Предыдущий: нет больше объектов");
 		return;
 	}
 
@@ -525,7 +525,7 @@ void CMD_PruneUnused(void)
 
 	if (num_verts == 0 && num_sides == 0 && num_secs == 0)
 	{
-		Beep("Nothing to prune");
+		Beep("Нечего обрезать");
 		return;
 	}
 
@@ -535,9 +535,9 @@ void CMD_PruneUnused(void)
 	DeleteObjects(&used_secs);
 	DeleteObjects(&used_verts);
 
-	BA_Message("pruned %d objects", num_secs + num_sides + num_verts);
+	BA_Message("обрезано %d объектов", num_secs + num_sides + num_verts);
 
-	Status_Set("Pruned %d SEC - %d Side - %d Vert", num_secs, num_sides, num_verts);
+	Status_Set("Обрезано %d СЕК - %d Сторон - %d Верт", num_secs, num_sides, num_verts);
 
 	BA_End();
 }

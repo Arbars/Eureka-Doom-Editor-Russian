@@ -5,7 +5,7 @@
 //  Eureka DOOM Editor
 //
 //  Copyright (C) 2001-2016 Andrew Apted
-//  Copyright (C) 1997-2003 Andr� Majorel et al
+//  Copyright (C) 1997-2003 André Majorel et al
 //
 //  This program is free software; you can redistribute it and/or
 //  modify it under the terms of the GNU General Public License
@@ -20,7 +20,7 @@
 //------------------------------------------------------------------------
 //
 //  Based on Yadex which incorporated code from DEU 5.21 that was put
-//  in the public domain in 1994 by Rapha�l Quinet and Brendon Wyber.
+//  in the public domain in 1994 by Raphaël Quinet and Brendon Wyber.
 //
 //------------------------------------------------------------------------
 
@@ -584,7 +584,7 @@ static void Insert_Sector()
 	int sel_count = edit.Selected->count_obj();
 	if (sel_count > 1)
 	{
-		Beep("Too many sectors to copy from");
+		Beep("Слишком много секторов для копирования");
 		return;
 	}
 
@@ -644,7 +644,7 @@ void CMD_Insert()
 
 	if (edit.render3d)
 	{
-		Beep("Insert: not usable in 3D view");
+		Beep("Insert: не используется в 3D виде");
 		return;
 	}
 
@@ -665,7 +665,7 @@ void CMD_Insert()
 			break;
 
 		default:
-			Beep("Cannot insert in this mode");
+			Beep("Невозможно добавить в данном режиме");
 			break;
 	}
 
@@ -1044,17 +1044,17 @@ void CMD_CopyProperties()
 {
 	if (edit.highlight.is_nil())
 	{
-		Beep("No target for CopyProperties");
+		Beep("Нет цели для  НастроекКопирования");
 		return;
 	}
 	else if (edit.Selected->empty())
 	{
-		Beep("No source for CopyProperties");
+		Beep("Нет источника для  НастроекКопирования");
 		return;
 	}
 	else if (edit.mode == OBJ_VERTICES)
 	{
-		Beep("No properties to copy");
+		Beep("Нет настроек для копирвания");
 		return;
 	}
 
@@ -1065,7 +1065,7 @@ void CMD_CopyProperties()
 	{
 		if (edit.Selected->count_obj() != 1)
 		{
-			Beep("Too many sources for CopyProperties");
+			Beep("Слишком много источников для НастроекКопирования");
 			return;
 		}
 
@@ -1104,7 +1104,7 @@ void CMD_CopyProperties()
 	{
 		if (edit.Selected->count_obj() == 1 && edit.Selected->find_first() == edit.highlight.num)
 		{
-			Beep("No selection for CopyProperties");
+			Beep("Не выбрано для НастроекКопирования");
 			return;
 		}
 
@@ -1572,7 +1572,7 @@ void CMD_Mirror()
 
 	if (! GetCurrentObjects(&list))
 	{
-		Beep("No objects to mirror");
+		Beep("Нет объектов для отзеркаливания");
 		return;
 	}
 
@@ -1628,7 +1628,7 @@ void CMD_Rotate90()
 {
 	if (EXEC_Param[0] == 0)
 	{
-		Beep("Rotate90: missing keyword");
+		Beep("Rotate90: пропущено ключ-слово");
 		return;
 	}
 
@@ -1639,7 +1639,7 @@ void CMD_Rotate90()
 
 	if (! GetCurrentObjects(&list))
 	{
-		Beep("No objects to rotate");
+		Beep("Нет объектов для вращения");
 		return;
 	}
 
@@ -1966,7 +1966,7 @@ static void DoEnlargeOrShrink(bool do_shrink)
 
 	if (! GetCurrentObjects(&list))
 	{
-		Beep("No objects to %s", do_shrink ? "shrink" : "enlarge");
+		Beep("Нет объектов для %s", do_shrink ? "сжатия" : "расширения");
 		return;
 	}
 
@@ -1978,7 +1978,7 @@ static void DoEnlargeOrShrink(bool do_shrink)
 
 		if (mul < 0.02 || mul > 50)
 		{
-			Beep("bad factor: %s", EXEC_Param[0]);
+			Beep("неверный фактор: %s", EXEC_Param[0]);
 			return;
 		}
 	}
@@ -2066,7 +2066,7 @@ static void Quantize_Things(selection_c& list)
 	list.unmerge(moved);
 
 	if (list.notempty())
-		Beep("Quantize: could not move %d things", list.count_obj());
+		Beep("Quantize: не удаётся передвинуть %d объектов", list.count_obj());
 }
 
 
@@ -2174,7 +2174,7 @@ static void Quantize_Vertices(selection_c& list)
 	list.unmerge(moved);
 
 	if (list.notempty())
-		Beep("Quantize: could not move %d vertices", list.count_obj());
+		Beep("Преобразование: не удаётся передвинуть %d вершин", list.count_obj());
 }
 
 
@@ -2184,7 +2184,7 @@ void CMD_Quantize()
 	{
 		if (edit.highlight.is_nil())
 		{
-			Beep("Nothing to quantize");
+			Beep("Нечего преобразовывать");
 			return;
 		}
 

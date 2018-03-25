@@ -418,7 +418,7 @@ void UI_LineBox::SetLineType(int new_type)
 {
 	if (obj < 0)
 	{
-///		Beep("No lines selected");
+///		Beep("Линии не выбраны");
 		return;
 	}
 
@@ -456,7 +456,7 @@ void UI_LineBox::CB_Copy()
 
 			if (name && y_stricmp(name, b_name) != 0)
 			{
-				Beep("multiple textures");
+				Beep("несколько текстур");
 				return;
 			}
 

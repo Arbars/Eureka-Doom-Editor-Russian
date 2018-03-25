@@ -5,7 +5,7 @@
 //  Eureka DOOM Editor
 //
 //  Copyright (C) 2001-2016 Andrew Apted
-//  Copyright (C) 1997-2003 Andr� Majorel et al
+//  Copyright (C) 1997-2003 André Majorel et al
 //
 //  This program is free software; you can redistribute it and/or
 //  modify it under the terms of the GNU General Public License
@@ -20,7 +20,7 @@
 //------------------------------------------------------------------------
 //
 //  Based on Yadex which incorporated code from DEU 5.21 that was put
-//  in the public domain in 1994 by Rapha�l Quinet and Brendon Wyber.
+//  in the public domain in 1994 by Raphaël Quinet and Brendon Wyber.
 //
 //------------------------------------------------------------------------
 
@@ -696,7 +696,7 @@ void CMD_LIN_Align()
 
 	if (! GetCurrentObjects(&list))
 	{
-		Beep("no lines to align");
+		Beep("нет линий для выравнивания");
 		return;
 	}
 
@@ -707,7 +707,7 @@ void CMD_LIN_Align()
 
 	if (! (do_X || do_Y))
 	{
-		Beep("LIN_Align: need x or y flag");
+		Beep("LIN_Align: нужен флаг x или y");
 		return;
 	}
 
@@ -763,7 +763,7 @@ void CMD_LIN_Align()
 
 	if (group.empty())
 	{
-		Beep("no visible surfaces");
+		Beep("нет видимых поверхностей");
 		return;
 	}
 
@@ -841,7 +841,7 @@ void CMD_LIN_Flip()
 
 	if (! GetCurrentObjects(&list))
 	{
-		Beep("No lines to flip");
+		Beep("Нет линий для разворота");
 		return;
 	}
 
@@ -871,7 +871,7 @@ void CMD_LIN_SwapSides()
 
 	if (! GetCurrentObjects(&list))
 	{
-		Beep("No lines to swap sides");
+		Beep("Нет линий для слияния сторон");
 		return;
 	}
 
@@ -981,7 +981,7 @@ void CMD_LIN_SplitHalf(void)
 
 	if (! GetCurrentObjects(&list))
 	{
-		Beep("No lines to split");
+		Beep("Нет линий для разделения");
 		return;
 	}
 
@@ -1008,7 +1008,7 @@ void CMD_LIN_SplitHalf(void)
 
 	// Hmmmmm -- should abort early if some lines are too short??
 	if (new_count < list.count_obj())
-		Beep("Some lines were too short!");
+		Beep("Некоторые линии слишком короткие!");
 
 	if (was_selected && new_count > 0)
 	{
@@ -1168,7 +1168,7 @@ void CMD_LIN_MergeTwo(void)
 
 	if (edit.Selected->count_obj() != 2)
 	{
-		Beep("Need 2 linedefs to merge (got %d)", edit.Selected->count_obj());
+		Beep("Нужны 2 линии для слияния (взяты %d)", edit.Selected->count_obj());
 		return;
 	}
 
@@ -1182,7 +1182,7 @@ void CMD_LIN_MergeTwo(void)
 
 	if (! (L1->OneSided() && L2->OneSided()))
 	{
-		Beep("Linedefs to merge must be single sided.");
+		Beep("Линии для слияния должны быть односторонние.");
 		return;
 	}
 
@@ -1358,7 +1358,7 @@ void LineDefs_SetLength(int new_len)
 
 	if (! GetCurrentObjects(&list))
 	{
-		Beep("No lines to extend");
+		Beep("Нет линий для удлиннения");
 		return;
 	}
 

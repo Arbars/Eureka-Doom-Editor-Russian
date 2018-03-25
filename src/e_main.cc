@@ -5,7 +5,7 @@
 //  Eureka DOOM Editor
 //
 //  Copyright (C) 2001-2016 Andrew Apted
-//  Copyright (C) 1997-2003 Andr� Majorel et al
+//  Copyright (C) 1997-2003 André Majorel et al
 //
 //  This program is free software; you can redistribute it and/or
 //  modify it under the terms of the GNU General Public License
@@ -20,7 +20,7 @@
 //------------------------------------------------------------------------
 //
 //  Based on Yadex which incorporated code from DEU 5.21 that was put
-//  in the public domain in 1994 by Rapha�l Quinet and Brendon Wyber.
+//  in the public domain in 1994 by Raphaël Quinet and Brendon Wyber.
 //
 //------------------------------------------------------------------------
 
@@ -331,7 +331,7 @@ void Editor_ChangeMode(char mode_char)
 		case 'v': Editor_ChangeMode_Raw(OBJ_VERTICES); break;
 
 		default:
-			Beep("Unknown mode: %c\n", mode_char);
+			Beep("Неизвестный режим: %c\n", mode_char);
 			return;
 	}
 
@@ -967,7 +967,7 @@ void Selection_Validate()
 	{
 		edit.Selected->frob_range(num_obj, edit.Selected->max_obj(), BOP_REMOVE);
 
-		Beep("BUG: invalid selection");
+		Beep("BUG: неверный выбор");
 	}
 }
 
@@ -976,7 +976,7 @@ void CMD_LastSelection()
 {
 	if (! last_Sel)
 	{
-		Beep("No last selection (or was invalidated)");
+		Beep("Нет последнего выбора (или был неверным)");
 		return;
 	}
 

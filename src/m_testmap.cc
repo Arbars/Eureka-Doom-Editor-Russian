@@ -438,7 +438,7 @@ void CMD_TestMap()
 	if (! FileChangeDir(folder))
 	{
 		// FIXME : a notify dialog
-		Beep("chdir failed!");
+		Beep("chdir не удалось!");
 		return;
 	}
 

@@ -77,7 +77,7 @@ void CMD_EditMode()
 
 	if (! mode || ! strchr("lstvr", mode))
 	{
-		Beep("Bad parameter for EditMode: '%s'", EXEC_Param[0]);
+		Beep("Неверный параметр в Режиме Редактирования: '%s'", EXEC_Param[0]);
 		return;
 	}
 
@@ -96,7 +96,7 @@ void CMD_Select()
 
 	if (edit.highlight.is_nil())
 	{
-		Beep("Nothing under cursor");
+		Beep("Под курсором ничего нет");
 		return;
 	}
 
@@ -172,7 +172,7 @@ void CMD_Undo()
 {
 	if (! BA_Undo())
 	{
-		Beep("No operation to undo");
+		Beep("Нечего откатывать");
 		return;
 	}
 
@@ -185,7 +185,7 @@ void CMD_Redo()
 {
 	if (! BA_Redo())
 	{
-		Beep("No operation to redo");
+		Beep("Нечего возвращать");
 		return;
 	}
 
@@ -213,13 +213,13 @@ void CMD_SetVar()
 
 	if (! var_name[0])
 	{
-		Beep("Set: missing var name");
+		Beep("Set: пропущено имя переменной");
 		return;
 	}
 
 	if (! value[0])
 	{
-		Beep("Set: missing value");
+		Beep("Set: пропущена значение");
 		return;
 	}
 
@@ -271,7 +271,7 @@ void CMD_SetVar()
 	}
 	else
 	{
-		Beep("Set: unknown var: %s", var_name);
+		Beep("Set: неизвестная переменная: %s", var_name);
 	}
 }
 
@@ -282,7 +282,7 @@ void CMD_ToggleVar()
 
 	if (! var_name[0])
 	{
-		Beep("Toggle: missing var name");
+		Beep("Toggle: пропущено имя переменной");
 		return;
 	}
 
@@ -332,7 +332,7 @@ void CMD_ToggleVar()
 	}
 	else
 	{
-		Beep("Toggle: unknown var: %s", var_name);
+		Beep("Toggle: неизвестная переменная: %s", var_name);
 	}
 }
 
@@ -341,7 +341,7 @@ void CMD_BrowserMode()
 {
 	if (! EXEC_Param[0][0])
 	{
-		Beep("BrowserMode: missing mode");
+		Beep("РежимКаталога: пропущенный режим");
 		return;
 	}
 
@@ -350,7 +350,7 @@ void CMD_BrowserMode()
 	if (! (mode == 'L' || mode == 'S' || mode == 'O' ||
 	       mode == 'T' || mode == 'F' || mode == 'G'))
 	{
-		Beep("Unknown browser mode: %s", EXEC_Param[0]);
+		Beep("Неизвестный режим браузера: %s", EXEC_Param[0]);
 		return;
 	}
 
@@ -749,7 +749,7 @@ void CMD_ACT_Drag()
 
 	if (edit.Selected->empty())
 	{
-		Beep("Nothing to drag");
+		Beep("Нечего перетаскивать");
 		return;
 	}
 
@@ -796,7 +796,7 @@ void CMD_ACT_Transform()
 
 	if (edit.Selected->empty())
 	{
-		Beep("Nothing to scale");
+		Beep("Нечего масштабировать");
 		return;
 	}
 
@@ -805,7 +805,7 @@ void CMD_ACT_Transform()
 
 	if (! keyword[0])
 	{
-		Beep("ACT_Transform: missing keyword");
+		Beep("ACT_Transform: пропущено ключ-слово");
 		return;
 	}
 	else if (y_stricmp(keyword, "scale") == 0)
@@ -830,7 +830,7 @@ void CMD_ACT_Transform()
 	}
 	else
 	{
-		Beep("ACT_Transform: unknown keyword: %s", keyword);
+		Beep("ACT_Transform: неизвестное ключ-слово: %s", keyword);
 		return;
 	}
 
@@ -895,7 +895,7 @@ void CMD_Merge()
 			break;
 
 		default:
-			Beep("Cannot merge that");
+			Beep("Это сжать невозможно");
 			break;
 	}
 }
@@ -922,7 +922,7 @@ void CMD_Disconnect()
 			break;
 
 		default:
-			Beep("Cannot disconnect that");
+			Beep("Не удаётся это отключить");
 			break;
 	}
 }
@@ -934,7 +934,7 @@ void CMD_Zoom()
 
 	if (delta == 0)
 	{
-		Beep("Zoom: bad or missing value");
+		Beep("Zoom: неверное или пропущенное значение");
 		return;
 	}
 
@@ -961,7 +961,7 @@ void CMD_ZoomSelection()
 {
 	if (edit.Selected->empty())
 	{
-		Beep("No selection to zoom");
+		Beep("Ничего не выбрано для зуминга");
 		return;
 	}
 
@@ -986,7 +986,7 @@ void CMD_PlaceCamera()
 {
 	if (edit.render3d)
 	{
-		Beep("Not supported in 3D view");
+		Beep("Не поддерживается в 3D режиме");
 		return;
 	}
 
@@ -994,7 +994,7 @@ void CMD_PlaceCamera()
 	{
 		// IDEA: turn cursor into cross, wait for click in map window
 
-		Beep("Mouse is not over map");
+		Beep("Мышь вне карты");
 		return;
 	}
 
@@ -1016,7 +1016,7 @@ void CMD_MoveObjects_Dialog()
 {
 	if (edit.Selected->empty())
 	{
-		Beep("Nothing to move");
+		Beep("Нечего зумить");
 		return;
 	}
 
@@ -1032,7 +1032,7 @@ void CMD_ScaleObjects_Dialog()
 {
 	if (edit.Selected->empty())
 	{
-		Beep("Nothing to scale");
+		Beep("Нечего масштабировать");
 		return;
 	}
 
@@ -1048,7 +1048,7 @@ void CMD_RotateObjects_Dialog()
 {
 	if (edit.Selected->empty())
 	{
-		Beep("Nothing to rotate");
+		Beep("Нечего вращать");
 		return;
 	}
 
@@ -1076,7 +1076,7 @@ void CMD_GRID_Set()
 
 	if (step < 2 || step > 4096)
 	{
-		Beep("Bad grid step");
+		Beep("Неверная степень ячейки сетки");
 		return;
 	}
 
@@ -1092,7 +1092,7 @@ void CMD_GRID_Zoom()
 
 	if (scale == 0)
 	{
-		Beep("Bad scale");
+		Beep("Неверная степень масштабирования");
 		return;
 	}
 
@@ -1111,7 +1111,7 @@ void CMD_BR_CycleCategory()
 {
 	if (! main_win->browser->visible())
 	{
-		Beep("Browser not open");
+		Beep("Не открыт каталог");
 		return;
 	}
 
@@ -1125,7 +1125,7 @@ void CMD_BR_ClearSearch()
 {
 	if (! main_win->browser->visible())
 	{
-		Beep("Browser not open");
+		Beep("Не открыт каталог");
 		return;
 	}
 
@@ -1137,13 +1137,13 @@ void CMD_BR_Scroll()
 {
 	if (! main_win->browser->visible())
 	{
-		Beep("Browser not open");
+		Beep("Не открыт каталог");
 		return;
 	}
 
 	if (! EXEC_Param[0][0])
 	{
-		Beep("Missing parameter to BR_Scroll");
+		Beep("Пропущен параметр в BR_Scroll");
 		return;
 	}
 

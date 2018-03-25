@@ -2140,15 +2140,15 @@ void UI_Render3D::DrawInfoBar()
 	int ang = I_ROUND(view.angle * 180 / M_PI);
 	if (ang < 0) ang += 360;
 
-	IB_Number(cx, cy, "angle", ang, 3);
+	IB_Number(cx, cy, "угол", ang, 3);
 	cx += 8;
 
 	IB_Number(cx, cy, "z", I_ROUND(view.z) - game_info.view_height, 4);
 
-	IB_Number(cx, cy, "gamma", usegamma, 1);
+	IB_Number(cx, cy, "гамма", usegamma, 1);
 	cx += 10;
 
-	IB_Flag(cx, cy, view.gravity, "GRAVITY", "gravity");
+	IB_Flag(cx, cy, view.gravity, "ГРАВИТАЦИЯ", "гравитация");
 
 	IB_Flag(cx, cy, true, "|", "|");
 
@@ -2197,7 +2197,7 @@ void UI_Render3D::IB_Highlight(int& cx, int& cy)
 	{
 		fl_color(INFO_DIM_COL);
 
-		strcpy(buffer, "no highlight");
+		strcpy(buffer, "нет всетового пятна");
 	}
 	else
 	{
@@ -2208,7 +2208,7 @@ void UI_Render3D::IB_Highlight(int& cx, int& cy)
 			const Thing *th = Things[r_edit.hl.num];
 			const thingtype_t *info = M_GetThingType(th->type);
 
-			snprintf(buffer, sizeof(buffer), "thing #%d  %s",
+			snprintf(buffer, sizeof(buffer), "объект #%d  %s",
 					 r_edit.hl.num, info->desc);
 
 		}
@@ -2216,7 +2216,7 @@ void UI_Render3D::IB_Highlight(int& cx, int& cy)
 		{
 			int tex = GrabTextureFromObject(r_edit.hl);
 
-			snprintf(buffer, sizeof(buffer), " sect #%d  %-8s",
+			snprintf(buffer, sizeof(buffer), " сектор #%d  %-8s",
 					 r_edit.hl.num,
 					 (tex < 0) ? "??????" : BA_GetString(tex));
 		}
@@ -2224,7 +2224,7 @@ void UI_Render3D::IB_Highlight(int& cx, int& cy)
 		{
 			int tex = GrabTextureFromObject(r_edit.hl);
 
-			snprintf(buffer, sizeof(buffer), " line #%d  %-8s",
+			snprintf(buffer, sizeof(buffer), " линия #%d  %-8s",
 					 r_edit.hl.num,
 					 (tex < 0) ? "??????" : BA_GetString(tex));
 		}
@@ -2409,7 +2409,7 @@ void Render3D_AdjustOffsets(int mode, int dx, int dy)
 		{
 			if (r_edit.sel_type < OB3D_Lower)
 			{
-				Beep("cannot adjust that");
+				Beep("это невозможно приспособить");
 				return;
 			}
 
@@ -2425,12 +2425,12 @@ void Render3D_AdjustOffsets(int mode, int dx, int dy)
 		{
 			if (! r_edit.hl.valid())
 			{
-				Beep("nothing to adjust");
+				Beep("Нечего приспосабливать");
 				return;
 			}
 			else if (! r_edit.hl.isLine())
 			{
-				Beep("cannot adjust that");
+				Beep("это невозможно приспособить");
 				return;
 			}
 
@@ -2791,7 +2791,7 @@ static void Render3D_Copy()
 	int new_tex = GrabTextureFrom3DSel();
 	if (new_tex < 0)
 	{
-		Beep("multiple textures present");
+		Beep("имеется несколько текстур");
 		return;
 	}
 
@@ -3007,7 +3007,7 @@ void R3D_Click()
 {
 	if (! r_edit.hl.valid())
 	{
-		Beep("nothing there");
+		Beep("здесь пусто");
 		return;
 	}
 
@@ -3071,7 +3071,7 @@ void R3D_Up()
 {
 	if (view.gravity && render_lock_gravity)
 	{
-		Beep("Gravity is on");
+		Beep("Гравитация включена");
 		return;
 	}
 
@@ -3088,7 +3088,7 @@ void R3D_Down()
 {
 	if (view.gravity && render_lock_gravity)
 	{
-		Beep("Gravity is on");
+		Beep("Гравитация включена");
 		return;
 	}
 
@@ -3211,7 +3211,7 @@ void R3D_NAV_Up()
 
 	if (view.gravity && render_lock_gravity)
 	{
-		Beep("Gravity is on");
+		Beep("Гравитация включена");
 		return;
 	}
 
@@ -3238,7 +3238,7 @@ void R3D_NAV_Down()
 
 	if (view.gravity && render_lock_gravity)
 	{
-		Beep("Gravity is on");
+		Beep("Гравитация включена");
 		return;
 	}
 
@@ -3348,13 +3348,13 @@ void R3D_Set()
 
 	if (! var_name[0])
 	{
-		Beep("3D_Set: missing var name");
+		Beep("3D_Set: утеряно имя переменной");
 		return;
 	}
 
 	if (! value[0])
 	{
-		Beep("3D_Set: missing value");
+		Beep("3D_Set: утерянно значение");
 		return;
 	}
 
@@ -3381,7 +3381,7 @@ void R3D_Set()
 	}
 	else
 	{
-		Beep("3D_Set: unknown var: %s", var_name);
+		Beep("3D_Set: неизвестная переменная: %s", var_name);
 		return;
 	}
 
@@ -3395,7 +3395,7 @@ void R3D_Toggle()
 
 	if (! var_name[0])
 	{
-		Beep("3D_Toggle: missing var name");
+		Beep("3D_Toggle: утеряно имя переменной");
 		return;
 	}
 
@@ -3418,7 +3418,7 @@ void R3D_Toggle()
 	}
 	else
 	{
-		Beep("3D_Toggle: unknown var: %s", var_name);
+		Beep("3D_Toggle: неизвестная переменная: %s", var_name);
 		return;
 	}
 
@@ -3442,7 +3442,7 @@ void R3D_Align()
 {
 	if (! edit.render3d)
 	{
-		Beep("3D mode required");
+		Beep("Требуется 3D режим");
 		return;
 	}
 
@@ -3460,7 +3460,7 @@ void R3D_Align()
 
 	if (! (do_X || do_Y))
 	{
-		Beep("3D_Align: need x or y flag");
+		Beep("3D_Align: нужен флаг x или y");
 		return;
 	}
 
@@ -3486,12 +3486,12 @@ void R3D_Align()
 	{
 		if (! r_edit.hl.valid())
 		{
-			Beep("nothing to align");
+			Beep("нечего выравнивать");
 			return;
 		}
 		else if (! r_edit.hl.isLine())
 		{
-			Beep("cannot align that");
+			Beep("не получилось выровнить");
 			return;
 		}
 
@@ -3502,7 +3502,7 @@ void R3D_Align()
 	{
 		if (r_edit.sel_type < OB3D_Lower)
 		{
-			Beep("cannot align that");
+			Beep("не получилось выровнить");
 			return;
 		}
 	}

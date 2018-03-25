@@ -5,7 +5,7 @@
 //  Eureka DOOM Editor
 //
 //  Copyright (C) 2001-2016 Andrew Apted
-//  Copyright (C) 1997-2003 Andr� Majorel et al
+//  Copyright (C) 1997-2003 André Majorel et al
 //
 //  This program is free software; you can redistribute it and/or
 //  modify it under the terms of the GNU General Public License
@@ -20,7 +20,7 @@
 //------------------------------------------------------------------------
 //
 //  Based on Yadex which incorporated code from DEU 5.21 that was put
-//  in the public domain in 1994 by Rapha�l Quinet and Brendon Wyber.
+//  in the public domain in 1994 by Raphaël Quinet and Brendon Wyber.
 //
 //------------------------------------------------------------------------
 
@@ -276,7 +276,7 @@ void CMD_VT_Merge()
 
 	if (edit.Selected->count_obj() < 2)
 	{
-		Beep("Need 2 or more vertices to merge");
+		Beep("Нужно 2 или более вершин для объединения");
 		return;
 	}
 
@@ -348,7 +348,7 @@ fprintf(stderr, "Vertex_TryFixDangler : merge vert %d onto %d\n", v_num, v_other
 
 		edit.Selected->set(v_other);
 
-		Beep("Merged a dangling vertex");
+		Beep("Объединение обвисающих вершин");
 		return true;
 	}
 
@@ -478,7 +478,7 @@ void CMD_VT_Disconnect(void)
 	{
 		if (edit.highlight.is_nil())
 		{
-			Beep("Nothing to disconnect");
+			Beep("Нечего разъединять");
 			return;
 		}
 
@@ -509,7 +509,7 @@ void CMD_VT_Disconnect(void)
 	}
 
 	if (! seen_one)
-		Beep("Nothing was disconnected");
+		Beep("Ничего не было разъединено");
 
 	BA_End();
 
@@ -588,7 +588,7 @@ void CMD_LIN_Disconnect(void)
 	{
 		if (edit.highlight.is_nil())
 		{
-			Beep("Nothing to disconnect");
+			Beep("Нечего разъединять");
 			return;
 		}
 
@@ -613,7 +613,7 @@ void CMD_LIN_Disconnect(void)
 	BA_End();
 
 	if (! seen_one)
-		Beep("Nothing was disconnected");
+		Beep("Ничего не было разъединено");
 
 	if (unselect)
 		Selection_Clear(true /* no save */);
@@ -787,7 +787,7 @@ void CMD_SEC_Disconnect(void)
 {
 	if (NumVertices == 0)
 	{
-		Beep("No sectors to disconnect");
+		Beep("Нет секторов для разъединения");
 		return;
 	}
 
@@ -798,7 +798,7 @@ void CMD_SEC_Disconnect(void)
 	{
 		if (edit.highlight.is_nil())
 		{
-			Beep("No sectors to disconnect");
+			Beep("Нет секторов для разъединения");
 			return;
 		}
 
@@ -815,7 +815,7 @@ void CMD_SEC_Disconnect(void)
 
 	if (detach_verts.empty())
 	{
-		Beep("Already disconnected");
+		Beep("Уже разъединено");
 		return;
 	}
 
@@ -960,7 +960,7 @@ void CMD_VT_ShapeLine(void)
 {
 	if (edit.Selected->count_obj() < 3)
 	{
-		Beep("Need 3 or more vertices to shape");
+		Beep("Нужно 3 или больше вершин для формирования");
 		return;
 	}
 
@@ -975,7 +975,7 @@ void CMD_VT_ShapeLine(void)
 
 	if (width < 4 && height < 4)
 	{
-		Beep("Too small");
+		Beep("Слишком маленький");
 		return;
 	}
 
@@ -1037,7 +1037,7 @@ void CMD_VT_ShapeLine(void)
 
 	if (unit_len < 2)
 	{
-		Beep("Cannot determine line");
+		Beep("Не удалось поределить линию");
 		return;
 	}
 
@@ -1195,7 +1195,7 @@ void CMD_VT_ShapeArc(void)
 {
 	if (! EXEC_Param[0][0])
 	{
-		Beep("VT_ShapeArc: missing angle parameter");
+		Beep("VT_ShapeArc: утерян параметр угла");
 		return;
 	}
 
@@ -1203,7 +1203,7 @@ void CMD_VT_ShapeArc(void)
 
 	if (arc_deg < 30 || arc_deg > 360)
 	{
-		Beep("VT_ShapeArc: bad angle: %s", EXEC_Param[0]);
+		Beep("VT_ShapeArc: неверный угол: %s", EXEC_Param[0]);
 		return;
 	}
 
@@ -1212,7 +1212,7 @@ void CMD_VT_ShapeArc(void)
 
 	if (edit.Selected->count_obj() < 3)
 	{
-		Beep("Need 3 or more vertices to shape");
+		Beep("Нужно 3 или больше вершин для формирования");
 		return;
 	}
 
@@ -1227,7 +1227,7 @@ void CMD_VT_ShapeArc(void)
 
 	if (width < 4 && height < 4)
 	{
-		Beep("Too small");
+		Beep("Слишком маленький");
 		return;
 	}
 
@@ -1258,7 +1258,7 @@ void CMD_VT_ShapeArc(void)
 
 		if (dist < 4)
 		{
-			Beep("Strange shape");
+			Beep("Странная форма");
 			return;
 		}
 

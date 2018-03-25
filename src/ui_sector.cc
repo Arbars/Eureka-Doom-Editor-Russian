@@ -768,7 +768,7 @@ void UI_SectorBox::CB_Copy()
 {
 	if (GetSelectedPics() == 3)
 	{
-		Beep("multiple textures");
+		Beep("несколько текстур");
 		return;
 	}
 

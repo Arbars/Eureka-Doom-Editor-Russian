@@ -348,7 +348,7 @@ void Grid_State_c::AdjustStep(int delta)
 {
 	if (! shown)
 	{
-		Beep("Grid is off (cannot change step)");
+		Beep("Сетка отключена (невозможно поменять размер ячейки)");
 		return;
 	}
 
