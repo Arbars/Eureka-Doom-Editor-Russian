@@ -1,42 +1,44 @@
 
-EUREKA AUTHORS
+АВТОРЫ EUREKA
 ==============
 
-DEVELOPER:
+РАЗРАБОТЧИК:
 
 Andrew Apted  <ajapted@users.sf.net>
 
-I created Eureka (based on an existing program) and continue to develop it.
+Я создал Eureka (на основе других програм) и продолжаю её разрабатывать.
 
 
-CONTRIBUTORS:
+СО-АВТОРЫ:
 
 Ioan Chera
-  * MacOS X port
+  * Порт на MacOS X
 
 Fabian Greffrath
-  * Debian packager
+  * Сборщик пакетов для Debian
 
 Jason R. Johnston (fiftyoars.com)
-  * Eureka Logo
+  * Логотип Eureka
 
 Wesley Johnson
-  * Doom Legacy definition file
+  * Файл параметров Doom Legacy
+
+Arbars Zagadkin
+  * Перевод на русский язык, поддержка Chex Quest
+
+РАННИЕ РАБОТЫ:
+
+André Majorel создал редактор Yadex.  Eureka начинался как ответвление
+этого редактора, с версии 1.7.0, если быть точным.
+
+Raphael Quinet и Brendon Wyber создали DEU 5.21, из которого Yadex
+и получился.
+
+И у Yadex, и у DEU было множество соавторов, полный их список Вы
+сможете найти в документации к Yadex.
 
 
-EARLIER WORK:
+К ОЗНАКОМЛЕНИЮ:
 
-André Majorel created the Yadex editor.  Eureka began as a fork of
-this editor, version 1.7.0 to be precise.
-
-Raphael Quinet and Brendon Wyber created DEU 5.21, which Yadex was
-derived from.
-
-Both Yadex and DEU had many contributors, a comprehensive list of them
-can be found in the Yadex documentation.
-
-
-ACKNOWLEDGEMENTS:
-
-Eureka uses the FLTK widget library (http://www.fltk.org)
+Eureka использует библиотеку виджетов FLTK (http://www.fltk.org)
 
