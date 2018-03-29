@@ -25,28 +25,28 @@ endif
 
 #---- ODAMEX THINGS ----------
 
-thing 4001 p -  16 PLAYA1 "Player 5 start"
-thing 4002 p -  16 PLAYA1 "Player 6 start"
-thing 4003 p -  16 PLAYA1 "Player 7 start"
-thing 4004 p -  16 PLAYA1 "Player 8 start"
+thing 4001 p -  16 PLAYA1 "Игрок 5"
+thing 4002 p -  16 PLAYA1 "Игрок 6"
+thing 4003 p -  16 PLAYA1 "Игрок 7"
+thing 4004 p -  16 PLAYA1 "Игрок 8"
 
-thing 5080 p -  16 PLAYF1  "ODAMEX: Blue start"
-thing 5081 p -  16 PLAYF1  "ODAMEX: Red start"
+thing 5080 p -  16 PLAYF1  "ODAMEX: Старт Синих"
+thing 5081 p -  16 PLAYF1  "ODAMEX: Старт Красных"
 
-thing 5130 k n  16 BFLG   "ODAMEX: Blue flag"
-thing 5131 k n  16 RFLG   "ODAMEX: Red flag"
+thing 5130 k n  16 BFLG   "ODAMEX: Синий флаг"
+thing 5131 k n  16 RFLG   "ODAMEX: Красный флаг"
 
-thing 9046 - n  16 NULL   "ODAMEX: Secret"
-thing 9045 - n  16 NULL   "ODAMEX: Water zone"
+thing 9046 - n  16 NULL   "ODAMEX: Секрет"
+thing 9045 - n  16 NULL   "ODAMEX: Водная зона"
 
-thing 9026 d n  16 NULL   "ODAMEX: Sparks"
-thing 9027 d n  16 NULL   "ODAMEX: Fountain 1"
-thing 9028 d n  16 NULL   "ODAMEX: Fountain 2"
-thing 9029 d n  16 NULL   "ODAMEX: Fountain 3"
-thing 9030 d n  16 NULL   "ODAMEX: Fountain 4"
-thing 9031 d n  16 NULL   "ODAMEX: Fountain 5"
-thing 9032 d n  16 NULL   "ODAMEX: Fountain 6"
-thing 9033 d n  16 NULL   "ODAMEX: Fountain 7"
+thing 9026 d n  16 NULL   "ODAMEX: Искры"
+thing 9027 d n  16 NULL   "ODAMEX: Фонтан 1"
+thing 9028 d n  16 NULL   "ODAMEX: Фонтан 2"
+thing 9029 d n  16 NULL   "ODAMEX: Фонтан 3"
+thing 9030 d n  16 NULL   "ODAMEX: Фонтан 4"
+thing 9031 d n  16 NULL   "ODAMEX: Фонтан 5"
+thing 9032 d n  16 NULL   "ODAMEX: Фонтан 6"
+thing 9033 d n  16 NULL   "ODAMEX: Фонтан 7"
 
 # not here (require Hexen format) :
 #   MT_CAMERA
@@ -58,27 +58,27 @@ thing 9033 d n  16 NULL   "ODAMEX: Fountain 7"
 
 #---- ODAMEX LINE TYPES ----------
 
-line 333 - "-- ODAMEX: Init Gravity"
-line 334 - "-- ODAMEX: Init Color"
-line 335 - "-- ODAMEX: Init Damage"
+line 333 - "-- ODAMEX: Проверить Гравитацию"
+line 334 - "-- ODAMEX: Проверить Цвет"
+line 335 - "-- ODAMEX: Проверить Урон"
 
-line 340 s "-- ODAMEX: Slope F1"
-line 341 s "-- ODAMEX: Slope C1"
-line 342 s "-- ODAMEX: Slope F1 + C1"
-line 343 s "-- ODAMEX: Slope F2"
-line 344 s "-- ODAMEX: Slope C2"
-line 345 s "-- ODAMEX: Slope C2 + F2"
-line 346 s "-- ODAMEX: Slope C1 + F2"
-line 347 s "-- ODAMEX: Slope C2 + F1"
+line 340 s "-- ODAMEX: Слоп F1"
+line 341 s "-- ODAMEX: Слоп C1"
+line 342 s "-- ODAMEX: Слоп F1 + C1"
+line 343 s "-- ODAMEX: Слоп F2"
+line 344 s "-- ODAMEX: Слоп C2"
+line 345 s "-- ODAMEX: Слоп C2 + F2"
+line 346 s "-- ODAMEX: Слоп C1 + F2"
+line 347 s "-- ODAMEX: Слоп C2 + F1"
 
 
 #---- ODAMEX SECTOR TYPES ----------
 
-sector 21 "ODAMEX: Light Phased"
+sector 21 "ODAMEX: Переменный свет"
 
-sector 22 "ODAMEX: LightSeq Start"
-sector 23 "ODAMEX: LightSeq Spec 1"
-sector 24 "ODAMEX: LightSeq Spec 2"
+sector 22 "ODAMEX: Старт перехода света"
+sector 23 "ODAMEX: Особый переход света 1"
+sector 24 "ODAMEX: Особый переход света 2"
 
 # hmmm, can Sky2 and Scroll types be used too ???
 

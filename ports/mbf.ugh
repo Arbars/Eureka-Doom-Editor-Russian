@@ -30,11 +30,11 @@ feature friend_flag 1
 
 #---- THINGS -------------
 
-thing  888 - -  12 DOGS   "Dog (MBF)"
+thing  888 - -  12 DOGS   "Собака (MBF)"
 
 
 #---- LINETYPES ----------
 
-line 271 - "-- MBF: Transfer sky"
-line 272 - "-- MBF: Mirror sky"
+line 271 - "-- MBF: Перенос неба"
+line 272 - "-- MBF: Зеркальное небо"
 

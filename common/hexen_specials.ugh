@@ -26,119 +26,119 @@
 
 # Floors and lifts
 
-special 20 f "Пол вниз"          тег  скорость  расстояние
-special 21 f "Floor_Lower /lowest"  тег  скорость
-special 22 f "Floor_Lower /nearest" тег  скорость
-special 23 f "Floor_Raise"          тег  скорость  расстояние
-special 24 f "Floor_Raise /highest" тег  скорость
-special 25 f "Floor_Raise /nearest" тег  скорость
-special 28 f "Floor_Raise /crush"   тег  скорость  урон
-special 35 f "Floor_Raise x8"       тег  скорость  расстояние_x8
-special 36 f "Floor_Lower x8"       тег  скорость  расстояние_x8
-special 66 f "Floor_Lower /instant" тег  -  расстояние
-special 67 f "Floor_Raise /instant" тег  -  расстояние
-special 68 f "Floor_MoveTo x8"      тег  скорость  высота_x8  negate?
-special 46 f "Floor_CrushStop"      тег
+special 20 f "Пол_Вниз"          тег  скорость  расстояние
+special 21 f "Пол_Вниз /СН"  тег  скорость
+special 22 f "Пол_Вниз /ближ." тег  скорость
+special 23 f "Пол_Вверх"          тег  скорость  расстояние
+special 24 f "Пол_Вверх /СВ" тег  скорость
+special 25 f "Пол_Вверх /ближ." тег  скорость
+special 28 f "Пол_вверх /дав."   тег  скорость  урон
+special 35 f "Пол_вверх x8"       тег  скорость  расстояние_x8
+special 36 f "Пол_Вниз x8"       тег  скорость  расстояние_x8
+special 66 f "Пол_Вниз /мнгнов." тег  -  расстояние
+special 67 f "Пол_Вверх /мнгнов." тег  -  расстояние
+special 68 f "Пол_ДвигатьДо x8"      тег  скорость  высота_x8  обратно?
+special 46 f "Пол_СтопДавилка"      тег
 
-special 138 f "Floor_Waggle"        тег  амплитуда  скорость  смещение  время
+special 138 f "Качающийся_Пол"        тег  амплитуда  скорость  смещение  время
 
-special 62 g "Plat_DownWaitUp"  тег  скорость  задержка
-special 63 g "Plat_Down"        тег  скорость  задержка  расстояние
-special 64 g "Plat_UpWaitDown"  тег  скорость  задержка
-special 65 g "Plat_Up"          тег  скорость  задержка  расстояние
-special 60 g "Plat_Perpetual"   тег  скорость  задержка
-special 61 g "Plat_Stop"        тег
+special 62 g "Лифт_ВнизСтопВверх"  тег  скорость  задержка
+special 63 g "Лифт_Вниз"        тег  скорость  задержка  расстояние
+special 64 g "Лифт_ВверхСтопВниз"  тег  скорость  задержка
+special 65 g "Лифт_Вверх"          тег  скорость  задержка  расстояние
+special 60 g "Лифт_Постоян."   тег  скорость  задержка
+special 61 g "Лифт_Стоп"        тег
 
-special 26 q "Stairs_Down"        тег  скорость  расстояние  задержка  сброс
-special 27 q "Stairs_Up"          тег  скорость  расстояние  задержка  сброс
-special 31 q "Stairs_Down /sync"  тег  скорость  расстояние  сброс
-special 32 q "Stairs_Up   /sync"  тег  скорость  расстояние  сброс
+special 26 q "Ступени_Вниз"        тег  скорость  расстояние  задержка  сброс
+special 27 q "Ступени_Вверх"          тег  скорость  расстояние  задержка  сброс
+special 31 q "Ступени_Вниз /синх."  тег  скорость  расстояние  сброс
+special 32 q "Ступени_Вверх /синх."  тег  скорость  расстояние  сброс
 
 # Ceiling and doors
 
-special 40 c "Ceiling_Lower"      тег  скорость  расстояние
-special 41 c "Ceiling_Raise"      тег  скорость  расстояние
-special 69 c "Ceiling_MoveTo x8"  тег  скорость  высота_x8  negate?
+special 40 c "Потолок_Вниз"      тег  скорость  расстояние
+special 41 c "Потолок_Вверх"      тег  скорость  расстояние
+special 69 c "Потолок_Двигать x8"  тег  скорость  высота_x8  до конца?
 
-special 42 c "Ceiling_Crush /perpet"  тег  скорость  урон
-special 43 c "Ceiling_Crush "         тег  скорость  урон
-special 45 c "Ceiling_CrushAndUp"     тег  скорость  урон
-special 44 c "Ceiling_CrushStop"      тег
+special 42 c "Потолок_Давит /мнгнов."  тег  скорость  урон
+special 43 c "Потолок_Давит"         тег  скорость  урон
+special 45 c "Потолок_Давит_И_Поднять"     тег  скорость  урон
+special 44 c "Потолок_Давит_И_Оставить"      тег
 
-special 10 d "Door_Close"   тег  скорость
-special 11 d "Door_Open"    тег  скорость
-special 12 d "Door_Raise"   тег  скорость  задержка
-special 13 d "Door_Locked"  тег  скорость  задержка  lock
+special 10 d "Закрыть_Дверь"   тег  скорость
+special 11 d "Открыть_Дверь"    тег  скорость
+special 12 d "Поднять_Дверь"   тег  скорость  задержка
+special 13 d "Заблокировать_Дверь"  тег  скорость  задержка  тип_ключа
 
 # Lighting
 
-special 110 l "Light_Raise"   тег  light
-special 111 l "Light_Lower"   тег  light
-special 112 l "Light_Set"     тег  light
-special 113 l "Light_Fade"    тег  light  время
-special 114 l "Light_Glow"    тег  high  low  время
-special 115 l "Light_Flicker" тег  high  low
-special 116 l "Light_Strobe"  тег  high  low  макс.время  мин.время
+special 110 l "Свет_Ярче"   тег  свет
+special 111 l "Свет_Темнее"   тег  свет
+special 112 l "Задать_Свет"     тег  свет
+special 113 l "Свет_Тухнет"    тег  свет  время
+special 114 l "Свет_Перелив"    тег  макс.  мин.  время
+special 115 l "Свет_Мигает" тег  макс.  мин.
+special 116 l "Свет_Мерцает"  тег  макс.  мин.  макс.время  мин.время
 
-special 109 l "Force Lightning"  mode
+special 109 l "Быстрый свет"  режим
 
 # Thing specials
 
-special 72 t "Push Thing"    угол  расстояние
-special 73 t "Damage Thing"  урон
+special 72 t "Нажать на объект"    угол  расстояние
+special 73 t "Урон от объекта"  урон
 
-special 130 t "Thing_Activate"      tid
-special 131 t "Thing_Deactivate"    tid
-special 132 t "Thing_Remove"        tid
-special 133 t "Thing_Destroy"       tid
-special 134 t "Thing_Launch"        tid  тип  угол  скорость  vскорость
-special 136 t "Thing_Launch /grav"  tid  тип  угол  скорость  vскорость
-special 135 t "Thing_Spawn"         tid  тип  угол
-special 137 t "Thing_Spawn /silent" tid  тип  угол
+special 130 t "Активировать_Объект"      tid
+special 131 t "Деактивировать_Объект"    tid
+special 132 t "Удалить_Объект"        tid
+special 133 t "Уничтожить_Объект"       tid
+special 134 t "Запустить_Объект"        tid  тип  угол  скорость  верт_скорость
+special 136 t "Запустить_Объект /грав"  tid  тип  угол  скорость  верт_скорость
+special 135 t "Появление_Объекта"         tid  тип  угол
+special 137 t "Появление_Объекта /тихо" tid  тип  угол
 
 # Polyobj specials
 
-special 1 p "Polyobj_Start"       по  зеркало  sound_seq
-special 5 p "Polyobj_Explicit"    по  порядок  зеркало  sound_seq
+special 1 p "Полиобъект_Старт"       по  зеркало  звук
+special 5 p "Полиобъект_Явный"    по  порядок  зеркало  звук
 
-special 2 p "Polyobj_RotateL"     по  скорость  угол
-special 3 p "Polyobj_RotateR"     по  скорость  угол
-special 4 p "Polyobj_Move"        по  скорость  угол  расстояние
-special 6 p "Polyobj_Move x8"     по  скорость  угол  расстояние
-special 7 p "Polyobj_DoorSwing"   по  скорость  угол  задержка
-special 8 p "Polyobj_DoorSlide"   по  скорость  угол  расстояние  задержка
+special 2 p "Полиобъект_Вращ.ВЛ"     по  скорость  угол
+special 3 p "Полиобъект_Вращ.ВПР"     по  скорость  угол
+special 4 p "Полиобъект_Двигать"        по  скорость  угол  расстояние
+special 6 p "Полиобъект_Двигать x8"     по  скорость  угол  расстояние
+special 7 p "Полиобъект_Обыч.Двери"   по  скорость  угол  задержка
+special 8 p "Полиобъект_Сдвиг.Двери"   по  скорость  угол  расстояние  задержка
 
-special 90 p "Polyobj_RotateL /OR"  по  скорость  угол
-special 91 p "Polyobj_RotateR /OR"  по  скорость  угол
-special 92 p "Polyobj_Move /OR"     по  скорость  угол  расстояние
-special 93 p "Polyobj_Move x8 /OR"  по  скорость  угол  расстояние
+special 90 p "Полиобъект_Вращ.ВЛ /OR"  по  скорость  угол
+special 91 p "Полиобъект_Вращ.ВПР /OR"  по  скорость  угол
+special 92 p "Полиобъект_Двигать /OR"     по  скорость  угол  расстояние
+special 93 p "Полиобъект_Двигать x8 /OR"  по  скорость  угол  расстояние
 
 # Miscellaneous
 
 special 0  - "НИЧЕГО"
 
-special 29 e "Pillar_Build"  тег  скорость  расстояние
-special 30 e "Pillar_Open"   тег  скорость  f_расстояние  c_расстояние
-special 94 e "Pillar_Crush"  тег  скорость  расстояние  урон
+special 29 e "Построить_Столб"  тег  скорость  расстояние
+special 30 e "Открыть_Столб"   тег  скорость  расстояние_ОтПола  расстояние_ОтПотолка
+special 94 e "Столб_Давилка"  тег  скорость  расстояние  урон
 
-special 95 e "Elevator_Lower"    тег  скорость  расстояние
-special 96 e "Elevator_Raise"    тег  скорость  расстояние
+special 95 e "Опутить_Лифт"    тег  скорость  расстояние
+special 96 e "Поднять_Лифт"    тег  скорость  расстояние
 
-special 80 k "ACS_Execute"       script  map  парам1  парам2  парам3
-special 83 k "ACS_Execute /lock" script  map  парам1  парам2  lock
-special 81 k "ACS_Suspend"       script  map
-special 82 k "ACS_Terminate"     script  map
+special 80 k "ACS_Выполнить"       скрипт  map  парам1  парам2  парам3
+special 83 k "ACS_Выполнить /блок." скрипт  map  парам1  парам2  блок.
+special 81 k "ACS_Приостановить"       скрипт  map
+special 82 k "ACS_Уничтожить"     скрипт  map
 
-special 121 - "Line_SetIdent"  номер_id
+special 121 - "Назначить_ID_Линии"  номер_id
 
-special 100 a "Scroll_Left"   скорость
-special 101 a "Scroll_Right"  скорость
-special 102 a "Scroll_Up"     скорость
-special 103 a "Scroll_Down"   скорость
+special 100 a "Скролл_Влево"   скорость
+special 101 a "Скролл_Вправо"  скорость
+special 102 a "Скролл_Вверх"     скорость
+special 103 a "Скролл_Вниз"   скорость
 
-special 129 - "UsePuzzleItem"  предмет  скрипт  парам1  парам2  парам3
-special 140 - "Change Sound"  тег  sound_seq
-special 120 - "Earthquake"  интенсивность  продолжительность  радиус_урона  tremrad  tid
+special 129 - "ИспользоватьЧастьПаззла"  предмет  скрипт  парам1  парам2  парам3
+special 140 - "Смена звука"  тег  sound_seq
+special 120 - "Землетрясение"  интенсивность  продолжительность  радиус_урона  tremrad  tid
 
 special 70 u "Телепорт"          идентификатор телепорта
 special 71 u "Телепорт /тихий"  идентификатор телепорта

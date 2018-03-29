@@ -367,7 +367,7 @@ static build_result_e BuildAllNodes(nodebuildinfo_t *info)
 	{
 		GB_PrintMsg("\n");
 		GB_PrintMsg("Всего определено карт: %d\n", info->total_failed_maps);
-		GB_PrintMsg("Всего ошибок: %d serious, %d minor\n", info->total_warnings,
+		GB_PrintMsg("Всего ошибок: %d серьъёзных, %d мелких\n", info->total_warnings,
 					info->total_minor_warnings);
 	}
 	else if (ret == BUILD_Cancelled)
@@ -400,7 +400,7 @@ void BuildNodesAfterSave(short lev_idx)
 	// TODO : maybe print # of serious/minor warnings
 
 	if (ret != BUILD_OK)
-		LogPrintf("NODES FAILED TO FAILED.\n");
+		LogPrintf("НОДЫ НЕ СТРОЯТСЯ (WTF!?).\n");
 
 	delete nb_info;
 }

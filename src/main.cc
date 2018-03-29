@@ -339,7 +339,7 @@ static void Determine_InstallPath(const char *argv0)
 	if (! install_dir)
 		FatalError("Unable to find install directory!\n");
 
-	LogPrintf("папка установки: %s\n", install_dir);
+	LogPrintf("Папка установки: %s\n", install_dir);
 }
 
 
@@ -857,7 +857,7 @@ static void ShowTime()
 
 	GetSystemTime(&sys_time);
 
-	LogPrintf("Текущее время: %02d:%02d on %04d/%02d/%02d\n",
+	LogPrintf("Текущее время: %02d:%02d, дата: %04d/%02d/%02d\n",
 			  sys_time.wHour, sys_time.wMinute,
 			  sys_time.wYear, sys_time.wMonth, sys_time.wDay);
 
@@ -873,7 +873,7 @@ static void ShowTime()
 	if (! calend_time)
 		return;
 
-	LogPrintf("Текущее время: %02d:%02d on %04d/%02d/%02d\n",
+	LogPrintf("Текущее время: %02d:%02d, дата: %04d/%02d/%02d\n",
 			  calend_time->tm_hour, calend_time->tm_min,
 			  calend_time->tm_year + 1900, calend_time->tm_mon + 1,
 			  calend_time->tm_mday);

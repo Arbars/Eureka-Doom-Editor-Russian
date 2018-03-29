@@ -449,7 +449,7 @@ void CMD_TestMap()
 	snprintf(cmd_buffer, sizeof(cmd_buffer), "%s %s %s",
 			 CalcEXEName(info), GrabWadNames(info), CalcWarpString());
 
-	LogPrintf("Тестируем карту, используя следующие комманды:\n");
+	LogPrintf("Тестируем карту, используя следующую команду:\n");
 	LogPrintf("--> %s\n", cmd_buffer);
 
 	Status_Set("ТЕСТИРОВАНИЕ КАРТЫ");

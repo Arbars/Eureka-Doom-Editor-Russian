@@ -306,12 +306,12 @@ thing 91    n c   4   ICT3 "Малый ледяной сталактит"
 thing 92    n c   4   ICT4 "Маленький ледяной сталактит"
 
 thing 118   - -   32  NULL "Мост"
-thing 9001  - n   20  NULL "Map spot"
-thing 9013  - n   20  NULL "Map spot /gravity"
+thing 9001  - n   20  NULL "Пятно_карты"
+thing 9013  - n   20  NULL "Пятно_карты /гравитация"
 
-thing 3000  - nv 8 NULL "Полиобъект якорь"
-thing 3001  - nv 8 NULL "Поллиобъект-пятно"
-thing 3002  - nv 8 NULL "Полиобъект-пятно/давил"
+thing 3000  - nv 8 NULL "Полиобъект_якорь"
+thing 3001  - nv 8 NULL "Полиобъект_пятно"
+thing 3002  - nv 8 NULL "Полиобъект_пятно/давил."
 
 thing 1400  s n 8 NULL "Тип_звука Камень"
 thing 1401  s n 8 NULL "Тип_звука Тяжелый"
@@ -327,11 +327,11 @@ thing 1409  s n 8 NULL "Тип_звука Металл 2"
 thing 1410  s nv 8 NULL "Звук ветра"
 
 thing 113   - n  20 LEF1 "Листопад"
-thing 10000 - nl 20 FOGM "Источник дыма" 1  speed  spread  frequency  lifetime
-thing 10001 - n  20 FOGS "Дым /слабый"  1  speed  -  -  lifetime  moving
-thing 10002 - n  20 FOGM "Дым /средний" 1  speed  -  -  lifetime  moving
-thing 10003 - n  20 FOGL "Дым /Крупный"  1  speed  -  -  lifetime  moving
-thing 10225 - n  20 ABAT "Гнездо летучих мышей" 1  frequency  spread  duration  angles
+thing 10000 - nl 20 FOGM "Источник дыма" 1  скорость  spread  frequency  время_действия
+thing 10001 - n  20 FOGS "Дым /слабый"  1  скорость  -  -  время_действия  движение
+thing 10002 - n  20 FOGM "Дым /средний" 1  скорость  -  -  время_действия  движение
+thing 10003 - n  20 FOGL "Дым /Крупный"  1  скорость  -  -  время_действия  движение
+thing 10225 - n  20 ABAT "Гнездо летучих мышей" 1  частота  радиус  время  углы
 thing 10500 - nl 20 FFSM "Слабое пламя /тухнет"
 thing 10501 - nl 20 FFSM "Слабое пламя"
 thing 10502 - nl 20 FFLG "Сильное пламя /тухнет"

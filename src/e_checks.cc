@@ -1038,7 +1038,7 @@ class UI_Check_Sectors : public UI_Check_base
 {
 public:
 	UI_Check_Sectors(bool all_mode) :
-		UI_Check_base(530, 346, all_mode, "Проверка секторов",
+		UI_Check_base(600, 346, all_mode, "Проверка секторов",
 				      "Результаты теста секторов")
 	{ }
 
@@ -1201,11 +1201,11 @@ check_result_e CHECK_Sectors(int min_severity = 0)
 			dialog->AddLine("Нет неизвестных типов секторов");
 		else
 		{
-			sprintf(check_message, "%d неизвестных типов секторов", (int)types.size());
+			sprintf(check_message, "%d неизвест. тип(ов) секторов", (int)types.size());
 
 			dialog->AddLine(check_message, 2, 220,
 			                "Показать",   &UI_Check_Sectors::action_show_unknown,
-			                "Залоггировать",    &UI_Check_Sectors::action_log_unknown,
+			                "В Лог",    &UI_Check_Sectors::action_log_unknown,
 			                "Очистить",  &UI_Check_Sectors::action_clear_unknown);
 		}
 
@@ -1660,7 +1660,7 @@ class UI_Check_Things : public UI_Check_base
 {
 public:
 	UI_Check_Things(bool all_mode) :
-		UI_Check_base(520, 286, all_mode, "Проверка объектов",
+		UI_Check_base(600, 286, all_mode, "Проверка объектов",
 				      "Результаты проверки объектов")
 	{ }
 
@@ -1726,11 +1726,11 @@ check_result_e CHECK_Things(int min_severity = 0)
 			dialog->AddLine("Нет неизвестных объектов");
 		else
 		{
-			sprintf(check_message, "%d неизвестных объектов", (int)types.size());
+			sprintf(check_message, "%d неизвестный(х) объект(ов)", (int)types.size());
 
-			dialog->AddLine(check_message, 2, 200,
+			dialog->AddLine(check_message, 2, 260,
 			                "Показать",   &UI_Check_Things::action_show_unknown,
-			                "Залоггировать",    &UI_Check_Things::action_log_unknown,
+			                "В Лог",    &UI_Check_Things::action_log_unknown,
 			                "Удалить", &UI_Check_Things::action_remove_unknown);
 		}
 
@@ -2482,7 +2482,7 @@ class UI_Check_LineDefs : public UI_Check_base
 {
 public:
 	UI_Check_LineDefs(bool all_mode) :
-		UI_Check_base(530, 370, all_mode, "Проверка линий",
+		UI_Check_base(600, 370, all_mode, "Проверка линий",
 		              "Результат проверки линий")
 	{ }
 
@@ -2658,11 +2658,11 @@ check_result_e CHECK_LineDefs(int min_severity)
 			dialog->AddLine("Нет линий неизвестного типа");
 		else
 		{
-			sprintf(check_buffer, "%d линий неизвестного типа", (int)types.size());
+			sprintf(check_buffer, "%d линия(й) неизвестного типа", (int)types.size());
 
-			dialog->AddLine(check_buffer, 1, 210,
+			dialog->AddLine(check_buffer, 1, 260,
 			                "Показать",   &UI_Check_LineDefs::action_show_unknown,
-			                "Залоггировать",    &UI_Check_LineDefs::action_log_unknown,
+			                "В Лог",    &UI_Check_LineDefs::action_log_unknown,
 			                "Очистить",  &UI_Check_LineDefs::action_clear_unknown);
 		}
 
@@ -3058,10 +3058,10 @@ check_result_e CHECK_Tags(int min_severity)
 			dialog->AddLine("Нет линий с отсутствием нужного тега");
 		else
 		{
-			sprintf(check_buffer, "%d линий с отсутствием нужного тега", sel.count_obj());
+			sprintf(check_buffer, "%d лини(я/и/й) с отсутствием нужного тега", sel.count_obj());
 
-			dialog->AddLine(check_buffer, 2, 320,
-			                "ПОказать", &UI_Check_Tags::action_show_missing_tag);
+			dialog->AddLine(check_buffer, 2, 400,
+			                "Показать", &UI_Check_Tags::action_show_missing_tag);
 		}
 
 
@@ -3071,9 +3071,9 @@ check_result_e CHECK_Tags(int min_severity)
 			dialog->AddLine("Нет линий с тегом без подходящего сектора");
 		else
 		{
-			sprintf(check_buffer, "%d линий с тегом без подходящего сектора", sel.count_obj());
+			sprintf(check_buffer, "%d лини(я/и/й) с тегом без подходящего сектора", sel.count_obj());
 
-			dialog->AddLine(check_buffer, 2, 350,
+			dialog->AddLine(check_buffer, 2, 400,
 			                "Показать", &UI_Check_Tags::action_show_unmatch_line);
 		}
 
@@ -3084,9 +3084,9 @@ check_result_e CHECK_Tags(int min_severity)
 			dialog->AddLine("Нет секторов с тегом без подходящей линии");
 		else
 		{
-			sprintf(check_buffer, "%d секторов с тегом без подходящей линии", sel.count_obj());
+			sprintf(check_buffer, "%d сектор(ов) с тегом без подходящей линии", sel.count_obj());
 
-			dialog->AddLine(check_buffer, 1, 350,
+			dialog->AddLine(check_buffer, 1, 400,
 			                "Показать", &UI_Check_Tags::action_show_unmatch_sec);
 		}
 
@@ -3801,7 +3801,7 @@ check_result_e CHECK_Textures(int min_severity)
 
 			dialog->AddLine(check_buffer, 2, 200,
 			                "Прказать", &UI_Check_Textures::action_show_unk_tex,
-			                "Залоггировать",  &UI_Check_Textures::action_log_unk_tex,
+			                "В Лог",  &UI_Check_Textures::action_log_unk_tex,
 			                "Исправить",  &UI_Check_Textures::action_fix_unk_tex);
 		}
 
@@ -3816,7 +3816,7 @@ check_result_e CHECK_Textures(int min_severity)
 
 			dialog->AddLine(check_buffer, 2, 200,
 			                "Показать", &UI_Check_Textures::action_show_unk_flat,
-			                "Залоггировать",  &UI_Check_Textures::action_log_unk_flat,
+			                "В Лог",  &UI_Check_Textures::action_log_unk_flat,
 			                "Исправить",  &UI_Check_Textures::action_fix_unk_flat);
 		}
 
@@ -3866,7 +3866,7 @@ check_result_e CHECK_Textures(int min_severity)
 			dialog->AddLine(check_buffer, 1, 270,
 			                "Показать", &UI_Check_Textures::action_show_transparent,
 			                "Исправить",  &UI_Check_Textures::action_fix_transparent,
-			                "Залоггировать",  &UI_Check_Textures::action_log_transparent);
+			                "В Лог",  &UI_Check_Textures::action_log_transparent);
 		}
 
 
