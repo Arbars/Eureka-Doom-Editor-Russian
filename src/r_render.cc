@@ -2197,7 +2197,7 @@ void UI_Render3D::IB_Highlight(int& cx, int& cy)
 	{
 		fl_color(INFO_DIM_COL);
 
-		strcpy(buffer, "нет всетового пятна");
+		strcpy(buffer, "нет светового пятна");
 	}
 	else
 	{
