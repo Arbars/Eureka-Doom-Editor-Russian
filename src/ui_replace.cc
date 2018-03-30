@@ -1133,7 +1133,7 @@ bool UI_FindAndReplace::FindNext()
 
 			if (is_first)
 			{
-				find_but->label("Next");
+				find_but->label("След.");
 				rep_value->do_callback();
 			}
 
@@ -1148,7 +1148,7 @@ bool UI_FindAndReplace::FindNext()
 
 	cur_obj.clear();
 
-	find_but->label("Find");
+	find_but->label("Найти");
 	rep_value->do_callback();
 
 	if (is_first)
