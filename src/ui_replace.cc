@@ -306,7 +306,7 @@ UI_FindAndReplace::UI_FindAndReplace(int X, int Y, int W, int H) :
 		UpdateWhatColor();
 
 
-		find_match = new Fl_Input(X+75, Y+95, 135, 25, "Совпадение: ");
+		find_match = new Fl_Input(X+75, Y+95, 135, 25, "Совп.: ");
 		find_match->when(FL_WHEN_CHANGED);
 		find_match->callback(find_match_callback, this);
 
@@ -387,17 +387,17 @@ UI_FindAndReplace::UI_FindAndReplace(int X, int Y, int W, int H) :
 			o_dm     = new UI_TripleCheckButton(X+220, Y+504, 28, 26, "dm: ");
 
 			// sector stuff
-			o_floors   = new Fl_Check_Button(X+45, Y+448, 80, 22, " floors");
-			o_ceilings = new Fl_Check_Button(X+45, Y+470, 80, 22, " ceilings");
-			o_skies    = new Fl_Check_Button(X+45, Y+492, 80, 22, " skies");
+			o_floors   = new Fl_Check_Button(X+45, Y+448, 80, 22, " полы");
+			o_ceilings = new Fl_Check_Button(X+45, Y+470, 80, 22, " потолки");
+			o_skies    = new Fl_Check_Button(X+45, Y+492, 80, 22, " небо");
 
 			// linedef stuff
-			o_lowers  = new Fl_Check_Button(X+45, Y+448, 80, 22, " lowers");
-			o_uppers  = new Fl_Check_Button(X+45, Y+470, 80, 22, " uppers");
-			o_rails   = new Fl_Check_Button(X+45, Y+492, 80, 22, " rail");
+			o_lowers  = new Fl_Check_Button(X+45, Y+448, 80, 22, " нижние");
+			o_uppers  = new Fl_Check_Button(X+45, Y+470, 80, 22, " верхние");
+			o_rails   = new Fl_Check_Button(X+45, Y+492, 80, 22, " ровны");
 
-			o_one_sided = new Fl_Check_Button(X+155, Y+448, 80, 22, " one-sided");
-			o_two_sided = new Fl_Check_Button(X+155, Y+470, 80, 22, " two-sided");
+			o_one_sided = new Fl_Check_Button(X+155, Y+448, 80, 22, " односторонние");
+			o_two_sided = new Fl_Check_Button(X+155, Y+470, 80, 22, " двусторонние");
 		}
 		filter_group->end();
 		filter_group->hide();
@@ -579,7 +579,7 @@ void UI_FindAndReplace::Clear()
 
 	find_match->value("");
 	find_desc->value("");
-	find_but->label("Find");
+	find_but->label("Найти");
 	find_pic->Clear();
 
 	rep_value->value("");

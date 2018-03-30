@@ -33,7 +33,7 @@ feature tx_start 1
 
 #---- EDGE THINGS ----------
 
-thing 7000 b n  20 NVSC   "EDGE: Night vision"
+thing 7000 b n  20 NVSC   "EDGE: Очки ИК Зрения"
 thing 7020 b n  20 JPCK   "EDGE: Ракетный ранец"
 
 thing 7015 k nl 20 YKEY   "EDGE: Зелёная ключ-карта"
