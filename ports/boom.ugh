@@ -46,8 +46,8 @@ thing 4002 p - 16 NULL "Игрок 6"
 thing 4003 p - 16 NULL "Игрок 7"
 thing 4004 p - 16 NULL "Игрок 8"
 
-thing 5001 - nv  20 NULL  "BOOM: Point pusher"
-thing 5002 - nv  20 NULL  "BOOM: Point puller"
+thing 5001 - nv  20 NULL  "BOOM: Выталкивание"
+thing 5002 - nv  20 NULL  "BOOM: Источник силы"
 
 
 #---- BOOM LINETYPES ----------
@@ -150,9 +150,9 @@ line 213 l "-- BOOM: Перенос освещения пола"
 line 261 l "-- BOOM: Перенос освещения потолка"
 
 line 223 - "-- BOOM: Трение"
-line 224 - "-- BOOM: Сила ветра"
-line 225 - "-- BOOM: Текущая сила"
-line 226 - "-- BOOM: Точка силы"
+line 224 - "-- BOOM: Ветер"
+line 225 - "-- BOOM: Течение"
+line 226 - "-- BOOM: Источник ветра"
 line 242 - "-- BOOM: Глубокая вода"
 line 260 - "-- BOOM: Полупрозрачный"
 
