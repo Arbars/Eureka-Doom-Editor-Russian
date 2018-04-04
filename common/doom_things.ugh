@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------
-#  DOOM 1/2 common things
+# Описание объектов в DOOM 1/2
 #------------------------------------------------------------------------
 #
 #  Eureka DOOM Editor
@@ -16,6 +16,8 @@
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
+#  
+#  Перевод (С) Арбарс Загадкин, 2018
 #
 #------------------------------------------------------------------------
 #
@@ -27,8 +29,8 @@
 player_size 16 56 41
 
 #
-#	Definition of thing groups
-#	Format is : thinggroup <letter> <colour> <description>
+#	Описание групп объектов
+#	Формат : thinggroup <буква> <цвета> <описание>
 #
 
 thinggroup p 4F4 "Игрок"
@@ -44,18 +46,18 @@ thinggroup g 66C "Останки"
 thinggroup - 0BD "ПРОЧЕЕ"
 
 #
-#	Definition of things
-#	Format is : thing <number> <group> <flags> <radius> <sprite> <desc>
+#	Описание объектов
+#	Формат описания : thing <номер> <группа> <флаги> <радиус> <спрайт> <описание>
 #
-#	<sprite> should be NULL for things without any sprite
+#	Для объектов без спрайтов <sprite> должен иметь значение NULL
 #
-# <flags> can contain these letters:
-#    i  :  invisible
-#    c  :  on ceiling
-#    l  :  lit up
-#    n  :  non-blocking
-#    v  :  can exist in void-space
-#    t  :  teleport dest (can overlap certain things)
+# <flags> могут содержать следующие обозначения:
+#    i  :  невидимый
+#    c  :  на потолке
+#    l  :  может светиться
+#    n  :  не блокирует
+#    v  :  может находиться в пустоте
+#    t  :  точка телепортации (can overlap certain things)
 #
 
 thing    1 p -  16 PLAY   "Игрок 1"

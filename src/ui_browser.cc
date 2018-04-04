@@ -1355,7 +1355,7 @@ void UI_Generalized_Box::CreatePages()
 
 	category->clear();
 
-	category->add("NONE");
+	category->add("НЕТ");
 
 	int X = x();  /// + (w() - MIN_BROWSER_W);
 
@@ -1500,7 +1500,7 @@ UI_Browser::UI_Browser(int X, int Y, int W, int H, const char *label) :
 			browsers[i]->hide();
 	}
 
-	gen_box = new UI_Generalized_Box(X, Y, W, H, "Generalized");
+	gen_box = new UI_Generalized_Box(X, Y, W, H, "Общие типы");
 	gen_box->hide();
 
 

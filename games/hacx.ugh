@@ -31,7 +31,7 @@ include "doom_colors"
 include "doom_groups"
 include "doom_specials"
 
-#---- THINGS ----------------
+#---- ОБЪЕКТЫ----------------
 
 thinggroup p 4F4 "Игроки"
 thinggroup m F00 "Монстры"
@@ -166,12 +166,15 @@ thing   78 n nc 16 HDB6   "Сталактит 2"
 thing   79 n -  16 POB1   "Сталагмит 1"
 
 
-#---- TEXTURES ----------------
+#---- ТЕКСТУРЫ ----------------
 
 ## FIXME: more categories
 texturegroup n "Природа"
-texturegroup u "Город"
+texturegroup u "Здание"
 texturegroup c "Киберпространство"
+texturegroup t "Техника"
+texturegroup d "Двери"
+texturegroup g "Витражи и решётки"
 texturegroup - "ПРОЧЕЕ"
 
 ## FIXME: assign to categories
@@ -192,7 +195,7 @@ texture - BIGDOOR1
 texture - BIGDOOR2
 texture - BIGDOOR4
 texture - BLAKWAL1
-texture - BLAKWAL2
+texture t BLAKWAL2
 texture - BLODGR1
 texture - BLODGR2
 texture - BLODGR3
@@ -223,7 +226,7 @@ texture - BRNSMAL1
 texture - BRNSMAL2
 texture - BRNSMALC
 texture - BRNSMALL
-texture - BRNSMALR
+texture t BRNSMALR
 texture - BRONZE1
 texture - BRONZE2
 texture - BRONZE3
@@ -238,13 +241,13 @@ texture - BRWINDOW
 texture - BSTONE1
 texture - BSTONE2
 texture - BSTONE3
-texture - CEMENT7
+texture t CEMENT7
 texture - CEMENT8
 texture - CEMENT9
 texture - COMP2
 texture - COMPSPAN
-texture - COMPSTA1
-texture - COMPSTA2
+texture t COMPSTA1
+texture t COMPSTA2
 texture - COMPTALL
 texture - COMPTILE
 texture - COMPUTE1
@@ -285,8 +288,8 @@ texture - HD4
 texture - HD5
 texture - HD6
 texture - HD7
-texture - HD8
-texture - HD9
+texture t HD8
+texture t HD9
 texture - HW162
 texture - HW163
 texture - HW164
@@ -328,17 +331,17 @@ texture - HW199
 texture - HW200
 texture - HW201
 texture - HW202
-texture - HW203
-texture - HW204
+texture g HW203
+texture g HW204
 texture - HW205
 texture - HW206
 texture - HW207
 texture - HW208
 texture - HW209
-texture - HW210
-texture - HW211
-texture - HW212
-texture - HW213
+texture g HW210
+texture g HW211
+texture g HW212
+texture g HW213
 texture - HW214
 texture - HW215
 texture - HW216
@@ -346,25 +349,25 @@ texture - HW217
 texture - HW218
 texture - HW219
 texture - HW221
-texture - HW222
-texture - HW223
-texture - HW224
-texture - HW225
+texture g HW222
+texture g HW223
+texture g HW224
+texture g HW225
 texture - HW226
-texture - HW227
-texture - HW228
+texture g HW227
+texture g HW228
 texture - HW229
 texture - HW24
 texture - HW300
 texture - HW301
-texture - HW302
-texture - HW303
+texture g HW302
+texture g HW303
 texture - HW304
 texture - HW305
 texture - HW306
 texture - HW307
-texture - HW308
-texture - HW309
+texture g HW308
+texture g HW309
 texture - HW310
 texture - HW311
 texture - HW312
@@ -702,29 +705,33 @@ texture - ZZZFACE9
 #---- FLATS ----------------
 
 ## FIXME: assign to categories
-flat - BLOOD1
-flat - BLOOD2
-flat - BLOOD3
-flat - CEIL1_1
-flat - CEIL1_2
-flat - CEIL1_3
-flat - CEIL3_1
-flat - CEIL3_2
-flat - CEIL3_3
-flat - CEIL3_4
-flat - CEIL3_5
-flat - CEIL3_6
-flat - CEIL4_1
-flat - CEIL4_2
-flat - CEIL4_3
-flat - CEIL5_1
-flat - CEIL5_2
-flat - COMP01
+texturegroup s "Жидкости"
+texturegroup m "Металл"
+
+
+flat t BLOOD1
+flat t BLOOD2
+flat t BLOOD3
+flat u CEIL1_1
+flat c CEIL1_2
+flat u CEIL1_3
+flat u CEIL3_1
+flat u CEIL3_2
+flat u CEIL3_3
+flat u CEIL3_4
+flat u CEIL3_5
+flat c CEIL3_6
+flat u CEIL4_1
+flat u CEIL4_2
+flat u CEIL4_3
+flat u CEIL5_1
+flat u CEIL5_2
+flat c COMP01
 flat - CONS1_1
 flat - CONS1_5
 flat - CONS1_7
-flat - CRATOP1
-flat - CRATOP2
+flat c CRATOP1
+flat c CRATOP2
 flat - DEM1_1
 flat - DEM1_2
 flat - DEM1_3
@@ -792,10 +799,10 @@ flat - GRASS1
 flat - GRASS2
 flat - GRNLITE1
 flat - GRNROCK
-flat - LAVA1
-flat - LAVA2
-flat - LAVA3
-flat - LAVA4
+flat s LAVA1
+flat s LAVA2
+flat s LAVA3
+flat s LAVA4
 flat - MFLR8_1
 flat - MFLR8_2
 flat - MFLR8_3
@@ -804,44 +811,44 @@ flat - NUKAGE1
 flat - NUKAGE2
 flat - NUKAGE3
 flat - RROCK01
-flat - RROCK02
-flat - RROCK03
-flat - RROCK04
-flat - RROCK05
-flat - RROCK06
-flat - RROCK07
-flat - RROCK08
-flat - RROCK09
-flat - RROCK10
-flat - RROCK11
-flat - RROCK12
-flat - RROCK13
-flat - RROCK14
-flat - RROCK15
+flat u RROCK02
+flat u RROCK03
+flat u RROCK04
+flat u RROCK05
+flat u RROCK06
+flat u RROCK07
+flat u RROCK08
+flat u RROCK09
+flat u RROCK10
+flat u RROCK11
+flat u RROCK12
+flat u RROCK13
+flat u RROCK14
+flat u RROCK15
 flat - SFLR6_1
 flat - SFLR6_4
 flat - SFLR7_1
 flat - SFLR7_4
-flat - SLIME01
-flat - SLIME02
-flat - SLIME03
-flat - SLIME04
-flat - SLIME05
-flat - SLIME06
-flat - SLIME07
-flat - SLIME08
-flat - SLIME09
-flat - SLIME10
-flat - SLIME11
-flat - SLIME12
-flat - SLIME13
-flat - SLIME14
-flat - SLIME15
-flat - SLIME16
+flat s SLIME01
+flat s SLIME02
+flat s SLIME03
+flat s SLIME04
+flat s SLIME05
+flat s SLIME06
+flat s SLIME07
+flat s SLIME08
+flat s SLIME09
+flat s SLIME10
+flat s SLIME11
+flat s SLIME12
+flat s SLIME13
+flat s SLIME14
+flat s SLIME15
+flat s SLIME16
 flat - STEP1
 flat - STEP2
 flat - TLITE6_1
 flat - TLITE6_4
 flat - TLITE6_5
-flat - TLITE6_6
+flat t TLITE6_6
 

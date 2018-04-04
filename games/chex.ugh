@@ -38,7 +38,7 @@ include "chex_groups"
 include "chex_specials"
 include "chex_tex"
 
-#---- DOOM 1 TEXTURES ----------------
+#---- ТЕКСТУРЫ DOOM 1 ----------------
 
 texture h REDWALL1
 texture h SKINBORD

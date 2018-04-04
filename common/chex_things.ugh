@@ -31,8 +31,8 @@
 player_size 16 56 41
 
 #
-#	Definition of thing groups
-#	Format is : thinggroup <letter> <colour> <description>
+#	Описание групп объектов
+#	Формат : thinggroup <буква> <цвета> <описание>
 #
 
 thinggroup p 4F4 "Игрок"
@@ -48,25 +48,25 @@ thinggroup g 66C "Растения и проч."
 thinggroup - 0BD "ПРОЧЕЕ"
 
 #
-#	Definition of things
-#	Format is : thing <number> <group> <flags> <radius> <sprite> <desc>
+#	Описание объектов
+#	Формат описания : thing <номер> <группа> <флаги> <радиус> <спрайт> <описание>
 #
-#	<sprite> should be NULL for things without any sprite
+#	Для объектов без спрайтов <sprite> должен иметь значение NULL
 #
-# <flags> can contain these letters:
-#    i  :  invisible
-#    c  :  on ceiling
-#    l  :  lit up
-#    n  :  non-blocking
-#    v  :  can exist in void-space
-#    t  :  teleport dest (can overlap certain things)
+# <flags> могут содержать следующие обозначения:
+#    i  :  невидимый
+#    c  :  на потолке
+#    l  :  может светиться
+#    n  :  не блокирует
+#    v  :  может находиться в пустоте
+#    t  :  точка телепортации (can overlap certain things)
 #
 
-thing    1 p -  16 PLAY   "Точка старта для 1-го игрока"
-thing    2 p -  16 PLAY   "Точка старта для 2-го игрока"
-thing    3 p -  16 PLAY   "Точка старта для 3-го игрока"
-thing    4 p -  16 PLAY   "Точка старта для 4-го игрока"
-thing   11 p t  16 PLAYF1 "Точка старта для DeathMatch"
+thing    1 p -  16 PLAY   "Игрок 1"
+thing    2 p -  16 PLAY   "Игрок 2"
+thing    3 p -  16 PLAY   "Игрок 3"
+thing    4 p -  16 PLAY   "Игрок 4"
+thing   11 p t  16 PLAYF1 "Точка DeathMatch"
 thing   14 p t  16 TFOG   "Выход в телепорт"
 
 thing 2005 w n  20 CSAW   "Электровилка"

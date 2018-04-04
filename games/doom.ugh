@@ -37,7 +37,7 @@ include "doom_groups"
 include "doom_specials"
 include "doom_tex"
 
-#---- DOOM 1 TEXTURES ----------------
+#---- ТЕКСТУРЫ DOOM 1 ----------------
 
 texture h REDWALL1
 texture h SKINBORD

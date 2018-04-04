@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------
-#  DOOM 2 definitions
+#  ОПИСАНИЕ DOOM 2
 #------------------------------------------------------------------------
 #
 #  Eureka DOOM Editor
@@ -37,7 +37,7 @@ include "doom_groups"
 include "doom_specials"
 include "doom_tex"
 
-#---- DOOM 2 THINGS ----------------
+#---- ОБЪЕКТЫ DOOM 2 ----------------
 
 thing   82 w n- 20 SGN2   "Супер Дробовик"
 thing   83 h nl 20 MEGA   "Мегасфера"
@@ -70,7 +70,7 @@ thing   89 - -  16 BOSFB  "Куб с черепом"
 thing   72 - c  16 KEEN   "Коммандер Кин"
 
 
-#---- DOOM 2 TEXTURES ----------------
+#---- ТЕКСТУРЫ DOOM 2 ----------------
 
 texturegroup w "Wolfenstein"
 
@@ -262,7 +262,7 @@ texture u WOODMET4
 texture u WOODVERT
 
 
-#---- DOOM 2 FLATS ----------------
+#---- ТЕКСТУРЫ ПОЛОВ И ПОТОЛКОВ DOOM 2 ----------------
 
 flat n GRASS1
 flat n GRASS2

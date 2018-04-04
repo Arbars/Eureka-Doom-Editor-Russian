@@ -276,8 +276,8 @@ line 825 a "-- EDGE: Масш. ПОЛ2 + ПОТ.2"
 
 
 # not in EDGE
-line 271 - "-- (Unsupported)"
-line 272 - "-- (Unsupported)"
+line 271 - "-- (Не поддерживается)"
+line 272 - "-- (Не поддерживается)"
 
 
 #---- EDGE SECTOR TYPES ----------
